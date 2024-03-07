@@ -1,0 +1,14 @@
+.slide-container {
+    max-width: 800px;
+    margin: auto;
+   }
+   
+   .each-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* Adjust based on your needs */
+    background-size: cover;
+    background-position: center center;
+   }
+   
