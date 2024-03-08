@@ -1,29 +1,50 @@
 /* CSS for the Categories component */
 .categories {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
-    grid-template-rows: repeat(2, auto); /* Creates 2 rows, one for each column */
-    grid-gap: 10px; /* Spacing between grid items */
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 equal-width columns */
+    grid-template-rows: repeat(3, auto); /* Creates 3 rows */
+    grid-gap: 20px; /* Increased spacing between grid items */
     padding: 10px; /* Padding around the grid */
-   }
-   
-   .categories a {
+}
+
+.categories a {
     text-decoration: none; /* Removes the default underline from links */
     color: inherit; /* Inherits text color from parent */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-   }
-   
-   .categories img {
-    width: 100%; /* Adjusts the image width to fill the column */
+    position: relative; /* Needed for hover effects */
+    overflow: hidden; /* Ensures the text does not overflow the link */
+    background-color: rgba(0, 0, 0, 0.1); /* Slight background for each grid box */
+    padding: 10px; /* Adds some space inside each grid box */
+    border-radius: 10px; /* Optional: Rounds the corners of each grid box */
+}
+
+.categories img {
+    width: 80%; /* Adjusts the image width to be smaller */
     height: auto; /* Maintains the aspect ratio of the image */
     object-fit: cover; /* Ensures the image covers the available space without stretching */
-    margin-bottom: 10px; /* Adds space between the image and the text */
-    /* Ensure images have a fixed size */
-    max-width: 100%;
-    max-height: 200px; /* Adjust as needed */
-    object-fit: cover; /* Cover the area without distorting the image */
-   }
-   
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+    margin: auto; /* Centers the image within the grid box */
+}
+
+.categories span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
+    color: white; /* Text color */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.categories a:hover img {
+    transform: translateY(-10px); /* Moves the image slightly upwards on hover */
+}
+
+.categories a:hover span {
+    transform: translateY(-50%); /* Moves the text from bottom to middle on hover */
+}

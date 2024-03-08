@@ -1,10 +1,8 @@
-// Header.jsx
-// Header.jsx
 
 import React from 'react';
 import './Header.css';
 import { FaRegUserCircle, FaSearch, FaHeart, FaShoppingCart } from "react-icons/fa";
-import VerticalNav from './verticalNav.jsx'; // Use the correct name of your component
+import VerticalNav from '../verticalNav.jsx'; // Use the correct name of your component
 
 const Header = () => {
  return (

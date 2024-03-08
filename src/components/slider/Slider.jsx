@@ -5,7 +5,8 @@ import { slides } from './Slides';
 
 const Slideshow = () => {
  return (
-    <div className="slide-container">
+  <div style={{ paddingTop: '80px' }}>
+   <div className="slide-container">
       <Slide easing="ease" duration={500}>
         {slides.map((slide, index) => (
           <div key={index} className="each-slide">
@@ -16,6 +17,8 @@ const Slideshow = () => {
         ))}
       </Slide>
     </div>
+  </div>
+    
  );
 };
 
