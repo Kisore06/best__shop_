@@ -1,3 +1,4 @@
+
 import React from 'react';
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -49,3 +50,4 @@ const Footer = () => {
 }
 
 export default Footer;
+
