@@ -7,6 +7,12 @@ import gift from '../../Assets/giftt.jpg';
 import bags from '../../Assets/bags.jpg';
 import watches from '../../Assets/watches.jpg';
 import clothes from '../../Assets/clothes.jpg';
+import sports from '../../Assets/sports.jpg';
+import Trophy from '../../Assets/Trophy.jpg';
+import BabyProducts from '../../Assets/BabyProducts.jpg';
+import Mobiles from '../../Assets/Mobiles.jpeg';
+import Toys from '../../Assets/Toys.jpg';
+import GeneralGoods from '../../Assets/GeneralGoods.jpg';
 import "./Categories.css";
 
 const categories = [
@@ -15,7 +21,13 @@ const categories = [
  { name: 'Cosmetics', image: cosmetics },
  { name: 'Bags', image: bags, subcategories: ['Handbags', 'Backpacks', 'Totes', 'Crossbody Bags'] }, // Added subcategories here
  { name: 'Gifts', image:gift },
- { name: 'Clothes', image:clothes}
+ { name: 'Clothes', image:clothes},
+ { name: 'sports', image:sports},
+ { name: 'GeneralGoods', image:GeneralGoods},
+ { name: 'Toys', image:Toys},
+ { name: 'Mobiles', image:Mobiles},
+ { name: 'BabyProducts', image:BabyProducts},
+ { name: 'Trophy', image:Trophy},
 ];
 
 const Categories = () => {

@@ -2,9 +2,13 @@ import React from 'react'
 
 const Content = () => {
   return (
-    <main>
-        categories and service
-    </main>
+    <div>
+    <p 
+    style={{ paddingBottom: '580px'
+     }}  >
+    </p>
+    <p>BestShop</p> 
+    </div>
   )
 }
 
