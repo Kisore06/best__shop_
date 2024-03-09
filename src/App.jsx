@@ -19,6 +19,7 @@ import MobileCategories from "./components/Mobiles/MobileCategories";
 import ToyCategories from "./components/Toys/ToyCategories";
 import BabyProdCat from "./components/BabyProducts/BabyProdCat";
 import Trophy from "./components/Trophy/Trophy";
+import ShopLocations from "./components/Shop/Branch/ShopLocations";
 //import Brands from './components/Brands/Brands';
 
 
@@ -38,7 +39,7 @@ function App() {
       <Route path="/toys" element={<ToyCategories/>} />
       <Route path="/babyproducts" element={<BabyProdCat/>} />
       <Route path="/trophy" element={<Trophy/>} />
-
+      <Route path="/shop-locations" element={<ShopLocations/>} />
       </Routes>
       <Content/>
       <Footer/>
