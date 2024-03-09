@@ -11,6 +11,7 @@ const ShopLocations = () => {
  ];
 
  return (
+    <div style={{ paddingTop: '80px' }}>
     <div className="shop-locations">
       <h2>Our Locations</h2>
       <div className="locations-grid">
@@ -20,6 +21,7 @@ const ShopLocations = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
  );
 };
