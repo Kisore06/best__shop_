@@ -2,7 +2,11 @@
 import React from 'react';
 import './Header.css';
 import { FaRegUserCircle, FaSearch, FaHeart, FaShoppingCart } from "react-icons/fa";
+<<<<<<< HEAD:src/components/Header.jsx
+import VerticalNav from '../components/verticalNavbar/verticalNav.jsx'; // Use the correct name of your component
+=======
 import VerticalNav from '../verticalNav.jsx'; // Use the correct name of your component
+>>>>>>> 1a81c652bdc58e1f5de201ae9158dd6f20709d41:src/components/HomePage/Header.jsx
 
 const Header = () => {
  return (

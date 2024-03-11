@@ -1,0 +1,21 @@
+/* BagsPage.css */
+.bags {
+    padding: 20px;
+   }
+   
+   .subcategories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   }
+   
+   .subcategory {
+    margin: 10px;
+    text-align: center;
+   }
+   
+   .subcategory img {
+    width: 100px;
+    height: 100px;
+   }
+   
