@@ -1,22 +1,28 @@
 // ShopFinder.jsx
 import React from 'react';
-import { useNavigate } from "react-router-dom"; // Import useNavigate instead of useHistory
-import './ShopFinder.css'; // Ensure this CSS file is created
+import { useNavigate } from "react-router-dom";
+import './ShopFinder.css';
 
 const ShopFinder = () => {
- const navigate = useNavigate(); // Use useNavigate instead of useHistory
+  const navigate = useNavigate();
 
- const goToShopLocations = () => {
-    navigate('/shop-locations'); // Use navigate to redirect
- };
+  const goToShopLocations = () => {
+    navigate('/shop-locations');
+  };
 
- return (
+  return (
     <div className="shop-finder">
-      <h1>COME HAVE A DRINK</h1>
-      <p>We’ve got great neighbors, classic clothes, and cold drinks up for grabs whenever you wanna stop by. See you soon.</p>
-      <button onClick={goToShopLocations}>STOP ON BY</button>
+      <div className="left-side">
+        <h1>COME HAVE A DRINK</h1>
+        <hr />
+        <p>We’ve got great neighbors, classic clothes, and cold drinks up for grabs whenever you wanna stop by. See you soon.</p>
+        <button onClick={goToShopLocations}>STOP ON BY</button>
+      </div>
+      <div className="right-side">
+        <img id="img" src="./best_shop.jpeg" alt="Image" />
+      </div>
     </div>
- );
+  );
 };
 
 export default ShopFinder;

@@ -1,38 +1,68 @@
-
+/* TopDeals.css */
 .product-list {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-  }
-  
-  .product-row {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-  
-  .product-image {
-    width: 100px;
-    height: auto;
-  }
-  
-  .product-info {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  
-  .product-name {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .product-description {
-    font-size: 14px;
-  }
-  
-  .product-price {
-    font-size: 16px;
-    color: #2ecc71; /* Example color for price */
-  }
-  
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  width: 150px; /* Adjusted width */
+  margin-bottom: 20px;
+}
+
+.product-row:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.product-row:hover .product-image {
+  transform: scale(1.1);
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.product-name {
+  font-size: 16px; /* Adjusted font size */
+  font-weight: bold;
+  color: #3498db;
+}
+
+.product-description {
+  font-size: 12px; /* Adjusted font size */
+  color: #555;
+}
+
+.product-price {
+  font-size: 14px; /* Adjusted font size */
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.top-deals-title {
+  font-size: 24px; /* Adjusted font size */
+  font-weight: bold;
+  color: #3498db;
+  text-align: center;
+  margin-bottom: 20px;
+}

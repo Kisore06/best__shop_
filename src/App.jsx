@@ -20,6 +20,9 @@ import ToyCategories from "./components/Toys/ToyCategories";
 import BabyProdCat from "./components/BabyProducts/BabyProdCat";
 import Trophy from "./components/Trophy/Trophy";
 import ShopLocations from "./components/Shop/Branch/ShopLocations";
+import BagCategories from "./components/Bags/BagCategories";
+import GiftCategories from "./components/Gifts/GiftCategories";
+import ClothCategories from "./components/Clothes/ClothCategories";
 //import Brands from './components/Brands/Brands';
 
 
@@ -33,8 +36,11 @@ function App() {
       <Route path="/shoes" element={<ShoeCategories/>} />
       <Route path="/watches" element={<WatchCategories/>} />
       <Route path="/cosmetics" element={<CosmeticsCategory/>} />
+      <Route path="/bags" element={<BagCategories/>} />
       <Route path="/generalgoods" element={<GoodsCategories/>} />
       <Route path="/sports" element={<SportsCategories/>} />
+      <Route path="/gifts" element={<GiftCategories/>}/>
+      <Route path="/clothes" element={<ClothCategories/>}/>
       <Route path="/mobiles" element={<MobileCategories/>} />
       <Route path="/toys" element={<ToyCategories/>} />
       <Route path="/babyproducts" element={<BabyProdCat/>} />

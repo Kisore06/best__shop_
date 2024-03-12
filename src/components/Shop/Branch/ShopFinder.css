@@ -1,27 +1,56 @@
 /* ShopFinder.css */
+
 .shop-finder {
+    display: grid;
+    grid-template-columns: 590px 560px;
+    grid-template-rows: 450px;
+    gap: 20px; 
+    padding: 20px;
+    margin: 55px;
+}
+
+.left-side {
     display: flex;
     flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    border: 1px solid black;
+}
+
+.right-side {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 20px;
+    border: 1px solid black;
+}
+
+h1 {
+    margin-bottom: 80px;
     text-align: center;
-   }
-   
-   h1 {
-    margin-bottom: 20px;
-   }
-   
-   button {
-    margin-top: 20px;
+    margin-top: 50px;
+}
+
+button {
+    margin-top: 50px;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     background-color: #007BFF;
     color: white;
     cursor: pointer;
-   }
-   
-   button:hover {
+    width: 150px;
+    align-self: center;
+}
+
+button:hover {
     background-color: #0056b3;
-   }
-   
+}
+p{
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+#img {
+    width: 100%; 
+    height: auto;
+}
