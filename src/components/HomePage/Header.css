@@ -1,10 +1,7 @@
 /* Header.css */
 
-/* Header */
-/* Header.css */
-
 .header {
-  background-color: #85f12d;
+  background-color: #56f137;
   padding: 10px 0;
   position: fixed; /* Make the header fixed */
   top: 0; /* Position it at the top of the viewport */
@@ -14,6 +11,18 @@
   height: 50px; /* Ensure it stays on top of other content */
  }
  
+ .custom-modal-container {
+  background-color: #f9f9f9; /* Light background */
+  color: #333; /* Dark text */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding inside the modal */
+ }
+ 
+ .custom-modal-title {
+  font-size: 24px; /* Larger title */
+  font-weight: bold; /* Bold title */
+  color: #333; /* Dark title */
+ }
 
 .header-container {
   display: flex;
@@ -28,24 +37,43 @@
   height: 50px;
 }
 
+.logo-container{
+  text-wrap: nowrap;
+}
+
 /* Navigation Links */
+.nav-links{
+  justify-items: center;
+  align-items: center;
+  padding-left: 25%;
+}
+
 .nav-links ul {
   list-style: none;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.nav-links li {
+  padding-right: 0%;
+ }
+ 
+ .nav-links li {
   margin: 0 10px;
   position: relative; /* Added for dropdown */
-}
-
-.nav-links a {
+ }
+ 
+ .nav-links a {
   text-decoration: none;
   color: #333;
-}
+ }
+ 
+ /* Add media query for smaller screens */
+ @media (max-width: 768px) {
+  .nav-links ul {
+     display: none; /* Hide the navigation links on smaller screens */
+  }
+ }
+ 
 
 /* Mega Menu Dropdown */
 /* Add this to your Header.css */
@@ -98,21 +126,43 @@
 .user-actions {
   display: flex;
   align-items: center;
-}
-
-.user-actions a {
+  
+ }
+ 
+ .user-actions a {
   margin-right: 10px;
   color: #333;
   text-decoration: none;
-}
-
-.user-actions a:last-child {
+ }
+ 
+ .user-actions a:last-child {
   margin-right: 0;
-}
-
-.fa {
+ }
+ 
+ .fa {
   font-size: 1.2em;
-}
+ }
+
+ /* Search Bar */
+.search-bar {
+  flex-grow: 1;
+  margin-left: 20px;
+  padding-left: 240px;
+ }
+ 
+ .search-input {
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+ }
+ 
+ .search-input:focus {
+  border-color: #007bff;
+ }
 
 /* Main and Footer */
 main {

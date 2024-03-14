@@ -1,17 +1,4 @@
-<<<<<<< HEAD
 import React from 'react';
-import Home from './components/Header';
-import Content from './components/Content';
-import Footer from './components/Footer';
-import Slider from './components/slider/Slider';
-import ProductList from './components/TopDeals/ProductList';
-import products from './components/TopDeals/Products';
-import Categories from './components/Categories/Categories';
-import { Route, Routes } from "react-router-dom";
-import ShoeCategories from './components/Shoes/ShoeCategories';
-import Brands from './components/Brands/Brands';
-import BagCategories from './components/Bags/BagCategories'; // Corrected import statement
-=======
 //import Home from './components/HomePage/Header';
 //import Content from './components/Content';
 //import Footer from './components/HomePage/Footer';
@@ -33,25 +20,22 @@ import MobileCategories from "./components/Mobiles/MobileCategories";
 import ToyCategories from "./components/Toys/ToyCategories";
 import BabyProdCat from "./components/BabyProducts/BabyProdCat";
 import Trophy from "./components/Trophy/Trophy";
+// import Login from './components/Login/login';
+import AddCategory from './components/AddProducts/AddCategory'; // Assuming you have an AddCategoryPage component
+
+
 //import Brands from './components/Brands/Brands';
 
->>>>>>> 1a81c652bdc58e1f5de201ae9158dd6f20709d41
 
 function App() {
  return (
     <div className="App">
-<<<<<<< HEAD
-      <Home />
-      <Slider />
-      <ProductList products={products} />
-      <Categories />
-      <Routes>
-        <Route path="/shoes" element={<ShoeCategories/>} />
-        <Route path="/bags" element={<BagCategories/>} /> {/* Corrected usage */}
-=======
+
     <Header/>
+    {/* <Login /> */}
     <Routes>
       <Route path="/home" element={<HomePage />} />
+      <Route path="/add-category" component={AddCategory} />
       <Route path="/shoes" element={<ShoeCategories/>} />
       <Route path="/watches" element={<WatchCategories/>} />
       <Route path="/cosmetics" element={<CosmeticsCategory/>} />
@@ -62,7 +46,6 @@ function App() {
       <Route path="/babyproducts" element={<BabyProdCat/>} />
       <Route path="/trophy" element={<Trophy/>} />
 
->>>>>>> 1a81c652bdc58e1f5de201ae9158dd6f20709d41
       </Routes>
       <Content/>
       <Footer/>
