@@ -1,0 +1,44 @@
+/* BagCategory.css */
+.bag-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    padding-right:50px;
+    align-items: flex-start; /* Align items to the start of the cross axis */
+}
+
+.men-categories, .women-categories {
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* Stack men and women categories vertically */
+}
+.category img {
+    width: 200px; 
+    height: 200px;
+   
+  }
+  
+
+.category {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin-bottom: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
