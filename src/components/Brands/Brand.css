@@ -1,10 +1,26 @@
 /* CSS for the Categories component */
+<<<<<<< HEAD
 .brands {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columns */
     grid-template-rows: repeat(3, auto); /* 3 rows */
     grid-gap: 20px; /* Spacing between grid items */
     padding: 10px; /* Padding around the grid */
+=======
+.he1 {
+    font-size: 30px; /* Reduced header size */
+    color: black; /* Heading color set to black */
+    font-weight: 450; /* Reduced weight */
+    text-align: left; /* Align heading to the left */
+    margin-bottom: 20px;
+   }
+.brands {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 13px; /* Reduced gap between flex items */
+    padding: 5px; /* Padding around the flex container */
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a minimal shadow */
 }
 
@@ -16,7 +32,16 @@
     align-items: center;
     text-align: center;
     transition: transform 0.3s ease; /* Smooth transition for hover effect */
+<<<<<<< HEAD
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Add a shadow to each grid box */
+=======
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Add a shadow to each flex item */
+    background-color: #f8f9fa; /* Add a background color to each flex item */
+    padding: 5px; /* Add padding inside each flex item */
+    border-radius: 5px; /* Add rounded corners to each flex item */
+    width: calc(25% - 20px); /* Adjusts the width of each flex item for 4 items per row */
+    min-width: 200px; /* Ensures items don't get too small */
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
 }
 
 .brands a:hover {
@@ -33,3 +58,19 @@
     object-fit: cover;
     transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
+<<<<<<< HEAD
+=======
+
+/* Responsive design */
+@media (max-width: 768px) {
+ .brands a {
+    width: calc(50% - 20px); /* Adjusts to 2 items per row on small screens */
+ }
+}
+
+@media (max-width: 480px) {
+ .brands a {
+    width: 100%; /* Full width on very small screens */
+ }
+}
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04

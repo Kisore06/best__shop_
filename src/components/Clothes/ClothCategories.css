@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+/* clothCategory.css */
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
 .cloth-categories {
     display: flex;
     flex-wrap: wrap;
@@ -14,6 +18,7 @@
 }
 
 .category {
+<<<<<<< HEAD
     margin-bottom: 20px;
 }
 
@@ -24,8 +29,44 @@ h1, h2 {
 ul {
     list-style-type: none;
     padding-left: 0;
+=======
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  width: 150px; /* Adjusted width */
+  margin-bottom: 20px;
+}
+
+h1, h2 {
+    font-size: 25px; /* Adjusted font size */
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.category:hover {
+    transform: translateY(-5px);
+  }
+
+ul {
+    font-size: 20px; /* Adjusted font size */
+    color: #555;
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
 }
 
 li {
     margin-bottom: 5px;
 }
+<<<<<<< HEAD
+=======
+.category img {
+    width: 200px; 
+    height: 200px;
+   
+  }
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04

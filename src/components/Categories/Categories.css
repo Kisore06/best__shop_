@@ -1,10 +1,19 @@
 /* CSS for the Categories component */
 .categories {
+<<<<<<< HEAD
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Creates 4 equal-width columns */
     grid-template-rows: repeat(3, auto); /* Creates 3 rows */
     grid-gap: 20px; /* Increased spacing between grid items */
     padding: 10px; /* Padding around the grid */
+=======
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 13px; /* Reduced gap between flex items */
+    padding: 5px; /* Padding around the flex container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a minimal shadow */
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
 }
 
 .categories a {
@@ -16,6 +25,7 @@
     text-align: center;
     position: relative; /* Needed for hover effects */
     overflow: hidden; /* Ensures the text does not overflow the link */
+<<<<<<< HEAD
     background-color: rgba(0, 0, 0, 0.1); /* Slight background for each grid box */
     padding: 10px; /* Adds some space inside each grid box */
     border-radius: 10px; /* Optional: Rounds the corners of each grid box */
@@ -27,6 +37,26 @@
     object-fit: cover; /* Ensures the image covers the available space without stretching */
     transition: transform 0.3s ease; /* Smooth transition for hover effect */
     margin: auto; /* Centers the image within the grid box */
+=======
+    background-color: #f8f9fa; /* Background color for each flex item */
+    padding: 5px; /* Adds some space inside each flex item */
+    border-radius: 5px; /* Rounded corners for each flex item */
+    width: calc(25% - 20px); /* Adjusts the width of each flex item for 4 items per row */
+    min-width: 200px; /* Ensures items don't get too small */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Add a shadow to each flex item */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.categories img {
+    width: 100%; /* Full width of the flex item */
+    height: auto; /* Maintains the aspect ratio of the image */
+    object-fit: cover; /* Ensures the image covers the available space without stretching */
+    margin-bottom: 10px;
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
 }
 
 .categories span {
@@ -48,3 +78,19 @@
 .categories a:hover span {
     transform: translateY(-50%); /* Moves the text from bottom to middle on hover */
 }
+<<<<<<< HEAD
+=======
+
+/* Responsive design */
+@media (max-width: 768px) {
+ .categories a {
+    width: calc(50% - 20px); /* Adjusts to 2 items per row on small screens */
+ }
+}
+
+@media (max-width: 480px) {
+ .categories a {
+    width: 100%; /* Full width on very small screens */
+ }
+}
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04

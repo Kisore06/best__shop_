@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .vertical-nav {
    position: fixed;
    top: 0;
@@ -59,3 +60,32 @@
    }
   }
   
+=======
+/* verticalNav.css */
+
+.vertical-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure it stays on top of other content */
+ }
+ 
+ .hide-icon {
+  display: none;
+ }
+ 
+ .drawer-header {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  justify-content: flex-end;
+ }
+ 
+ /* Additional styles for positioning the menu icon */
+ .vertical-nav .MuiIconButton-root {
+  position: absolute;
+  top: 10px; /* Adjust based on your header's padding */
+  left: 10px; /* Adjust based on your header's padding */
+ }
+ 
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04

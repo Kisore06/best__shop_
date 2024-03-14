@@ -14,7 +14,82 @@
    #slideshow-container {
     max-width: 800px;
     margin: auto;
+<<<<<<< HEAD
     margin-top: 100px; /* Adjust as needed */
 }
 
+=======
+    margin-top: 100px; 
+}
+
+
+/* Style for the previous arrow */
+.nav-button-prev {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    /* Hide the default SVG icon */
+    background-image: none;
+}
+
+.nav-button-prev::before {
+    content: '';
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Style for the next arrow */
+.nav-button-next {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    /* Hide the default SVG icon */
+    background-image: none;
+}
+
+.nav-button-next::before {
+    content: '';
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid white;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+/* Optional: Add hover effects for the arrows */
+.nav-button-prev:hover::before,
+.nav-button-next:hover::before {
+    border-color: #007bff; /* Change arrow color on hover */
+}
+
+
+
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
    

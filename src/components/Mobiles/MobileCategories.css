@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* MobileProducts.css */
 .mobile-products {
     display: flex;
@@ -33,3 +34,112 @@
     margin-bottom: 5px;
    }
    
+=======
+/* MobileCategories.css */
+
+.mobile-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 45px;
+}
+.mobile-phones-container {
+   display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.phone-brand {
+    display: -ms-inline-flex;
+    flex-wrap: wrap;
+    width: 200px;
+    height: 350px;
+    padding: 55px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
+    margin-bottom: 20px;
+    align-self: center;
+    border-radius: 20px;
+    margin-right: 35px;
+}
+.mobile-accessories-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.accessory-category {
+    display: inline-flex;
+    width: 200px;
+    height: 360px;
+    flex-wrap: wrap;
+    padding: 55px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-right: 35px;
+}
+h2 {
+    text-align: center;
+    margin: 10px 0;
+    color: blue;
+}
+
+ .phone-brand h3  {
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    align-self: flex-start;
+    transform: translate( 0px , -50px)
+
+}
+.accessory-category h3{
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    /* align-self: flex-start;  */
+    transform: translate( 0px , -50px)
+}
+ ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0px 0 0;
+    text-align: center;
+}
+
+ li {
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.phone-image {
+    width: 150px;
+    height: auto;
+    margin-left: 25px;
+}
+
+.accessory-image {
+    width: 150px;
+    height: auto;
+    margin-left: 25px;
+}
+@media only screen and (max-width: 768px) {
+    .phone-brand,
+    .accessory-category {
+        width: 150px;
+        height: 360px;
+        padding: 20px;
+  
+    }
+
+    .phone-image,
+    .accessory-image {
+        width: 120px;
+        margin-left: 15px;
+    }
+}
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "@babel/plugin-transform-class-properties": "^7.23.3",
     "@babel/plugin-transform-nullish-coalescing-operator": "^7.23.4",
     "@babel/plugin-transform-numeric-separator": "^7.23.4",
@@ -14,21 +15,29 @@
 =======
 
 >>>>>>> d8149865c98e9d24bb227d2c31aa3089c7bb1fae
+=======
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/icons-material": "^5.15.12",
     "@mui/material": "^5.15.12",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@rollup/plugin-terser": "^0.4.4",
     "@testing-library/dom": "^9.3.4",
 =======
 >>>>>>> d8149865c98e9d24bb227d2c31aa3089c7bb1fae
+=======
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "ajv": "^8.12.0",
     "axios": "^1.6.7",
+<<<<<<< HEAD
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
@@ -46,13 +55,31 @@
     "react-router-dom": "^6.22.3",
     "react-slideshow-image": "^4.3.0",
     "sweetalert2": "^11.6.13",
+=======
+    "cors": "^2.8.5",
+    "express": "^4.18.3",
+    "gsap": "^3.12.5",
+    "mysql": "^2.18.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
+    "react-router-dom": "^6.22.2",
+    "react-scripts": "^5.0.1",
+    "react-slideshow-image": "^4.3.0",
+    "typescript": "^5.4.2",
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+<<<<<<< HEAD
     "eject": "react-scripts eject"
+=======
+    "eject": "react-scripts eject",
+    "server": "node backend/server.js"
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
   },
   "eslintConfig": {
     "extends": [
@@ -60,6 +87,12 @@
       "react-app/jest"
     ]
   },
+<<<<<<< HEAD
+=======
+  "optionalDependencies": {
+    "fsevents": "*"
+  },
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
   "browserslist": {
     "production": [
       ">0.2%",
@@ -71,6 +104,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+<<<<<<< HEAD
   },
   "devDependencies": {
     "react-scripts": "^5.0.1",
@@ -81,4 +115,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC"
+=======
+  }
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
 }

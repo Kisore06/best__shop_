@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ShopLocations.css */
 .shop-locations {
     display: flex;
@@ -25,3 +26,70 @@
     transform: scale(1.05);
   }
   
+=======
+
+.shop-locations {
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+ }
+ 
+ .locations-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+ }
+ 
+ .location-card {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(25% - 20px); /* Adjusts the width of each card for 4 boxes per row */
+  min-width: 200px; /* Ensures cards don't get too small */
+ }
+ 
+ .location-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: black; /* Heading color set to black */
+ }
+ 
+ .location-card p {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  color: #666;
+ }
+ 
+ .location-card a {
+  color: black; /* Link color set to black */
+  text-decoration: none; /* Removes underline */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+ }
+ 
+ .location-card a:hover {
+  color: #007BFF; /* Changes link color on hover */
+ }
+ 
+ .location-card a:active {
+  color: #0056b3; /* Changes link color on click */
+ }
+ 
+ /* Responsive design */
+ @media (max-width: 768px) {
+  .location-card {
+     flex: 1 1 calc(50% - 20px); /* Adjusts to 2 boxes per row on small screens */
+  }
+ }
+ 
+ @media (max-width: 480px) {
+  .location-card {
+     flex: 1 1 100%; /* Full width on very small screens */
+  }
+ }
+ 
+ .he2{
+    font-size: 24px; /* Reduced header size */
+    color: #333;
+ }
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04

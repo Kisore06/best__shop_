@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
+<<<<<<< HEAD
 import { Link } from 'react-router-dom';
 import './verticalNav.css';
+=======
+import './verticalNav.css'; // Import separate CSS file
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -11,14 +15,26 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import HomeIcon from '@mui/icons-material/Home';
 import CategoryIcon from '@mui/icons-material/Category';
+<<<<<<< HEAD
+=======
+import AddIcon from '@mui/icons-material/Add'; // Import Add icon
+import { Link } from 'react-router-dom';
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
 import Collapse from '@mui/material/Collapse';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 
+<<<<<<< HEAD
 
 const VerticalNav = () => {
  const [open, setOpen] = useState(false);
  const [categoriesOpen, setCategoriesOpen] = useState(false); // State for categories dropdown
+=======
+const VerticalNav = () => {
+ const [open, setOpen] = useState(false);
+ const [categoriesOpen, setCategoriesOpen] = useState(false); // State for categories dropdown
+ const [addOpen, setAddOpen] = useState(false); // State for "Add Category" dropdown
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
  const drawerRef = useRef(null);
 
  useEffect(() => {
@@ -41,10 +57,19 @@ const VerticalNav = () => {
  const handleDrawerClose = () => {
     setOpen(false);
  };
+<<<<<<< HEAD
 
  const toggleCategories = () => {
     setCategoriesOpen(!categoriesOpen);
  };
+=======
+ const toggleCategories = () => {
+    setCategoriesOpen(!categoriesOpen);
+ };
+ const toggleAdd = () => { // Function to toggle "Add Category" dropdown
+    setAddOpen(!addOpen);
+ };
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
 
  return (
     <>
@@ -80,11 +105,19 @@ const VerticalNav = () => {
           </IconButton>
         </div>
         <List>
+<<<<<<< HEAD
           <ListItemButton onClick={handleDrawerClose}>
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
             <ListItemText primary="Home" />
+=======
+        <ListItemButton component={Link} to="/home" onClick={handleDrawerClose}>
+            <ListItemIcon >
+              <HomeIcon />
+            </ListItemIcon>
+              <ListItemText primary="Home" />
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
           </ListItemButton>
           <ListItemButton onClick={toggleCategories}>
             <ListItemIcon>
@@ -133,12 +166,42 @@ const VerticalNav = () => {
               </ListItemButton>
             </List>
           </Collapse>
+<<<<<<< HEAD
           <ListItemButton component={Link} to="/add-category" onClick={handleDrawerClose}>
             <ListItemIcon>
               <CategoryIcon />
             </ListItemIcon>
             <ListItemText primary="Add Category" />
           </ListItemButton>
+=======
+          <ListItemButton onClick={toggleAdd}>
+            <ListItemIcon>
+              <AddIcon />
+            </ListItemIcon>
+            <ListItemText primary="Add Category" />
+            {addOpen ? <ExpandLess /> : <ExpandMore />}
+          </ListItemButton>
+          <Collapse in={addOpen} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              <ListItemButton component={Link} to="/add-category" onClick={handleDrawerClose} sx={{ pl: 4 }}>
+                <ListItemText primary="Add Category" />
+              </ListItemButton>
+              <ListItemButton component={Link} to="/add-gender" onClick={handleDrawerClose} sx={{ pl: 4 }}>
+                <ListItemText primary="Add Items Gender wise" />
+              </ListItemButton>
+              <ListItemButton component={Link} to="/add-subcategory" onClick={handleDrawerClose} sx={{ pl: 4 }}>
+                <ListItemText primary="Add Sub Category" />
+              </ListItemButton>
+              <ListItemButton component={Link} to="/add-brand" onClick={handleDrawerClose} sx={{ pl: 4 }}>
+                <ListItemText primary="Add Brands" />
+              </ListItemButton>
+              <ListItemButton component={Link} to="/add-product" onClick={handleDrawerClose} sx={{ pl: 4 }}>
+                <ListItemText primary="Add Products" />
+              </ListItemButton>
+            </List>
+          </Collapse>
+          {/* Other list items */}
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
         </List>
       </Drawer>
     </>

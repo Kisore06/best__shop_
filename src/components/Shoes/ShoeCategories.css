@@ -3,6 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+<<<<<<< HEAD
     padding: 20px;
     padding-right:50px;
     align-items: flex-start; /* Align items to the start of the cross axis */
@@ -36,3 +37,42 @@ ul {
 li {
     margin-bottom: 5px;
 }
+=======
+    gap:0px;
+    padding: 20px;
+   }
+   
+   .men-categories, .women-categories {
+    width: 45%; /* Adjust based on your layout */
+    align-items:center;
+   }
+   
+   .category {
+    margin-bottom: 20px;
+   }
+   
+   .category-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 10px;
+   }
+   
+   /* Styles for the links */
+   .shoe-categories a {
+    text-decoration: none; /* Removes the underline */
+    color: black; /* Sets the text color to black */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+   }
+   
+   .shoe-categories a:hover, .shoe-categories a:active {
+    color: blue; /* Changes the text color to blue on hover and when clicked */
+   }
+   
+   /* Optional: Add some padding and margin to the list items for better spacing */
+   .subCategoryList li {
+    padding: 5px 0;
+    margin-bottom: 5px;
+   }
+   
+>>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
