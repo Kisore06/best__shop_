@@ -70,23 +70,22 @@ const GoodsCategories = () => {
  ];
 
  return (
-    <div style={{ paddingTop: '80px' }}>
-    <h1>General Goods</h1>
+  <div style={{ paddingTop: '80px' }}>
+    <h1>General Goods Categories</h1>
     <div className="goods-categories">
       {categories.map((category, index) => (
         <div key={index} className="category-section">
           <h2>{category.title}</h2>
-          <div className="category-items">
+          <ul>
             {category.items.map((item, itemIndex) => (
-              <div key={itemIndex} className="category-item">
-                {item}
-              </div>
+              <li key={itemIndex}>{item}</li>
             ))}
-          </div>
+          </ul>
         </div>
       ))}
     </div>
     </div>
+   
  );
 };
 

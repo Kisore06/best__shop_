@@ -1,35 +1,27 @@
+/* ToyCategories.css */
 .sports-categories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 auto;
-    max-width: 900px; /* Adjust based on your design */
-   }
-   
-   .category-section {
-    width: 48%; /* Two columns */
-    padding: 20px;
-    box-sizing: border-box;
-   }
-   
-   .category-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-   }
-   
-   .category-item {
-    flex-basis: 48%; /* Adjust for two items per row */
-    margin-bottom: 10px;
-   }
-   
-   @media (max-width: 768px) {
-    .category-section {
-       width: 100%;
-    }
-   
-    .category-item {
-       flex-basis: 100%;
-    }
-   }
-   
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   padding: 20px;
+  }
+  
+  .category-section {
+   flex: 1;
+   min-width: 300px;
+   margin-bottom: 20px;
+  }
+  
+  h1, h2 {
+   margin-bottom: 10px;
+  }
+  
+  ul {
+   list-style-type: none;
+   padding-left: 0;
+  }
+  
+  li {
+   margin-bottom: 5px;
+  }
+  

@@ -10,13 +10,20 @@
     "@babel/plugin-transform-private-methods": "^7.23.3",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
+<<<<<<< HEAD
+=======
+
+>>>>>>> d8149865c98e9d24bb227d2c31aa3089c7bb1fae
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/icons-material": "^5.15.12",
     "@mui/material": "^5.15.12",
+<<<<<<< HEAD
     "@rollup/plugin-terser": "^0.4.4",
     "@testing-library/dom": "^9.3.4",
+=======
+>>>>>>> d8149865c98e9d24bb227d2c31aa3089c7bb1fae
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",

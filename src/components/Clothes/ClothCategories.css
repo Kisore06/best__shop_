@@ -1,0 +1,31 @@
+.cloth-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.men-categories, .women-categories {
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* Stack men and women categories vertically */
+}
+
+.category {
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}

@@ -1,9 +1,14 @@
 import React from 'react';
 import './Header.css';
+<<<<<<< HEAD
 import { FaRegUserCircle, FaSearch} from "react-icons/fa";
 import VerticalNav from '../../components/verticalNavbar/verticalNav.jsx'; // Adjust the path as necessary
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+=======
+import { FaRegUserCircle, FaSearch, FaHeart, FaShoppingCart } from "react-icons/fa";
+import VerticalNav from '../../components/verticalNavbar/verticalNav.jsx'; // Use the correct name of your component
+>>>>>>> d8149865c98e9d24bb227d2c31aa3089c7bb1fae
 
 const Header = () => {
  const navigate = useNavigate();
