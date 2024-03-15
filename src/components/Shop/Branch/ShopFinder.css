@@ -1,61 +1,6 @@
 /* ShopFinder.css */
 
 .shop-finder {
-<<<<<<< HEAD
-    display: grid;
-    grid-template-columns: 590px 560px;
-    grid-template-rows: 450px;
-    gap: 20px; 
-    padding: 20px;
-    margin: 55px;
-}
-
-.left-side {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    border: 1px solid black;
-}
-
-.right-side {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-}
-
-h1 {
-    margin-bottom: 80px;
-    text-align: center;
-    margin-top: 50px;
-}
-
-button {
-    margin-top: 50px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007BFF;
-    color: white;
-    cursor: pointer;
-    width: 150px;
-    align-self: center;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-p{
-    margin-bottom: 80px;
-    text-align: center;
-}
-
-#img {
-    width: 100%; 
-    height: auto;
-}
-=======
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -161,4 +106,3 @@ p{
     }
    }
    
->>>>>>> 75345111110549f3123912ca50aa655f65b5dd04

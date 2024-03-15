@@ -33,11 +33,7 @@ const categories = [
 const Categories = () => {
     return (
        <div>
-<<<<<<< HEAD
-        <h1>Shop By Categories</h1>
-=======
         <h1 className='he1'>Shop By Categories</h1>
->>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
         <br></br>
            <div className="categories">
            {categories.map((category, index) => (

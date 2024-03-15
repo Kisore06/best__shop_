@@ -20,20 +20,12 @@
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-<<<<<<< HEAD
-    background-color: #007BFF;
-=======
     background-color: #030303b7;
->>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
     color: white;
     cursor: pointer;
    }
    
    button:hover {
-<<<<<<< HEAD
-    background-color: #0056b3;
-=======
     background-color: #000000;
->>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
    }
    

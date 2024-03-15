@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+/* verticalNav.css */
+
 .vertical-nav {
    position: fixed;
    top: 0;
@@ -11,38 +12,10 @@
   }
   
   .drawer-header {
-   background-color: #c7f788; /* A darker shade for the header */
-   color: white; /* Text color for the header */
-  }
-  
-  .MuiDrawer-paper {
-   background-color: #eb0a0a; /* Light background for the drawer */
-   border-radius: px; /* Rounded corners */
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  }
-
-  /* .MuiListItemButton-root { */
-   /* padding: 10px 20px; Increase padding for better touch targets */
-   /* font-size: 16px; Adjust font size */
-  /* } */
-  
-  .MuiListItemButton-root:hover {
-   background-color: #e0e0e0; /* Light grey background on hover */
-  }
-
-  .MuiListItemIcon-root {
-   min-width: 30px; /* Ensure icons have consistent width */
-   color: #3f51b5; /* Match icon color with the header */
-  }
-
-  .MuiDrawer-paper {
-   transition: transform 0.3s ease-in-out; /* Smooth transition for opening/closing */
-  }
-
-  @media (max-width: 768px) {
-   .MuiDrawer-paper {
-      width: 100%; /* Full width on smaller screens */
-   }
+   display: flex;
+   align-items: center;
+   padding: 8px;
+   justify-content: flex-end;
   }
   
   /* Additional styles for positioning the menu icon */
@@ -52,40 +25,3 @@
    left: 10px; /* Adjust based on your header's padding */
   }
   
-  /* Media query for smaller screens */
-  @media (max-width: 768px) {
-   .vertical-nav .MuiIconButton-root {
-      top: 5px; /* Adjust for smaller screens */
-      left: 5px; /* Adjust for smaller screens */
-   }
-  }
-  
-=======
-/* verticalNav.css */
-
-.vertical-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000; /* Ensure it stays on top of other content */
- }
- 
- .hide-icon {
-  display: none;
- }
- 
- .drawer-header {
-  display: flex;
-  align-items: center;
-  padding: 8px;
-  justify-content: flex-end;
- }
- 
- /* Additional styles for positioning the menu icon */
- .vertical-nav .MuiIconButton-root {
-  position: absolute;
-  top: 10px; /* Adjust based on your header's padding */
-  left: 10px; /* Adjust based on your header's padding */
- }
- 
->>>>>>> 75345111110549f3123912ca50aa655f65b5dd04

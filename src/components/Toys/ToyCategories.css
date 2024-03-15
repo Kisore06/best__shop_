@@ -1,85 +1,58 @@
 /* ToyCategories.css */
 .toy-categories {
-    display: flex;
-<<<<<<< HEAD
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px;
-   }
-   
-   .category {
-    flex: 1;
-    min-width: 300px;
-    margin-bottom: 20px;
-   }
-   
-   h1, h2 {
-    margin-bottom: 10px;
-   }
-   
-   ul {
-    list-style-type: none;
-    padding-left: 0;
-   }
-   
-   li {
-    margin-bottom: 5px;
-   }
-   
-=======
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-   
-  }
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
  
-  .category {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-    /* height: 300px; */
-    margin-bottom: 20px;
-  }
- 
-  .category-section:hover {
-    transform: translateY(-5px);
-  }
-
- 
-  h1, h2 {
-    font-size: 25px; /* Adjusted font size */
-    font-weight: bold;
-    color: black;
-    text-align: center;
-    margin-bottom: 20px;
-  }
- 
-  .category img {
-    width: 150px; /* Adjusted width */
-    height: auto;
-  }
- 
-  ul {
-    font-size: 20px; /* Adjusted font size */
-    color: #555;
-  }
- 
-  li {
-    margin-bottom: 5px;
-  }
-  @media only screen and (max-width: 768px) {
-    .category {
-        padding: 10px;
-    }
-
-    .category-image {
-        width: 120px;
-    }
 }
->>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  /* height: 300px; */
+  margin-bottom: 20px;
+}
+
+.category-section:hover {
+  transform: translateY(-5px);
+}
+
+
+h1, h2 {
+  font-size: 25px; /* Adjusted font size */
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.category img {
+  width: 150px; /* Adjusted width */
+  height: auto;
+}
+
+ul {
+  font-size: 20px; /* Adjusted font size */
+  color: #555;
+}
+
+li {
+  margin-bottom: 5px;
+}
+@media only screen and (max-width: 768px) {
+  .category {
+      padding: 10px;
+  }
+
+  .category-image {
+      width: 120px;
+  }
+}

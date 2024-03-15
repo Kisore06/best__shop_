@@ -11,7 +11,7 @@ const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '',
-  database: 'best_shop_'
+  database: 'best_shop'
 });
 
 db.connect((err) => {
@@ -35,13 +35,22 @@ app.get('/categories', (req, res) => {
 });
 
 app.post('/categories', (req, res) => {
-    const { name } = req.body;
+    const { category } = req.body;
+    if (!category) {
+        return res.status(400).send({ error: 'Category name is required.' });
+    }
     const query = 'INSERT INTO categories (category) VALUES (?)';
-    db.query(query, [name], (err, result) => {
-       if (err) throw err;
-       res.send(result);
+    db.query(query, [category], (err, result) => {
+       if (err) {
+           console.error(err);
+           res.status(500).send({ error: 'An error occurred while inserting the category.' });
+       } else {
+           res.send(result);
+       }
     });
-});   
+});
+
+   
 
 //Brands
 app.get('/brands', (req, res) => {
@@ -70,19 +79,37 @@ app.post('/brands', (req, res) => {
 
 
 //gender
-app.get('/genders', (req, res) => {
-    console.log('Fetching genders...');
-    const query = 'SELECT * FROM genders';
-    db.query(query, (err, results) => {
-        if (err) {
-            console.error('Error fetching genders:', err);
-            res.status(500).send('Error fetching genders');
+app.get('/product', (req, res) => {
+    const { subCategoryName, brandName } = req.query;
+
+    let query = 'SELECT * FROM product';
+    let params = [];
+
+    if (subCategoryName) {
+        query += ' WHERE subCategoryName = ?';
+        params.push(subCategoryName);
+    }
+
+    if (brandName) {
+        if (params.length > 0) {
+            query += ' AND brandName = ?';
         } else {
-            console.log('genders fetched successfully');
+            query += ' WHERE brandName = ?';
+        }
+        params.push(brandName);
+    }
+
+    db.query(query, params, (err, results) => {
+        if (err) {
+            console.error('Error fetching products:', err);
+            res.status(500).send('Error fetching products');
+        } else {
+            console.log('Products fetched successfully');
             res.send(results);
         }
     });
 });
+
 
 app.post('/genders', (req, res) => {
     const { name } = req.body;

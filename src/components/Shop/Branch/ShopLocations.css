@@ -1,32 +1,3 @@
-<<<<<<< HEAD
-/* ShopLocations.css */
-.shop-locations {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .locations-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  .location-card {
-    padding: 20px;
-    border: 2.5px solid #cf1f1f;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-    background-color: bisque;
-  }
-  
-  .location-card:hover {
-    transform: scale(1.05);
-  }
-  
-=======
 
 .shop-locations {
   padding: 20px;
@@ -92,4 +63,3 @@
     font-size: 24px; /* Reduced header size */
     color: #333;
  }
->>>>>>> 75345111110549f3123912ca50aa655f65b5dd04

@@ -3,15 +3,7 @@
   color: #fff;
   padding: 20px 0;
   text-align: center;
-<<<<<<< HEAD
- }
- 
- .footer-social-icons {
-  margin-bottom: 20px;
- }
- 
- .footer-social-icon {
-=======
+
 }
 
 .footer-social-icons {
@@ -19,12 +11,10 @@
 }
 
 .footer-social-icon {
->>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
   display: inline-block;
   font-size: 24px;
   margin-right: 10px;
   color: #fff;
-<<<<<<< HEAD
   position: relative;
  }
  
@@ -72,34 +62,3 @@
   padding-top: 10px;
  }
  
-=======
-}
-
-.footer-links {
-  margin-bottom: 20px;
-}
-
-.footer-links-list {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-links-list li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.footer-links-list li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.footer-text {
-  margin: 0;
-}
-
-.footer-bottom {
-  border-top: 1px solid #666;
-  padding-top: 10px;
-}
->>>>>>> 75345111110549f3123912ca50aa655f65b5dd04

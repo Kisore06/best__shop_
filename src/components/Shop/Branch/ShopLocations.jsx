@@ -1,30 +1,5 @@
 // ShopLocations.js
 import React from 'react';
-<<<<<<< HEAD
-import './ShopLocations.css'; // Ensure this CSS file is created
-
-const ShopLocations = () => {
- const locations = [
-    'Head Office MT Road Near Taluka Office, Sathyamangalam',
-    'Branch 1 Opposite to Bus stand Sathyamangalam',
-    'Branch 2 Karattur Arch Kayalvizhi Complex, Gobichettipalayam',
-    'Branch 3 Bannari Amman Institute of Technology Sathyamangalam',
- ];
-
- return (
-    <div style={{ paddingTop: '80px' }}>
-    <div className="shop-locations">
-      <h2>Our Locations</h2>
-      <div className="locations-grid">
-        {locations.map((location, index) => (
-          <div key={index} className="location-card">
-            <p>{location}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-    </div>
-=======
 import './ShopLocations.css';
 
 const ShopLocations = () => {
@@ -50,7 +25,6 @@ const ShopLocations = () => {
         </div>
       </div>
     </div>
->>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
  );
 };
 

@@ -1,29 +1,5 @@
 import React from 'react';
 import './ClothCategories.css'; // Ensure this CSS file is created
-<<<<<<< HEAD
-
-const ClothCategories = () => {
- const menCategories = [
-    { title: 'Tops', subCategories: ['T-shirts', 'Polo shirts', 'Casual shirts', 'Dress shirts', 'Henleys'] },
-    { title: 'Bottoms', subCategories: ['Jeans', 'Chinos', 'Cargo pants', 'Shorts', 'Sweatpants'] },
-    { title: 'Outerwear', subCategories: ['Jackets', 'Blazers', 'Coats', 'Hoodies', 'Sweaters'] },
-    { title: 'Suits', subCategories: ['Business suits', 'Formal suits', 'Tuxedos'] },
-    { title: 'Activewear', subCategories: ['Athletic shorts', 'Performance shirts', 'Track pants', 'Workout tops'] },
-    { title: 'Underwear', subCategories: ['Boxers', 'Briefs', 'Boxer briefs', 'Undershirts'] },
-    { title: 'Sleepwear', subCategories: ['Pajama sets', 'Lounge pants', 'Robes'] },
-    { title: 'Swimwear', subCategories: ['Swim trunks', 'Board shorts', 'Rash guards'] },
- ];
-
- const womenCategories = [
-    { title: 'Tops', subCategories: ['T-shirts', 'Blouses', 'Tank tops', 'Tunics', 'Crop tops'] },
-    { title: 'Bottoms', subCategories: ['Jeans', 'Leggings', 'Skirts', 'Shorts', 'Trousers'] },
-    { title: 'Dresses', subCategories: ['Casual dresses', 'Cocktail dresses', 'Maxi dresses', 'Midi dresses', 'Summer dresses'] },
-    { title: 'Outerwear', subCategories: ['Jackets', 'Blazers', 'Coats', 'Cardigans', 'Ponchos'] },
-    { title: 'Suits and Sets', subCategories: ['Pantsuits', 'Skirt suits', 'Co-ord sets'] },
-    { title: 'Activewear', subCategories: ['Sports bras', 'Athletic leggings', 'Workout tops', 'Yoga pants'] },
-    { title: 'Intimates', subCategories: ['Bras', 'Panties', 'Lingerie sets', 'Bralettes'] },
-    { title: 'Swimwear', subCategories: ['Bikinis', 'One-piece swimsuits', 'Tankinis', 'Cover-ups'] },
-=======
 import Activewearmen from "..//..//Assets//Clothes//activewear.jpg";
 import dresses from "..//..//Assets//Clothes//dresses.jpg";
 import Intimates from "..//..//Assets//Clothes//intimates.jpg";
@@ -61,7 +37,6 @@ const ClothCategories = () => {
     { title: 'Activewear', subCategories: ['Sports bras', 'Athletic leggings', 'Workout tops', 'Yoga pants'],image:womenactive },
     { title: 'Intimates', subCategories: ['Bras', 'Panties', 'Lingerie sets', 'Bralettes'],image:Intimates },
     { title: 'Swimwear', subCategories: ['Bikinis', 'One-piece swimsuits', 'Tankinis', 'Cover-ups'],image:womenswim },
->>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
  ];
 
  return (
@@ -73,10 +48,7 @@ const ClothCategories = () => {
         {menCategories.map((category, index) => (
           <div key={index} className="category">
             <h3>{category.title}</h3>
-<<<<<<< HEAD
-=======
             <img src={category.image} alt={category.title} className="category-image" />
->>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
             <ul>
               {category.subCategories.map((subCategory, subIndex) => (
                 <li key={subIndex}>{subCategory}</li>
@@ -90,10 +62,7 @@ const ClothCategories = () => {
         {womenCategories.map((category, index) => (
           <div key={index} className="category">
             <h3>{category.title}</h3>
-<<<<<<< HEAD
-=======
             <img src={category.image} alt={category.title} className="category-image" />
->>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
             <ul>
               {category.subCategories.map((subCategory, subIndex) => (
                 <li key={subIndex}>{subCategory}</li>
@@ -107,8 +76,4 @@ const ClothCategories = () => {
  );
 };
 
-<<<<<<< HEAD
 export default ClothCategories;
-=======
-export default ClothCategories;
->>>>>>> 75345111110549f3123912ca50aa655f65b5dd04

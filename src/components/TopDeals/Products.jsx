@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-import watches from '../../Assets/watches.jpg';
-import shoes from '../../Assets/shoess.jpg';
-=======
 import Addidas from '../../Assets/TopDeals/Adidas.jpg';
 import Airpods from '../../Assets/TopDeals/Airpods.webp';
 import Fastract from '../../Assets/TopDeals/Fastrack.jpg';
@@ -11,55 +7,10 @@ import Puma from '../../Assets/TopDeals/Puma.webp';
 import smart from '../../Assets/TopDeals/Smart.jpg';
 
 
->>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
 
 const products = [
     { id: 1,
       name: 'Nike',
-<<<<<<< HEAD
-      description: 'shoe1', 
-      price: 19.99,
-      image: shoes,
-    },
-    { id: 2, 
-      name: 'Puma', 
-      description: 'shoe2', 
-      price: 19.99,
-      image: shoes,
-    },
-    { id: 3, 
-      name: 'Addidas', 
-      description: 'shoe3', 
-      price: 19.99,
-      image: shoes, 
-    },
-    { id: 4, 
-      name: 'Fastract', 
-      description: 'watch1', 
-      price: 19.99,
-      image: watches,
-    },
-    { id: 5, 
-      name: 'Fastract', 
-      description: 'watch1', 
-      price: 19.99,
-      image: watches,
-    },
-    { id: 6, 
-      name: 'Fastract', 
-      description: 'watch1', 
-      price: 19.99,
-      image: watches,
-    },
-    { id: 7, 
-      name: 'Fastract', 
-      description: 'watch1', 
-      price: 19.99,
-      image: watches,
-    },
-  ];
-export default products
-=======
       description: '5% Offer', 
       price: 19.99,
       image: Nike,
@@ -102,4 +53,3 @@ export default products
     },
   ];
 export default products
->>>>>>> 75345111110549f3123912ca50aa655f65b5dd04

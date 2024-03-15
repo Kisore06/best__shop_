@@ -33,11 +33,7 @@ const brands = [
 const Brands = () => {
  return (
     <div>
-<<<<<<< HEAD
-     <h1>Shop By Trending Brands</h1>
-=======
      <h1 className="he1">Trending Brand Partners</h1>
->>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
      <br></br>
         <div className="brands">
         {brands.map((brand, index) => (

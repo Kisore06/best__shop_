@@ -14,14 +14,11 @@
     display: flex;
     flex-direction: column; /* Stack men and women categories vertically */
 }
-<<<<<<< HEAD
-=======
 .category img {
     width: 200px; 
     height: 200px;
    
   }
->>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
 
 .category {
     margin-bottom: 20px;
@@ -42,8 +39,4 @@ ul {
 
 li {
     margin-bottom: 5px;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 75345111110549f3123912ca50aa655f65b5dd04
