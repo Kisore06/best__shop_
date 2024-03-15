@@ -5,7 +5,7 @@
 //import ProductList from './components/TopDeals/ProductList';
 //import products from './components/TopDeals/Products';
 //import Categories from './components/Categories/Categories';
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import ShoeCategories from './components/Shoes/ShoeCategories';
 import HomePage from './components/HomePage/HomePage';
 import Header from "./components/HomePage/Header";
@@ -32,10 +32,16 @@ import AddProduct from "./components/Add/AddProduct";
 import ProductList from "./components/Shoes/ProductList";
 import './app.css'
 import BrandProducts from "./components/Brands/BrandProducts";
+import { useEffect } from "react";
 //import Brands from './components/Brands/Brands';
 
 
 function App() {
+  const location = useLocation();
+
+ useEffect (() => {
+    window.scrollTo(0, 0);
+ }, [location]);
 
   return (
     <div className="App">

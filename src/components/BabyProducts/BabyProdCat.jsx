@@ -9,6 +9,8 @@ import babyGear from '../../Assets/baby/gear.jpg';
 import healthSafety from '../../Assets/baby/baby care.jpg';
 import toysEntertainment from '../../Assets/baby/babydoll.jpeg';
 import bathSkincare from '../../Assets/baby/babyskincare.jpeg';
+import { Link } from 'react-router-dom';
+
 
 const BabyProdCat = () => {
  const categories = [
@@ -31,9 +33,10 @@ const BabyProdCat = () => {
           <h2>{category.title}</h2>
           <ul>
           <img src={category.image} alt={category.title} className="category-image" />
-
             {category.subCategories.map((subCategory, subIndex) => (
-              <li key={subIndex}>{subCategory}</li>
+              <li key={subIndex}>
+               <Link to={`/shoes/men/${subCategory}`}>{subCategory}</Link>
+              </li>
             ))}
           </ul>
         </div>

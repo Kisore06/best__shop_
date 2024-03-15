@@ -63,17 +63,27 @@ const AddProduct = () => {
         try {
             const response = await axios.post('http://localhost:3001/product', product);
             console.log(response.data);
+            setProduct({
+              productName: '',
+              description: '',
+              categoryName: '',
+              subCategoryName: '',
+              genderName: '',
+              brandName: '',
+            });
+            window.alert('Product added successfully!');  
         } catch (error) {
             console.error(error);
+            window.alert('An error occurred while adding the Product.');
         }
         
     };
 
     return (
-      <div style={{ paddingTop: '80px' }}>
-        <div>
+      <div style={{ paddingTop: '80px', maxWidth: '500px', margin: '0 auto' }}>
+       <div style={{ textAlign: 'center' }}>
             <h2>Add Product</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px', border: '1px solid #ccc', padding: '20px', borderRadius: '5px' }}>
                 <label>
                     Product Name:
                     <input
@@ -81,21 +91,29 @@ const AddProduct = () => {
                         value={product.productName}
                         onChange={(e) => setProduct({ ...product, productName: e.target.value })}
                         placeholder="Product Name"
+                        style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+                        required
                     />
                 </label>
-                <label>
-                    Product Description:
-                    <textarea
-                        value={product.description}
-                        onChange={(e) => setProduct({ ...product, description: e.target.value })}
-                        placeholder="Product Description"
-                    />
-                </label>
+                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+                  <label style={{ marginRight: '10px' }}>
+                      Product Description:
+                  </label>
+                  <textarea
+                      value={product.description}
+                      onChange={(e) => setProduct({ ...product, description: e.target.value })}
+                      placeholder="Product Description"
+                      style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc', flexGrow: 1 }}
+                      required
+                  />
+                </div>
                 <label>
                   Category:
                   <select
                     value={product.categoryName}
                     onChange={(e) => setProduct({ ...product, categoryName: e.target.value })}
+                    style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+                    required
                   >
                     <option value="">Select a category</option>
                     {categories.map((category) => (
@@ -110,6 +128,8 @@ const AddProduct = () => {
                   <select
                     value={product.subCategoryName}
                     onChange={(e) => setProduct({ ...product, subCategoryName: e.target.value })}
+                    style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+                    required
                   >
                     <option value="">Select a subcategory</option>
                     {subcategories.map((subcategory) => (
@@ -124,6 +144,8 @@ const AddProduct = () => {
                   <select
                     value={product.genderName}
                     onChange={(e) => setProduct({ ...product, genderName: e.target.value })}
+                    style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+                    required
                   >
                     <option value="">Select a gender</option>
                     {genders.map((gender) => (
@@ -138,6 +160,8 @@ const AddProduct = () => {
                   <select
                     value={product.brandName}
                     onChange={(e) => setProduct({ ...product, brandName: e.target.value })}
+                    style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+                    required
                   >
                     <option value="">Select a brand</option>
                     {brands.map((brand) => (
@@ -147,7 +171,6 @@ const AddProduct = () => {
                     ))}
                   </select>
                   </label>
-
 
                 <button type="submit">Add Product</button>
             </form>

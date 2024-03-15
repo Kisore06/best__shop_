@@ -1,4 +1,14 @@
 
+.iframe {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 60vh; /* Adjust this value as needed */
+  }
+  
+  iframe {
+   border: 0;
+  }
 .shop-locations {
   padding: 20px;
   font-family: 'Arial', sans-serif;

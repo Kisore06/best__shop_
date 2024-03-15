@@ -24,4 +24,14 @@
    li {
     margin-bottom: 5px;
    }
+   /* Styles for the links */
+   .baby-prod-cat a {
+    text-decoration: none;
+    color: black; 
+    transition: color 0.3s ease;  
+   }
+   
+   .baby-prod-cat a:hover, .baby-prod-cat a:active {
+    color: blue; 
+   }
    

@@ -41,10 +41,8 @@ const ShoeCategories = () => {
   <div style={{ paddingTop: '80px' }}>
       <h1>Shoe Categories</h1>
       <div className="shoe-categories">
-      <div className="men-categories">
-        <Link to={`/shoes/men`}>
-          <h2>Men's Footwear</h2>
-        </Link>
+      <div className="men-categories"> 
+      <h2>Men's Footwear</h2>
         {menCategories.map((category, index) => (
             <div key={index} className="category">
               <h3>{category.title}</h3>
@@ -68,7 +66,9 @@ const ShoeCategories = () => {
 
             <ul className="subCategoryList" >
               {category.subCategories.map((subCategory, subIndex) => (
-                <li key={subIndex}>{subCategory}</li>
+                <li key={subIndex}>
+                  <Link to={`/shoes/women/${subCategory}`}>{subCategory}</Link>
+                </li>
               ))}
             </ul>
           </div>

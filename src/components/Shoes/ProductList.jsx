@@ -21,38 +21,27 @@ const ProductList = () => {
  }, [subCategory]);
 
  return (
-    <div style={{ paddingTop: '80px' }}>
-    <div>
-      <h2>Products in {subCategory}</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Product Name</th>
-            <th>Description</th>
-            <th>Category</th>
-            <th>Sub Category Name</th>
-            <th>Gender</th>
-            <th>Brand</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((product) => (
-            <tr key={product.id}>
-              <td>{product.product_id}</td>
-              <td>{product.productName}</td>
-              <td>{product.description}</td>
-              <td>{product.categoryName}</td>
-              <td>{product.subCategoryName}</td>
-              <td>{product.genderName}</td>
-              <td>{product.brandName}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+  <div style={{ paddingTop: '80px' }}>
+  <div>
+    <h2>Products in {subCategory}</h2>
+    <div className="product-cards">
+      {products.map((product) => (
+        <div key={product.product_id} className="product-card">
+          <img src={product.image} alt={product.productName} className="product-image" />
+          <div className="product-details">
+            <h3 className="he3">{product.productName}</h3>
+            <p>{product.description}</p>
+            <p>Category: {product.categoryName}</p>
+            <p>Sub Category: {product.subCategoryName}</p>
+            <p>Gender: {product.genderName}</p>
+            <p>Brand: {product.brandName}</p>
+          </div>
+        </div>
+      ))}
     </div>
-    </div>
- );
+  </div>
+</div>
+);
 };
 
 export default ProductList;
