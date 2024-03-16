@@ -23,6 +23,9 @@ const ShopLocations = () => {
             </div>
           ))}
         </div>
+        <div className="iframe">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3909.7239090342064!2d77.24289567517845!3d11.499829288696398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba921413065a777%3A0x7eac7c98fa75fce2!2sBest%20Shop!5e0!3m2!1sen!2sin!4v1710439232462!5m2!1sen!2sin" width="600" height="450" style={{border:'0'}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="location"></iframe>
+        </div>
       </div>
     </div>
  );

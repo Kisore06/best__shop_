@@ -52,23 +52,39 @@ const AddSubcategoryForm = () => {
 
     if (response.ok) {
       alert('Subcategory added successfully');
-      //clear the form or redirect
+      setSubcategory({
+        name: '',
+        categoryId: '',
+        genderId: '',
+      });
     } else {
       alert('Failed to add subcategory');
     }
  };
 
  return (
-    <div style={{ paddingTop: '80px' }}>
+  <div style={{ paddingTop: '80px', maxWidth: '500px', margin: '0 auto' }}>
+    <div style={{ textAlign: 'center' }}>
       <h2>Add Sub Categories</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px', border: '1px solid #ccc', padding: '20px', borderRadius: '5px' }}>
         <label>
           Subcategory Name:
-          <input type="text" name="name" value={subcategory.name} onChange={handleChange} required />
+          <input 
+            type="text" 
+            name="name" 
+            value={subcategory.name} 
+            onChange={handleChange} 
+            style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+            required />
         </label>
         <label>
           Category:
-          <select name="categoryId" value={subcategory.categoryId} onChange={handleChange} required>
+          <select 
+            name="categoryId" 
+            value={subcategory.categoryId} 
+            onChange={handleChange} 
+            style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+            required>
               <option value="">Select a category</option>
               {categories.map((category) => (
                 <option key={category.id} value={category.id}>
@@ -79,7 +95,12 @@ const AddSubcategoryForm = () => {
           </label>
           <label>
           Gender:
-          <select name="genderId" value={subcategory.genderId} onChange={handleChange} required>
+          <select 
+            name="genderId" 
+            value={subcategory.genderId} 
+            onChange={handleChange} 
+            style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+            required>
               <option value="">Select a gender</option>
               {genders.map((gender) => (
                 <option key={gender.id} value={gender.g_id}>
@@ -88,9 +109,16 @@ const AddSubcategoryForm = () => {
               ))}
           </select>
           </label>
-
         <button type="submit">Add Subcategory</button>
       </form>
+      <p>
+        <br></br>
+        <a href="/add-brand" style={{ color: '#000', textDecoration: 'none', transition: 'color 0.3s ease', ':hover': { color: '#007bff' } }}>Add Brand</a>
+        <br></br>
+        <br></br>
+        <a href="/add-product" style={{ color: '#000', textDecoration: 'none', transition: 'color 0.3s ease', ':hover': { color: '#007bff' } }}>Add Product</a>
+      </p>
+      </div>
     </div>
  );
 };

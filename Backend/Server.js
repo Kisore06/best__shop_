@@ -130,21 +130,31 @@ app.get('/product', (req, res) => {
     console.log('Fetching products...');
     const { subCategoryName } = req.query; 
     const { brandName } = req.query;
-
+    let params = [];
+    
     let query = 'SELECT * FROM product';
     if (subCategoryName) {
         query += ' WHERE subCategoryName = ?';
-    } else if(brandName){
+        console.log(req.query);
+        console.log('Subcategory Fetched...');
+        params = [subCategoryName];
+    } 
+    if(brandName){
         query += ' WHERE brandName = ?';
+        console.log(req.query);
+        console.log('Brandname Fetched...');
+        params = [brandName];
+        
     }
-
-    db.query(query, [subCategoryName, brandName],(err, results) => {
+    
+    db.query(query, params, (err, results) => {
         if (err) {
             console.error('Error fetching products:', err);
             res.status(500).send('Error fetching products');
         } else {
             console.log('Products fetched successfully');
-            res.send(results);
+            console.log(results);
+            res.send(results); 
         }
     });
 });

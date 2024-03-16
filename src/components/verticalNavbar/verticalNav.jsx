@@ -149,7 +149,7 @@ const VerticalNav = () => {
                 <ListItemText primary="Add Category" />
               </ListItemButton>
               <ListItemButton component={Link} to="/add-gender" onClick={handleDrawerClose} sx={{ pl: 4 }}>
-                <ListItemText primary="Add Items Gender wise" />
+                <ListItemText primary="Add Gender" />
               </ListItemButton>
               <ListItemButton component={Link} to="/add-subcategory" onClick={handleDrawerClose} sx={{ pl: 4 }}>
                 <ListItemText primary="Add Sub Category" />

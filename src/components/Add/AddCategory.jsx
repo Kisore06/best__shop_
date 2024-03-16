@@ -6,35 +6,53 @@ const AddCategory = () => {
  const [categoryName, setCategoryName] = useState('');
 
  const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-     // Adjust the payload to use 'category' instead of 'name'
-     const response = await axios.post('http://localhost:3001/categories', { category: categoryName });
-     console.log(response.data);
-     // Optionally, clear the form or update state to reflect the new category added
-     setCategoryName(''); // Clear the input field
-  } catch (error) {
-     console.error(error);
-  }
+
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:3001/categories', { name: categoryName });
+      console.log(response.data);
+      setCategoryName('');
+      window.alert('Category added successfully!');  
+    } catch (error) {
+      console.error(error);
+      window.alert('An error occurred while adding the Category.');
+    }
  };
  
 
  return (
-  <div style={{ paddingTop: '80px'}}>
-    <div>
-      <h2>Add Category</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={categoryName}
-          onChange={(e) => setCategoryName(e.target.value)}
-          placeholder="Category Name"
-        />
-        <button type="submit">Add Category</button>
-      </form>
-    </div>
+  <div style={{ paddingTop: '80px', maxWidth: '500px', margin: '0 auto' }}>
+      <div style={{ textAlign: 'center' }}>
+        <h2>Add Category</h2>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px', border: '1px solid #ccc', padding: '20px', borderRadius: '5px' }}>
+          <input
+            type="text"
+            value={categoryName}
+            onChange={(e) => setCategoryName(e.target.value)}
+            placeholder="Category Name"
+            style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+            required
+          />
+           <button type="submit">Add Category</button>
+        </form>
+        <p>
+          <br></br>
+          <a href="/add-gender" style={{ color: '#000', textDecoration: 'none', transition: 'color 0.3s ease', ':hover': { color: '#007bff' } }}>Add Gender</a>
+          <br></br>
+          <br></br>
+          <a href="/add-subcategory" style={{ color: '#000', textDecoration: 'none', transition: 'color 0.3s ease', ':hover': { color: '#007bff' } }}>Add Sub Category</a>
+          <br></br>
+          <br></br>
+          <a href="/add-brand" style={{ color: '#000', textDecoration: 'none', transition: 'color 0.3s ease', ':hover': { color: '#007bff' } }}>Add Brand</a>
+          <br></br>
+          <br></br>
+          <a href="/add-product" style={{ color: '#000', textDecoration: 'none', transition: 'color 0.3s ease', ':hover': { color: '#007bff' } }}>Add Product</a>
+
+        </p>
+      </div>
     </div>
  );
 };
+
 
 export default AddCategory;
