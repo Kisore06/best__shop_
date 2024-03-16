@@ -58,8 +58,14 @@ const VerticalNav = () => {
           onClick={handleDrawerOpen}
           edge="start"
           className={open ? 'hide-icon' : ''}
+          size="large"
+          sx={{
+            position: 'absolute', // Ensure the button is positioned absolutely
+            left: 10, // Adjust the right position as needed
+            top: 15, // Adjust the top position as needed
+         }}
         >
-          <MenuIcon />
+          <MenuIcon sx={{ fontSize: 25}} />
         </IconButton>
       </nav>
       <Drawer
@@ -75,7 +81,7 @@ const VerticalNav = () => {
         variant="persistent"
         anchor="left"
         open={open}
-        disableBackdropClick={true}
+        disablebackdropclick="true"
       >
         <div className="drawer-header">
           <IconButton onClick={handleDrawerClose}>

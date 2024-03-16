@@ -6,7 +6,6 @@ const AddCategory = () => {
  const [categoryName, setCategoryName] = useState('');
 
  const handleSubmit = async (e) => {
-
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:3001/categories', { name: categoryName });
@@ -18,7 +17,6 @@ const AddCategory = () => {
       window.alert('An error occurred while adding the Category.');
     }
  };
- 
 
  return (
   <div style={{ paddingTop: '80px', maxWidth: '500px', margin: '0 auto' }}>

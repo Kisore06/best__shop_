@@ -6,25 +6,21 @@ import logo from '../../Assets/best_logo.png';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import { styled, alpha } from '@mui/material/styles';
-// import Box from '@mui/material/Box';
-// import IconButton from '@mui/material/IconButton';
-// import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-// import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 
 // Define styled components for the search bar
 const Search = styled('div')(({ theme }) => ({
  position: 'relative',
- borderRadius: theme.shape.borderRadius,
- backgroundColor: alpha(theme.palette.common.white, 0.15),
+ borderRadius: theme.shape.borderRadius, // Apply border radius
+ backgroundColor: alpha(theme.palette.common.white, 0.75),
  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
+    backgroundColor: alpha(theme.palette.common.black, 0.25),
  },
  marginLeft: 0,
  width: '100%',
  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(1),
+    marginLeft: theme.spacing(2),
     width: 'auto',
  },
 }));
@@ -37,6 +33,8 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
  display: 'flex',
  alignItems: 'center',
  justifyContent: 'center',
+ borderRadius: theme.shape.borderRadius, // Apply border radius to the icon wrapper
+ backgroundColor: alpha(theme.palette.common.white, 0.15), // Add a background color to the icon wrapper
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -96,16 +94,15 @@ const Header = () => {
 
         <nav className="nav-links">
           <ul>
-            <li><a href="#Home">Home</a></li>
+            <li><a href="/home">Home</a></li>
             <li>
               <a href="#All-categories">Categories</a>
               <div className="mega-menu">
                 <ul>
-                 <li><a href="#productd">Brands</a>
-                    <ul><li>Titan</li>
-                      <li>Titan</li>
-                      <li>Titan</li>
-                      <li>Titan</li></ul></li>
+                 <ul><li>Mobiles</li>
+                    <li>Clothes</li>
+                    <li>Gifts</li>
+                    <li>Shoes</li></ul>
                 </ul>
               </div>
             </li>
