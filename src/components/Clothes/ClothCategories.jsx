@@ -16,6 +16,9 @@ import womenouter from "..//..//Assets//Clothes//womenouterwear.jpg";
 import womensuits from "..//..//Assets//Clothes//womensuits.jpg";
 import womenswim from "..//..//Assets//Clothes//womenswimwear.jpg";
 import womentop from "..//..//Assets//Clothes//womentops.jpg";
+import { Link } from 'react-router-dom';
+
+
 const ClothCategories = () => {
  const menCategories = [
     { title: 'Tops', subCategories: ['T-shirts', 'Polo shirts', 'Casual shirts', 'Dress shirts', 'Henleys'],image:mentop },
@@ -51,7 +54,9 @@ const ClothCategories = () => {
             <img src={category.image} alt={category.title} className="category-image" />
             <ul>
               {category.subCategories.map((subCategory, subIndex) => (
-                <li key={subIndex}>{subCategory}</li>
+                <li key={subIndex}>
+                   <Link to={`/shoes/men/${subCategory}`}>{subCategory}</Link>
+                </li>
               ))}
             </ul>
           </div>
@@ -65,7 +70,9 @@ const ClothCategories = () => {
             <img src={category.image} alt={category.title} className="category-image" />
             <ul>
               {category.subCategories.map((subCategory, subIndex) => (
-                <li key={subIndex}>{subCategory}</li>
+                <li key={subIndex}>
+                   <Link to={`/shoes/men/${subCategory}`}>{subCategory}</Link>
+                </li>
               ))}
             </ul>
           </div>

@@ -1,6 +1,5 @@
-/* GoodsCategories.jsx */
 import React from 'react';
-import './GoodsCatego.css'; // Ensure you have this CSS file for styling
+import './GoodsCatego.css';
 import Kitchenware from '../../Assets/GeneralGoods/kitchenware.jpg';
 import Swimming from '../../Assets/GeneralGoods/Swimminggear.jpg';
 import Vega from '../../Assets/GeneralGoods/vegahelmets.jpg';

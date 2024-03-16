@@ -15,6 +15,8 @@ import walletsandcard from "..//..//Assets//Bags//WalletsandCardholders.jpg";
 import womenbackpacks from "..//..//Assets//Bags//womenbackpacks.jpg";
 import womentravelbackpags from "..//..//Assets//Bags//womenTravelBags.jpg";
 import Handbags from "..//..//Assets//Bags//handbags.webp";
+import { Link } from 'react-router-dom';
+
 
 const BagCategories = () => {
  const menCategories = [
@@ -50,7 +52,9 @@ const BagCategories = () => {
             <img src={category.image} alt={category.title} className="category-image" />
             <ul>
               {category.subCategories.map((subCategory, subIndex) => (
-                <li key={subIndex}>{subCategory}</li>
+                <li key={subIndex}>
+                  <Link to={`/shoes/men/${subCategory}`}>{subCategory}</Link>
+                </li>
               ))}
             </ul>
           </div>
@@ -64,7 +68,9 @@ const BagCategories = () => {
             <img src={category.image} alt={category.title} className="category-image" />
             <ul>
               {category.subCategories.map((subCategory, subIndex) => (
-                <li key={subIndex}>{subCategory}</li>
+                <li key={subIndex}>         
+                  <Link to={`/shoes/men/${subCategory}`}>{subCategory}</Link>
+                </li>
               ))}
             </ul>
           </div>

@@ -37,3 +37,12 @@
     height: 200px;
    
   }
+  .cosmetics-categories a {
+    text-decoration: none;
+    color: black; 
+    transition: color 0.3s ease;  
+  }
+    
+  .cosmetics-categories a:hover, .cosmetics-categories a:active {
+    color: blue; 
+  }

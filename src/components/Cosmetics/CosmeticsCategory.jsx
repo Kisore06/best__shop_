@@ -13,6 +13,9 @@ import Skincarewomen from "..//..//Assets//Cosmetics//Skincarewomen.jpg";
 import womencosmetics from "..//..//Assets//Cosmetics//WomenCosmetics.jpg";
 import womenfragrance from "..//..//Assets//Cosmetics//womenfragrances.jpg";
 import womenhair from "..//..//Assets//Cosmetics//womenHairCare.jpg";
+import { Link } from 'react-router-dom';
+
+
 const CosmeticsCategory = () => {
  const menCategories = [
     { title: 'Men\'s Cosmetics', subCategories: ['Skincare', 'Shaving Products', 'Hair Care', 'Fragrances'],image:Mencosmetics },
@@ -44,7 +47,9 @@ const CosmeticsCategory = () => {
             <img src={category.image} alt={category.title} className="category-image" />
             <ul>
               {category.subCategories.map((subCategory, subIndex) => (
-                <li key={subIndex}>{subCategory}</li>
+                <li key={subIndex}>
+                  <Link to={`/shoes/men/${subCategory}`}>{subCategory}</Link>
+                </li>
               ))}
             </ul>
           </div>
@@ -58,7 +63,9 @@ const CosmeticsCategory = () => {
             <img src={category.image} alt={category.title} className="category-image" />
             <ul>
               {category.subCategories.map((subCategory, subIndex) => (
-                <li key={subIndex}>{subCategory}</li>
+                <li key={subIndex}>                
+                  <Link to={`/shoes/men/${subCategory}`}>{subCategory}</Link>
+                </li>
               ))}
             </ul>
           </div>

@@ -56,3 +56,12 @@
         width: 120px;
     }
 }
+.toy-categories a {
+  text-decoration: none;
+  color: black; 
+  transition: color 0.3s ease;  
+}
+  
+.toy-categories a:hover, .toy-categories a:active {
+  color: blue; 
+}
