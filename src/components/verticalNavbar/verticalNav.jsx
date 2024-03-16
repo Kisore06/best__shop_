@@ -58,8 +58,14 @@ const VerticalNav = () => {
           onClick={handleDrawerOpen}
           edge="start"
           className={open ? 'hide-icon' : ''}
+          size="large"
+          sx={{
+            position: 'absolute', 
+            left: 10,
+            top: 10,
+         }}
         >
-          <MenuIcon />
+          <MenuIcon sx={{ fontSize: 25 }} />
         </IconButton>
       </nav>
       <Drawer
