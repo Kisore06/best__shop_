@@ -5,7 +5,7 @@ import bracelet from "..//..//Assets//Watches//Bracelet.jpg";
 import diamond from "..//..//Assets//Watches//Diamond.jpg";
 import Fashion from "..//..//Assets//Watches//Fashion.jpg";
 import mencasual from "..//..//Assets//Watches//Mencasual.jpg";
-import mendress from "..//..//Assets//Watches//mendress.jpg";
+// import mendress from "..//..//Assets//Watches//mendress.jpg";
 import mensmart from "..//..//Assets//Watches//mensmart.jpg";
 import military from "..//..//Assets//Watches//Military .jpg";
 import sport from "..//..//Assets//Watches//sport.jpg";

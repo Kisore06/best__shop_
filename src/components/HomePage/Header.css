@@ -1,10 +1,7 @@
 /* Header.css */
 
-/* Header */
-/* Header.css */
-
 .header {
-  background-color: white;
+  background-color: rgb(231, 163, 220);
   padding: 10px 0;
   position: fixed; /* Make the header fixed */
   top: 0; /* Position it at the top of the viewport */
@@ -12,45 +9,77 @@
   right: 0; /* Ensure it spans the full width of the viewport */
   z-index: 1000;
   height: 50px; /* Ensure it stays on top of other content */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
  }
  
-
-.header-container {
+ .custom-modal-container {
+  background-color: #f9f9f9; /* Light background */
+  color: #333; /* Dark text */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding inside the modal */
+ }
+ 
+ .custom-modal-title {
+  font-size: 24px; /* Larger title */
+  font-weight: bold; /* Bold title */
+  color: #333; /* Dark title */
+ }
+ 
+ .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-}
-
-.logo {
+ }
+ 
+ .logo {
   height: 50px;
-}
-
-/* Navigation Links */
-.nav-links ul {
+ }
+ 
+ .logo-container {
+  text-wrap: nowrap;
+ }
+ 
+ /* Navigation Links */
+ .nav-links {
+  justify-items: center;
+  align-items: center;
+ }
+ 
+ .nav-links ul {
   list-style: none;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.nav-links li {
+  padding-right: 0%;
+ }
+ 
+ .nav-links li {
   margin: 0 10px;
   position: relative; /* Added for dropdown */
-}
-
-.nav-links a {
+ }
+ 
+ .nav-links a {
   text-decoration: none;
   color: #333;
-}
-
-/* Mega Menu Dropdown */
-/* Add this to your Header.css */
-
-.menu-icon {
+  transition: color 0.3s ease; /* Smooth color transition */
+ }
+ 
+ .nav-links a:hover {
+  color: #007bff; /* Change link color on hover */
+ }
+ 
+ /* Add media query for smaller screens */
+ @media (max-width: 768px) {
+  .nav-links ul {
+     display: none; /* Hide the navigation links on smaller screens */
+  }
+ }
+ 
+ /* Mega Menu Dropdown */
+ .menu-icon {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -61,8 +90,7 @@
   cursor: pointer;
  }
  
-
-.mega-menu {
+ .mega-menu {
   position: absolute;
   top: 100%;
   left: 0;
@@ -70,52 +98,82 @@
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1; /* Added to appear above other elements */
-}
-
-.nav-links li:hover .mega-menu {
+ }
+ 
+ .nav-links li:hover .mega-menu {
   display: block;
-}
-
-.mega-menu ul {
+ }
+ 
+ .mega-menu ul {
   list-style: none;
   padding: 0;
-}
-
-.mega-menu ul li {
+ }
+ 
+ .mega-menu ul li {
   padding: 10px;
-}
-
-.mega-menu ul li a {
+ }
+ 
+ .mega-menu ul li a {
   color: #333;
   text-decoration: none;
-}
-
-.mega-menu ul li:hover {
+ }
+ 
+ .mega-menu ul li:hover {
   background-color: #f0f0f0;
-}
-
-/* User Actions */
-.user-actions {
+ }
+ 
+ /* User Actions */
+ .user-actions {
   display: flex;
   align-items: center;
-}
-
-.user-actions a {
+  gap: 10px;
+  justify-content: center;
+  align-content: center ;
+ }
+ 
+ .user-actions a {
   margin-right: 10px;
   color: #333;
   text-decoration: none;
-}
-
-.user-actions a:last-child {
+  transition: color 0.3s ease;
+ }
+ 
+ .user-actions a:last-child {
   margin-right: 0;
-}
-
-.fa {
+ }
+ 
+ .user-actions a:hover {
+  color: #007bff; /* Change link color on hover */
+ }
+ 
+ .fa {
   font-size: 1.2em;
-}
-
-/* Main and Footer */
-main {
+ }
+ 
+ /* Search Bar */
+ .search-bar {
+  flex-grow: 1;
+  margin-left: 20px;
+  padding-left: 240px;
+  border-color: #000000;
+ }
+ 
+ .search-input {
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+ }
+ 
+ .search-input:focus {
+  border-color: #007bff;
+ }
+ 
+ /* Main and Footer */
+ main {
   margin-top: 100px;
   width: 100%;
   height: 690px;
@@ -125,12 +183,17 @@ main {
   justify-content: flex-start;
   align-items: center;
   overflow-y: auto;
-}
-
-footer {
+ }
+ 
+ footer {
   width: 100%;
   padding: 0.25em;
   background-color: #f8f9fa;
   display: grid;
   place-content: center;
-}
+ }
+ 
+ .profile-icon{
+   font-size: 1.5rem;
+   display: flex;
+ }
