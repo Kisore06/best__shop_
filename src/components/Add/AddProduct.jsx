@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import apiHost from '../../utils/api';
 
 const AddProduct = () => {
     const [product, setProduct] = useState({
@@ -18,7 +19,7 @@ const AddProduct = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await axios.get('http://localhost:3001/categories');
+                const response = await axios.get(`${apiHost}/categories`);
                 setCategories(response.data);
             } catch (error) {
                 console.error('Error fetching categories:', error);

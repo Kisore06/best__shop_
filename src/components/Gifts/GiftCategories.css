@@ -38,4 +38,13 @@
   li {
       margin-bottom: 5px;
   }
+  .gift-categories a {
+    text-decoration: none;
+    color: black; 
+    transition: color 0.3s ease;  
+  }
+    
+  .gift-categories a:hover, .gift-categories a:active {
+    color: blue; 
+  }
   

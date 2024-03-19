@@ -14,6 +14,7 @@ import artandcraft from '../../Assets/toys/art.jpeg';
 import music from '../../Assets/toys/music.jpeg';
 import rolepaly from '../../Assets/toys/roleplay.jpeg';
 import collective from '../../Assets/toys/collective.jpeg';
+import { Link } from 'react-router-dom'; 
 
 
 const ToyCategories = () => {
@@ -42,7 +43,9 @@ const ToyCategories = () => {
             <img src={category.image} alt={category.title} className="category-image" />
             <ul>
               {category.subCategories.map((subCategory, subIndex) => (
-                <li key={subIndex}>{subCategory}</li>
+                <li key={subIndex}>
+                  <Link to={`/shoes/men/${subCategory}`}>{subCategory}</Link>
+                </li>
               ))}
             </ul>
           </div>

@@ -1,7 +1,7 @@
 /* Header.css */
 
 .header {
-  background-color: rgb(185, 244, 47);
+  background-color: rgb(143, 240, 69);
   padding: 10px 0;
   position: fixed; /* Make the header fixed */
   top: 0; /* Position it at the top of the viewport */
@@ -12,14 +12,8 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
  }
  
-@media (max-width: 768px) {
- .header {
-    height: 80px; /* Increase the height for mobile views */
- }
-} 
-
  .custom-modal-container {
-  background-color: #f9f9f9; /* Light background */
+  background-color: #ffffff; /* Light background */
   color: #333; /* Dark text */
   border-radius: 10px; /* Rounded corners */
   padding: 20px; /* Padding inside the modal */
@@ -233,3 +227,18 @@
    font-size: 1.5rem;
    display: flex;
  }
+ .search-box{
+  border: #000000;
+  border-radius: 60px;
+  height: 40px;
+  width: 100px;
+  padding-left: 10px;
+  transition: width 0.5s;
+  transition-timing-function: ease-in-out
+}
+
+.search-box:hover{
+  /* background-color: #007bff; */
+   width:150px ;
+
+}

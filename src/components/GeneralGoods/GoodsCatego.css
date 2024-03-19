@@ -32,15 +32,36 @@
   .category img {
     width: 200px; 
     height: 200px;
+  }
+   h1, h2 {
+   font-size: 25px; /* Adjusted font size */
+   font-weight: bold;
+   color: #3498db;
+   text-align: center;
+   margin-bottom: 20px;
+   }
+   .category img {
+     width: 200px; 
+     height: 200px;
+    
+   }
    
-  }
-  
-  
-  ul {
-   font-size: 20px; /* Adjusted font size */
-   color: #555;
-  }
-  
-  li {
-   margin-bottom: 5px;
-  }
+   
+   ul {
+    font-size: 20px; /* Adjusted font size */
+    color: #555;
+   }
+   
+   li {
+    margin-bottom: 5px;
+   }
+   .goods-categories a {
+    text-decoration: none;
+    color: black; 
+    transition: color 0.3s ease;  
+    }
+    
+    .goods-categories a:hover, .goods-categories a:active {
+    color: blue; 
+    }
+ 

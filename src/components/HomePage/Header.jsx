@@ -7,15 +7,18 @@ import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
-import SearchIcon from '@mui/icons-material/Search';
+// import SearchIcon from '@mui/icons-material/Search';
 
 // Define styled components for the search bar
 const Search = styled('div')(({ theme }) => ({
  position: 'relative',
  borderRadius: theme.shape.borderRadius, // Apply border radius
  backgroundColor: alpha(theme.palette.common.white, 0.75),
+ border:'#00000',
+
  '&:hover': {
     backgroundColor: alpha(theme.palette.common.black, 0.25),
+    border:'#000000'
  },
  marginLeft: 0,
  width: '100%',
@@ -112,7 +115,8 @@ const Header = () => {
           </ul>
         </nav>
         <div className="user-actions">
-          <Search>
+          <input className='search-box' type='text' placeholder='Search'  />
+          {/* <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -120,7 +124,7 @@ const Header = () => {
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
-          </Search>
+          </Search> */}
           <a className='profile-icon' href="#userLogin" onClick={showLoginModal}><FaRegUserCircle /></a>
         </div>
       </div>

@@ -7,6 +7,7 @@ import trendy from '../../Assets/Gifts/Trendy.jpg';
 import clock from '../../Assets/Gifts/Clock.jpg';
 import personalized from '../../Assets/Gifts/Personalized.jpg';
 import animal from '../../Assets/Gifts/Animal.jpg';
+import { Link } from 'react-router-dom';
 
 const GiftCategories = () => {
   const categories = [
@@ -29,7 +30,9 @@ const GiftCategories = () => {
 
             <ul>
               {category.subCategories.map((subCategory, subIndex) => (
-                <li key={subIndex}>{subCategory}</li>
+                <li key={subIndex}>
+                  <Link to={`/shoes/men/${subCategory}`}>{subCategory}</Link>
+                </li>
               ))}
             </ul>
           </div>

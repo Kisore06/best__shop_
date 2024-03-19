@@ -1,39 +1,48 @@
 /* CosmeticsCategory.css */
 .cosmetics-categories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 20px;
- }
- 
- .men-categories, .women-categories {
-  flex: 1;
-  min-width: 300px;
-  margin-bottom: 20px;
- }
- 
- .category {
-  margin-bottom: 20px;
- }
- 
- h2 {
-  margin-bottom: 10px;
- }
- 
- h3 {
-  margin-bottom: 5px;
- }
- 
- ul {
-  list-style-type: none;
-  padding-left: 0;
- }
- 
- li {
-  margin-bottom: 5px;
- }
- .category img {
-  width: 200px; 
-  height: 200px;
- 
-}
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+   }
+   
+   .men-categories, .women-categories {
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 20px;
+   }
+   
+   .category {
+    margin-bottom: 20px;
+   }
+   
+   h2 {
+    margin-bottom: 10px;
+   }
+   
+   h3 {
+    margin-bottom: 5px;
+   }
+   
+   ul {
+    list-style-type: none;
+    padding-left: 0;
+   }
+   
+   li {
+    margin-bottom: 5px;
+   }
+   .category img {
+    width: 200px; 
+    height: 200px;
+   
+  }
+  .cosmetics-categories a {
+    text-decoration: none;
+    color: black; 
+    transition: color 0.3s ease;  
+  }
+    
+  .cosmetics-categories a:hover, .cosmetics-categories a:active {
+    color: blue; 
+  }

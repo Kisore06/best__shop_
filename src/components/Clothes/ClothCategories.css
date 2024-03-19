@@ -50,4 +50,13 @@ li {
     width: 200px; 
     height: 200px;
    
-  }
+}
+.cloth-categories a {
+    text-decoration: none;
+    color: black; 
+    transition: color 0.3s ease;  
+}
+    
+.cloth-categories a:hover, .cloth-categories a:active {
+    color: blue; 
+}

@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import './ProductList.css'
+import './ProductList.css';
+import IconButton from '@mui/material/IconButton';
+import FilterListIcon from '@mui/icons-material/FilterList';
+import { Box, Select, MenuItem } from '@mui/material';
 
 const ProductList = () => {
  const {subCategory } = useParams();
  const [products, setProducts] = useState([]);
+ const [genders, setGenders] = useState([]);
+ const [brands, setBrands] = useState([]);
+ const [selectedGender, setSelectedGender] = useState('all');
+ const [selectedBrand, setSelectedBrand] = useState('all');
+ const [showFilters, setShowFilters] = useState(false);
 
  useEffect(() => {
     const fetchProducts = async () => {
@@ -17,16 +25,72 @@ const ProductList = () => {
       }
     };
 
+    const fetchGenders = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/genders');
+        setGenders(response.data);
+      } catch (error) {
+        console.error('Error fetching genders:', error);
+      }
+   };
+  
+   const fetchBrands = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/brands');
+        setBrands(response.data);
+      } catch (error) {
+        console.error('Error fetching brands:', error);
+      }
+   };
+  
+    fetchGenders();
+    fetchBrands();
     fetchProducts();
  }, [subCategory]);
 
  return (
   <div style={{ paddingTop: '80px' }}>
   <div>
-    <h2>Products in {subCategory}</h2>
-    <div className="product-cards">
-      {products.map((product) => (
-        <div key={product.product_id} className="product-card">
+  <h2>Products in {subCategory}</h2>
+  <Box>
+      <IconButton onClick={() => setShowFilters(!showFilters)}>
+        <FilterListIcon />
+      </IconButton>
+
+      {showFilters && (
+        <Box sx={{ bgcolor: 'background.paper', p: 2, borderRadius: 1 }}>
+          <Select
+            value={selectedGender}
+            onChange={(e) => setSelectedGender(e.target.value)}
+            displayEmpty
+          >
+            <MenuItem value="all">All Genders</MenuItem>
+            {genders.map((gender) => (
+              <MenuItem key={gender.g_id} value={gender.gender}>
+                {gender.gender}
+              </MenuItem>
+            ))}
+          </Select>
+          
+          <Select
+            value={selectedBrand}
+            onChange={(e) => setSelectedBrand(e.target.value)}
+            displayEmpty
+          >
+            <MenuItem value="all">All Brands</MenuItem>
+            {brands.map((brand) => (
+              <MenuItem key={brand.brand_id} value={brand.brand_name}>
+                {brand.brand_name}
+              </MenuItem>
+            ))}
+          </Select>
+        </Box>
+      )}
+    </Box>
+
+      <div className="product-cards">
+      {products.filter(product => (selectedGender === 'all' || product.genderName === selectedGender) && (selectedBrand === 'all' || product.brandName === selectedBrand)).map((product) => (
+          <div key={product.product_id} className="product-card">
           <img src={product.image} alt={product.productName} className="product-image" />
           <div className="product-details">
             <h3 className="he3">{product.productName}</h3>

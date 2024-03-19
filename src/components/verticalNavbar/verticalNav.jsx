@@ -66,6 +66,7 @@ const VerticalNav = () => {
          }}
         >
           <MenuIcon sx={{ fontSize: 25}} />
+
         </IconButton>
       </nav>
       <Drawer
