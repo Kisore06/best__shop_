@@ -105,3 +105,12 @@ h2 {
         margin-left: 15px;
     }
 }
+.mobile-products a {
+    text-decoration: none;
+    color: black; 
+    transition: color 0.3s ease;  
+}
+   
+.mobile-products a:hover, .mobile-products a:active {
+    color: blue; 
+}

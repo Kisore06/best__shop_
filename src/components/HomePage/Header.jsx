@@ -6,18 +6,14 @@ import logo from '../../Assets/best_logo.png';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import { styled, alpha } from '@mui/material/styles';
-// import Box from '@mui/material/Box';
-// import IconButton from '@mui/material/IconButton';
-// import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-// import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 
-// Define styled components for the search bar
+
 const Search = styled('div')(({ theme }) => ({
  position: 'relative',
  borderRadius: theme.shape.borderRadius,
- backgroundColor: alpha(theme.palette.common.white, 1.15),
+ backgroundColor: alpha(theme.palette.common.white, 0.8),
  '&:hover': {
     backgroundColor: alpha(theme.palette.common.black, 0.25),
  },

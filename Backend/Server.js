@@ -125,6 +125,26 @@ app.post('/subcategories', (req, res) => {
     });
 });
 
+// Fetch brands by subcategory
+app.get('/brands/:subCategoryName', (req, res) => {
+    const { subCategoryName } = req.params;
+    const query = `
+        SELECT DISTINCT brands.brand_name
+        FROM brands
+        JOIN product ON brands.brand_name = product.brandName
+        WHERE product.subCategoryName = ?
+    `;
+    db.query(query, [subCategoryName], (err, results) => {
+        if (err) {
+            console.error('Error fetching brands by subcategory:', err);
+            res.status(500).send('Error fetching brands by subcategory');
+        } else {
+            res.send(results);
+        }
+    });
+});
+
+
 //product
 app.get('/product', (req, res) => {
     console.log('Fetching products...');

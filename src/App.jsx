@@ -33,6 +33,12 @@ import ProductList from "./components/Shoes/ProductList";
 import './app.css'
 import BrandProducts from "./components/Brands/BrandProducts";
 import { useEffect } from "react";
+import TableDetails from "./components/Tables/TableDetails";
+import SubCategories from "./components/Tables/SubCategoriesTable";
+import ProductTable from "./components/Tables/Products";
+import CategoryTable from "./components/Tables/Categories";
+import Gender from "./components/Tables/Gender";
+import Brands from "./components/Tables/Brands";
 //import Brands from './components/Brands/Brands';
 
 
@@ -70,7 +76,26 @@ function App() {
       <Route path="/add-product" element={<AddProduct/>} />
 
       <Route path="/shoes/:gender/:subCategory" element={<ProductList />} />
+      <Route path="/cosmetics/:subCategory" element={<ProductList />} />
+      <Route path="/babyproducts/:subCategory" element={<ProductList />} />
+      <Route path="/bags/:subCategory" element={<ProductList />} />
+      <Route path="/clothes/:subCategory" element={<ProductList />} />
+      <Route path="/gifts/:subCategory" element={<ProductList />} />
+      <Route path="/toys/:subCategory" element={<ProductList />} />
+      <Route path="/generalGoods/:subCategory" element={<ProductList />} />
+      <Route path="/mobiles/:subCategory" element={<ProductList />} />
+      <Route path="/mobileAccessories/:subCategory" element={<ProductList />} />
+      <Route path="/sports/:subCategory" element={<ProductList />} />
+      <Route path="/watches/:subCategory" element={<ProductList />} />
+
       <Route path="/:brandName" element={<BrandProducts />} />
+
+      <Route path="/table-details" element={<TableDetails />} />
+      <Route path="/table-details-products" element={<ProductTable />} />
+      <Route path="/table-details-categories" element={<CategoryTable />} />
+      <Route path="/table-details-gender" element={<Gender />} />
+      <Route path="/table-details-subCategories" element={<SubCategories />} />
+      <Route path="/table-details-brands" element={<Brands />} />
 
       </Routes>
       <Content/>

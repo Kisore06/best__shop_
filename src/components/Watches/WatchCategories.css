@@ -40,3 +40,12 @@ ul {
 li {
     margin-bottom: 5px;
 }
+.watch-categories a {
+    text-decoration: none;
+    color: black; 
+    transition: color 0.3s ease;  
+}
+   
+.watch-categories a:hover, .watch-categories a:active {
+    color: blue; 
+}

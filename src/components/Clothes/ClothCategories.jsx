@@ -55,7 +55,7 @@ const ClothCategories = () => {
             <ul>
               {category.subCategories.map((subCategory, subIndex) => (
                 <li key={subIndex}>
-                   <Link to={`/shoes/men/${subCategory}`}>{subCategory}</Link>
+                   <Link to={`/clothes/${subCategory}`}>{subCategory}</Link>
                 </li>
               ))}
             </ul>
@@ -71,7 +71,7 @@ const ClothCategories = () => {
             <ul>
               {category.subCategories.map((subCategory, subIndex) => (
                 <li key={subIndex}>
-                   <Link to={`/shoes/men/${subCategory}`}>{subCategory}</Link>
+                   <Link to={`/clothes/${subCategory}`}>{subCategory}</Link>
                 </li>
               ))}
             </ul>

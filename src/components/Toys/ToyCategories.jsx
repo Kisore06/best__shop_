@@ -44,7 +44,7 @@ const ToyCategories = () => {
             <ul>
               {category.subCategories.map((subCategory, subIndex) => (
                 <li key={subIndex}>
-                  <Link to={`/shoes/men/${subCategory}`}>{subCategory}</Link>
+                  <Link to={`/toys/${subCategory}`}>{subCategory}</Link>
                 </li>
               ))}
             </ul>

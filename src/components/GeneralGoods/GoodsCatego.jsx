@@ -6,12 +6,13 @@ import Vega from '../../Assets/GeneralGoods/vegahelmets.jpg';
 import Stationery from '../../Assets/GeneralGoods/Stationery.jpg';
 import Outdoor from '../../Assets/GeneralGoods/OutdoorGear.jpg';
 import Personal from '../../Assets/GeneralGoods/personalaccesories.jpg';
+import { Link } from 'react-router-dom';
 
 const GoodsCategories = () => {
  const categories = [
     {
       title: 'Swimming Gear',
-      items: [
+      subCategories: [
         'Swimming glasses',
         'Swim caps',
         'Swimwear',
@@ -19,7 +20,7 @@ const GoodsCategories = () => {
     },
     {
       title: 'Vega Helmets',
-      items: [
+      subCategories: [
         'Vega Axor',
         'Vega Gents Helmet',
         'Vega Yellow Ladies Helmet',
@@ -27,7 +28,7 @@ const GoodsCategories = () => {
     },
     {
       title: 'Kitchenware',
-      items: [
+      subCategories: [
         'Milton Hot Box',
         'Cello Flask 24 Hot And Cold',
         'Cup And Saucer',
@@ -37,7 +38,7 @@ const GoodsCategories = () => {
     },
     {
       title: 'Personal Accessories',
-      items: [
+      subCategories: [
         'Mens Wallet Trendy Collection',
         'Mens Wallet',
         'Leather Belt',
@@ -47,7 +48,7 @@ const GoodsCategories = () => {
     },
     {
       title: 'Stationery',
-      items: [
+      subCategories: [
         'Steel Pen Stand',
         'Parker Pen',
         'Electronic Keyboard',
@@ -55,7 +56,7 @@ const GoodsCategories = () => {
     },
     {
       title: 'Outdoor Gear',
-      items: [
+      subCategories: [
         'Mosquito Bat',
         'Shield',
         'Cap for Boys',
@@ -77,8 +78,10 @@ const GoodsCategories = () => {
           <img src={category.image} alt={category.title} className="category-image" />
 
           <ul>
-            {category.items.map((item, itemIndex) => (
-              <li key={itemIndex}>{item}</li>
+            {category.subCategories.map((subCategory, subIndex) => (
+              <li key={subIndex}>
+              <Link to={`/generalGoods/${subCategory}`}>{subCategory}</Link>
+              </li>
             ))}
           </ul>
         </div>

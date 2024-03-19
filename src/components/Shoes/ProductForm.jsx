@@ -19,7 +19,6 @@ const ProductForm = () => {
     try {
       const response = await axios.post('http://localhost:3001/products', product);
       console.log(response.data);
-      // Optionally, clear the form or update state to reflect the new product added
     } catch (error) {
       if (error.message.includes('net::ERR_CONNECTION_REFUSED')) {
         console.error('Server is not running or not accessible. Please start the server and try again.');

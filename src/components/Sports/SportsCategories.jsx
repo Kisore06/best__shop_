@@ -12,6 +12,7 @@ import skating from '../../Assets/Sports/skating.jpg';
 import volleyball from '../../Assets/Sports/Volleyball.webp';
 import water from '../../Assets/Sports/water.jpg';
 import specific from '../../Assets/Sports/specific.jpg';
+import { Link } from 'react-router-dom';
 
 const SportsCategories = () => {
  const categories = [
@@ -119,8 +120,10 @@ const SportsCategories = () => {
           <h2>{category.title}</h2>
           <img src={category.image} alt={category.title} className="category-image" />
           <ul>
-            {category.items.map((item, itemIndex) => (
-              <li key={itemIndex}>{item}</li>
+            {category.items.map((subCategory, itemIndex) => (
+              <li key={itemIndex}>
+               <Link to={`/sports/${subCategory}`}>{subCategory}</Link>
+              </li>
             ))}
           </ul>
         </div>
