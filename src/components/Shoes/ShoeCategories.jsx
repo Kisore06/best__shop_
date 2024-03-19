@@ -31,16 +31,16 @@ const ShoeCategories = () => {
  ];
 
  return (
-  <div>
+  <div style={{ paddingTop: '80px' }}>
   <h1 className="shoe-categories-title">Shoe Categories</h1>
   <div className="shoe-categories">
     {categories.map((category, index) => (
       <div key={index} className="category-card">
         <h2>{category.title}</h2>
         <ul>
-          {category.types.map((type, typeIndex) => (
+          {category.types.map((subCategory, typeIndex) => (
             <li key={typeIndex}>
-             <Link to={`/shoes/${type}`}>{type}</Link>
+              <Link to={`/shoes/${subCategory}`}>{subCategory}</Link>
             </li>
           ))}
         </ul>

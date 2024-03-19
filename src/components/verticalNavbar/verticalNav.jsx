@@ -65,12 +65,13 @@ const VerticalNav = () => {
           className={open ? 'hide-icon' : ''}
           size="large"
           sx={{
-            position: 'absolute', 
-            left: 10,
-            top: 10,
+            position: 'absolute', // Ensure the button is positioned absolutely
+            left: 10, // Adjust the right position as needed
+            top: 15, // Adjust the top position as needed
          }}
         >
-          <MenuIcon sx={{ fontSize: 25 }} />
+          <MenuIcon sx={{ fontSize: 25}} />
+
         </IconButton>
       </nav>
       <Drawer

@@ -5,65 +5,8 @@ import VerticalNav from '../../components/verticalNavbar/verticalNav.jsx';
 import logo from '../../Assets/best_logo.png';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
-import { styled, alpha } from '@mui/material/styles';
-import InputBase from '@mui/material/InputBase';
-<<<<<<< HEAD
-import SearchIcon from '@mui/icons-material/Search';
-=======
-// import SearchIcon from '@mui/icons-material/Search';
->>>>>>> c8f1185167f2e4f8263e2bf286b46e401630278a
 
 
-const Search = styled('div')(({ theme }) => ({
- position: 'relative',
-<<<<<<< HEAD
- borderRadius: theme.shape.borderRadius,
- backgroundColor: alpha(theme.palette.common.white, 0.8),
-=======
- borderRadius: theme.shape.borderRadius, // Apply border radius
- backgroundColor: alpha(theme.palette.common.white, 0.75),
- border:'#00000',
-
->>>>>>> c8f1185167f2e4f8263e2bf286b46e401630278a
- '&:hover': {
-    backgroundColor: alpha(theme.palette.common.black, 0.25),
-    border:'#000000'
- },
- marginLeft: 0,
- width: '100%',
- [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(2),
-    width: 'auto',
- },
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
- padding: theme.spacing(0, 2),
- height: '100%',
- position: 'absolute',
- pointerEvents: 'none',
- display: 'flex',
- alignItems: 'center',
- justifyContent: 'center',
- borderRadius: theme.shape.borderRadius, // Apply border radius to the icon wrapper
- backgroundColor: alpha(theme.palette.common.white, 0.15), // Add a background color to the icon wrapper
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
- color: 'inherit',
- width: '100%',
- '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
-      '&:focus': {
-        width: '20ch',
-      },
-    },
- },
-}));
 
 const Header = () => {
  const navigate = useNavigate();
