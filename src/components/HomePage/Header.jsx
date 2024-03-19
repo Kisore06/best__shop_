@@ -7,20 +7,32 @@ import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
+<<<<<<< HEAD
 import SearchIcon from '@mui/icons-material/Search';
+=======
+// import SearchIcon from '@mui/icons-material/Search';
+>>>>>>> c8f1185167f2e4f8263e2bf286b46e401630278a
 
 
 const Search = styled('div')(({ theme }) => ({
  position: 'relative',
+<<<<<<< HEAD
  borderRadius: theme.shape.borderRadius,
  backgroundColor: alpha(theme.palette.common.white, 0.8),
+=======
+ borderRadius: theme.shape.borderRadius, // Apply border radius
+ backgroundColor: alpha(theme.palette.common.white, 0.75),
+ border:'#00000',
+
+>>>>>>> c8f1185167f2e4f8263e2bf286b46e401630278a
  '&:hover': {
     backgroundColor: alpha(theme.palette.common.black, 0.25),
+    border:'#000000'
  },
  marginLeft: 0,
  width: '100%',
  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(1),
+    marginLeft: theme.spacing(2),
     width: 'auto',
  },
 }));
@@ -33,6 +45,8 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
  display: 'flex',
  alignItems: 'center',
  justifyContent: 'center',
+ borderRadius: theme.shape.borderRadius, // Apply border radius to the icon wrapper
+ backgroundColor: alpha(theme.palette.common.white, 0.15), // Add a background color to the icon wrapper
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -92,16 +106,15 @@ const Header = () => {
 
         <nav className="nav-links">
           <ul>
-            <li><a href="#Home">Home</a></li>
+            <li><a href="/home">Home</a></li>
             <li>
               <a href="#All-categories">Categories</a>
               <div className="mega-menu">
                 <ul>
-                 <li><a href="#productd">Brands</a>
-                    <ul><li>Titan</li>
-                      <li>Titan</li>
-                      <li>Titan</li>
-                      <li>Titan</li></ul></li>
+                 <ul><li>Mobiles</li>
+                    <li>Clothes</li>
+                    <li>Gifts</li>
+                    <li>Shoes</li></ul>
                 </ul>
               </div>
             </li>
@@ -111,7 +124,8 @@ const Header = () => {
           </ul>
         </nav>
         <div className="user-actions">
-          <Search>
+          <input className='search-box' type='text' placeholder='Search'  />
+          {/* <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -119,7 +133,7 @@ const Header = () => {
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
-          </Search>
+          </Search> */}
           <a className='profile-icon' href="#userLogin" onClick={showLoginModal}><FaRegUserCircle /></a>
         </div>
       </div>

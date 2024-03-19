@@ -1,7 +1,7 @@
 /* Header.css */
 
 .header {
-  background-color: white;
+  background-color: rgb(143, 240, 69);
   padding: 10px 0;
   position: fixed; /* Make the header fixed */
   top: 0; /* Position it at the top of the viewport */
@@ -9,6 +9,7 @@
   right: 0; /* Ensure it spans the full width of the viewport */
   z-index: 1000;
   height: 50px; /* Ensure it stays on top of other content */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
  }
  
  .custom-modal-container {
@@ -226,3 +227,18 @@
    font-size: 1.5rem;
    display: flex;
  }
+ .search-box{
+  border: #000000;
+  border-radius: 60px;
+  height: 40px;
+  width: 100px;
+  padding-left: 10px;
+  transition: width 0.5s;
+  transition-timing-function: ease-in-out
+}
+
+.search-box:hover{
+  /* background-color: #007bff; */
+   width:150px ;
+
+}
