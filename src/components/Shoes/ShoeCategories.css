@@ -62,9 +62,9 @@
     color: inherit;
 }
 
-.category-card ul li a:hover {
+/* .category-card ul li a:hover {
     color: green;
-}
+} */
 
 @media only screen and (max-width: 768px) {
     .category-card {
