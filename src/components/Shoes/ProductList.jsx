@@ -35,11 +35,11 @@ const ProductList = () => {
    };
   
    const fetchBrands = async () => {
-      try {
-        const response = await axios.get('http://localhost:3001/brands');
-        setBrands(response.data);
+    try {
+      const response = await axios.get(`http://localhost:3001/brands/${subCategory}`);
+      setBrands(response.data);
       } catch (error) {
-        console.error('Error fetching brands:', error);
+          console.error('Error fetching brands by subcategory:', error);
       }
    };
   
@@ -79,7 +79,7 @@ const ProductList = () => {
           >
             <MenuItem value="all">All Brands</MenuItem>
             {brands.map((brand) => (
-              <MenuItem key={brand.brand_id} value={brand.brand_name}>
+              <MenuItem key={brand.brand_name} value={brand.brand_name}>
                 {brand.brand_name}
               </MenuItem>
             ))}

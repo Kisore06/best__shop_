@@ -35,7 +35,7 @@ const BabyProdCat = () => {
           <img src={category.image} alt={category.title} className="category-image" />
             {category.subCategories.map((subCategory, subIndex) => (
               <li key={subIndex}>
-               <Link to={`/shoes/men/${subCategory}`}>{subCategory}</Link>
+               <Link to={`/babyproducts/${subCategory}`}>{subCategory}</Link>
               </li>
             ))}
           </ul>

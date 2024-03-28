@@ -1,23 +1,14 @@
+
 .iframe {
    display: flex;
    justify-content: center;
    align-items: center;
-   position: absolute; /* Position the iframe at the bottom */
-   bottom: -40px; /* Adjust the distance from the bottom edge */
-   width: 100%; /* Ensure it spans the full width */
-   left: 0;
-   transition: box-shadow 0.3s, border-radius 0.3s;
-   /* Align it to the left */
+   height: 60vh; /* Adjust this value as needed */
   }
   
-  .iframe iframe {
+  iframe {
    border: 0;
-   width: 600px; /* Set the width of the iframe */
-   height: 450px; /* Set the height of the iframe */
-   margin: 0 auto; /* Center the iframe */
   }
-  
-
 .shop-locations {
   padding: 20px;
   font-family: 'Arial', sans-serif;
@@ -36,14 +27,7 @@
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   flex: 1 1 calc(25% - 20px); /* Adjusts the width of each card for 4 boxes per row */
-  min-width: 200px;
-  transition: box-shadow 0.3s, border-radius 0.3s;
- /* Ensures cards don't get too small */
- }
-
- .location-card:hover{
-   box-shadow: 0 4px 8px rgba(94, 203, 233, 0.2);
-  border-radius: 20px;
+  min-width: 200px; /* Ensures cards don't get too small */
  }
  
  .location-card h3 {
@@ -65,8 +49,7 @@
  }
  
  .location-card a:hover {
-  color: #007BFF;
-   /* Changes link color on hover */
+  color: #007BFF; /* Changes link color on hover */
  }
  
  .location-card a:active {

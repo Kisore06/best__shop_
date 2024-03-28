@@ -1,17 +1,17 @@
 import React from 'react';
-import './WatchCategories.css'; // Ensure this CSS file is created\
+import './WatchCategories.css'; 
 import aviation from "..//..//Assets//Watches//Aviation.jpg";
 import bracelet from "..//..//Assets//Watches//Bracelet.jpg";
 import diamond from "..//..//Assets//Watches//Diamond.jpg";
 import Fashion from "..//..//Assets//Watches//Fashion.jpg";
 import mencasual from "..//..//Assets//Watches//Mencasual.jpg";
-// import mendress from "..//..//Assets//Watches//mendress.jpg";
 import mensmart from "..//..//Assets//Watches//mensmart.jpg";
 import military from "..//..//Assets//Watches//Military .jpg";
 import sport from "..//..//Assets//Watches//sport.jpg";
 import womencasual from "..//..//Assets//Watches//womencasual.jpg";
 import womendress from "..//..//Assets//Watches//womendress.jpg";
 import womensmart from "..//..//Assets//Watches//womensmart.jpg";
+import { Link } from 'react-router-dom';
 
 const WatchCategories = () => {
  const menCategories = [
@@ -45,7 +45,9 @@ const WatchCategories = () => {
 
             <ul>
               {category.subCategories.map((subCategory, subIndex) => (
-                <li key={subIndex}>{subCategory}</li>
+                <li key={subIndex}>
+                 <Link to={`/watches/${subCategory}`}>{subCategory}</Link>
+                </li>
               ))}
             </ul>
           </div>
@@ -59,7 +61,9 @@ const WatchCategories = () => {
             <img src={category.image} alt={category.title} className="category-image" />
             <ul>
               {category.subCategories.map((subCategory, subIndex) => (
-                <li key={subIndex}>{subCategory}</li>
+                <li key={subIndex}>
+                 <Link to={`/watches/${subCategory}`}>{subCategory}</Link>
+                </li>
               ))}
             </ul>
           </div>

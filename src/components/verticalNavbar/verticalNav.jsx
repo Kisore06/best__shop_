@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './verticalNav.css'; // Import separate CSS file
+import './verticalNav.css'; 
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -9,17 +9,20 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import HomeIcon from '@mui/icons-material/Home';
+import LocationIcon from '@mui/icons-material/LocationOn'; // Import LocationIcon
 import CategoryIcon from '@mui/icons-material/Category';
-import AddIcon from '@mui/icons-material/Add'; // Import Add icon
+import AddIcon from '@mui/icons-material/Add'; 
 import { Link } from 'react-router-dom';
 import Collapse from '@mui/material/Collapse';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
+import TableViewIcon from '@mui/icons-material/TableView';
 
 const VerticalNav = () => {
  const [open, setOpen] = useState(false);
  const [categoriesOpen, setCategoriesOpen] = useState(false); // State for categories dropdown
  const [addOpen, setAddOpen] = useState(false); // State for "Add Category" dropdown
+ const [tableOpen, setTableOpen] = useState(false);
  const drawerRef = useRef(null);
 
  useEffect(() => {
@@ -45,9 +48,12 @@ const VerticalNav = () => {
  const toggleCategories = () => {
     setCategoriesOpen(!categoriesOpen);
  };
- const toggleAdd = () => { // Function to toggle "Add Category" dropdown
+ const toggleAdd = () => { 
     setAddOpen(!addOpen);
  };
+ const toggleTable = () => { 
+  setTableOpen(!tableOpen);
+};
 
  return (
     <>
@@ -72,18 +78,18 @@ const VerticalNav = () => {
       <Drawer
         ref={drawerRef}
         sx={{
-          width: 240,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
             width: 240,
-            boxSizing: 'border-box',
-          },
+            flexShrink: 0,
+            '& .MuiDrawer-paper': {
+              width: 240,
+              boxSizing: 'border-box',
+            },
         }}
         variant="persistent"
         anchor="left"
         open={open}
         disablebackdropclick="true"
-      >
+        >
         <div className="drawer-header">
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeftIcon />
@@ -143,6 +149,12 @@ const VerticalNav = () => {
               </ListItemButton>
             </List>
           </Collapse>
+          <ListItemButton component={Link} to="/shop-locations" onClick={handleDrawerClose}>
+            <ListItemIcon >
+            <LocationIcon />
+            </ListItemIcon>
+              <ListItemText primary="Showroom" />
+          </ListItemButton>
           <ListItemButton onClick={toggleAdd}>
             <ListItemIcon>
               <AddIcon />
@@ -167,9 +179,43 @@ const VerticalNav = () => {
               <ListItemButton component={Link} to="/add-product" onClick={handleDrawerClose} sx={{ pl: 4 }}>
                 <ListItemText primary="Add Products" />
               </ListItemButton>
+              <ListItemButton component={Link} to="/offer-products" onClick={handleDrawerClose} sx={{ pl: 4 }}>
+ <ListItemText primary="Add Offer Product" />
+</ListItemButton>
             </List>
           </Collapse>
-          {/* Other list items */}
+          <ListItemButton onClick={toggleTable}>
+            <ListItemIcon>
+              <TableViewIcon/>
+            </ListItemIcon>
+            <ListItemText primary="Table Details" />
+            {tableOpen ? <ExpandLess /> : <ExpandMore />}
+          </ListItemButton>
+          <Collapse in={tableOpen} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              <ListItemButton component={Link} to="/table-details-categories" onClick={handleDrawerClose} sx={{ pl: 4 }}>
+                <ListItemText primary="Categories" />
+              </ListItemButton>
+              <ListItemButton component={Link} to="/table-details-gender" onClick={handleDrawerClose} sx={{ pl: 4 }}>
+                <ListItemText primary="Gender" />
+              </ListItemButton>
+              <ListItemButton component={Link} to="/table-details-subCategories" onClick={handleDrawerClose} sx={{ pl: 4 }}>
+                <ListItemText primary="Sub Categories" />
+              </ListItemButton>
+              <ListItemButton component={Link} to="/table-details-brands" onClick={handleDrawerClose} sx={{ pl: 4 }}>
+                <ListItemText primary="Brands" />
+              </ListItemButton>
+              <ListItemButton component={Link} to="/table-details-products" onClick={handleDrawerClose} sx={{ pl: 4 }}>
+                <ListItemText primary="Products" />
+              </ListItemButton>
+              <ListItemButton component={Link} to="/table-details-offer-products" onClick={handleDrawerClose} sx={{ pl: 4 }}>
+ <ListItemText primary="Offer Products" />
+</ListItemButton>
+              <ListItemButton component={Link} to="/table-details" onClick={handleDrawerClose} sx={{ pl: 4 }}>
+                <ListItemText primary="All Tables" />
+              </ListItemButton>
+            </List>
+          </Collapse>
         </List>
       </Drawer>
     </>

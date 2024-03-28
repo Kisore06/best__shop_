@@ -13,6 +13,7 @@ import accessoryImage5 from '../../Assets/moblie/earphones.jpeg';
 import accessoryImage6 from '../../Assets/moblie/popsockets.jpeg';
 import accessoryImage7 from '../../Assets/moblie/caraccessories.jpeg';
 import accessoryImage8 from '../../Assets/moblie/phone stand.jpeg';
+import { Link } from 'react-router-dom';
 
 const MobileCategories = () => {
   const mobilePhones = [
@@ -45,8 +46,10 @@ const MobileCategories = () => {
               <h3>{phone.brand}</h3>
               <ul>
               <img src={phone.image} alt={phone.brand} className="phone-image" />
-                {phone.models.map((model, modelIndex) => (
-                  <li key={modelIndex}>{model}</li>
+                {phone.models.map((subCategory, modelIndex) => (
+                  <li key={modelIndex}>
+                    <Link to={`/mobiles/${subCategory}`}>{subCategory}</Link>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -59,8 +62,10 @@ const MobileCategories = () => {
               <h3>{accessory.category}</h3>
               <ul>
               <img src={accessory.image} alt={accessory.category} className="accessory-image" />
-                {accessory.items.map((item, itemIndex) => (
-                  <li key={itemIndex}>{item}</li>
+                {accessory.items.map((subCategory, itemIndex) => (
+                  <li key={itemIndex}>
+                    <Link to={`/mobileAccessories/${subCategory}`}>{subCategory}</Link>
+                  </li>
                 ))}
               </ul>
             </div>

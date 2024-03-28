@@ -1,6 +1,8 @@
-// src/components/AddGender.js
+// src/components/AddGender.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
+
+const BACKEND_URL = 'http://localhost:3001';
 
 const AddGender = () => {
  const [genderName, setGenderName] = useState('');
@@ -8,7 +10,7 @@ const AddGender = () => {
  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/genders', { name: genderName });
+      const response = await axios.post(`${BACKEND_URL}/genders`, { name: genderName });
       console.log(response.data);
       setGenderName('');
       window.alert('Gender added successfully!');
@@ -19,7 +21,7 @@ const AddGender = () => {
  };
 
  return (
-  <div style={{ paddingTop: '80px', maxWidth: '500px', margin: '0 auto' }}>
+ <div style={{ paddingTop: '80px', maxWidth: '500px', margin: '0 auto' }}>
     <div style={{ textAlign: 'center' }}>
       <h2>Add Gender</h2>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px', border: '1px solid #ccc', padding: '20px', borderRadius: '5px' }}>

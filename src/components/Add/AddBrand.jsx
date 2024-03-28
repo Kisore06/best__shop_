@@ -1,6 +1,8 @@
-// src/components/AddBrand.js
+// src/components/AddBrand.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
+
+const BACKEND_URL = 'http://localhost:3001';
 
 const AddBrand = () => {
  const [brandName, setBrandName] = useState('');
@@ -8,18 +10,18 @@ const AddBrand = () => {
  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/brands', { name: brandName });
+      const response = await axios.post(`${BACKEND_URL}/brands`, { name: brandName });
       console.log(response.data);
       setBrandName('');
-      window.alert('Brands added successfully!');  
+      window.alert('Brand added successfully!');  
     } catch (error) {
       console.error(error);
-      window.alert('An error occurred while adding the Brands.');  
+      window.alert('An error occurred while adding the Brand.');  
     }
  };
 
  return (
-  <div style={{ paddingTop: '80px', maxWidth: '500px', margin: '0 auto' }}>
+ <div style={{ paddingTop: '80px', maxWidth: '500px', margin: '0 auto' }}>
     <div style={{ textAlign: 'center' }}>
       <h2>Add Brand</h2>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px', border: '1px solid #ccc', padding: '20px', borderRadius: '5px' }}>
@@ -38,7 +40,7 @@ const AddBrand = () => {
         <a href="/add-product" style={{ color: '#000', textDecoration: 'none', transition: 'color 0.3s ease', ':hover': { color: '#007bff' } }}>Add Product</a>
       </p>
     </div>
-    </div>
+ </div>
  );
 };
 
