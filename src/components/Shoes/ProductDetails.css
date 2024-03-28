@@ -1,0 +1,111 @@
+.product-details-container {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+padding-top: 80px;
+}
+
+.main-image {
+width: 50%;
+}
+
+.main-image img {
+width: 100%;
+height: auto;
+}
+
+.product-info {
+width: 45%;
+text-align: left;
+margin-left: 70px;
+margin-top: 20px;
+}
+
+.he2{
+font-size: 30px;
+color: black;
+text-align: left;
+margin-bottom: 20px;
+}
+
+.description-images {
+display: flex;
+flex-direction: column;
+gap: 10px;
+padding-left: 30px;
+padding-right: 30px;
+padding-top: 20px;
+margin-left:50px;
+margin-right:30px;
+}
+
+.description-images img {
+width: 100%;
+height: 100px;
+max-width: 150px;
+object-fit:contain;
+}
+
+.main-image-container img {
+width: 600px; /* Fixed width */
+height: 400px; /* Fixed height */
+object-fit:contain; /* Ensures the image covers the area without distorting its aspect ratio */
+}
+
+.arrow-button {
+position: fixed;
+z-index: 1;
+color: white;
+background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background for better visibility */
+border-radius: 50%; /* Optional: Make the buttons circular */
+padding: 10px; /* Optional: Add some padding */
+}
+
+.arrow-button.left {
+left: 10px;
+bottom:-225px;
+}
+
+.arrow-button.right {
+left:553px;
+bottom: 220px;
+}
+
+.product-cards-similar {
+display: flex;
+flex-wrap: nowrap; /* Prevents the items from wrapping to the next line */
+overflow-x: auto; /* Allows horizontal scrolling if the items overflow the container */
+gap: 20px; /* Adjust the gap between cards */
+padding: 0 20px; /* Add some padding to the left and right to ensure the first and last items are visible when scrolling */
+}
+
+.product-card-similar {
+flex: 0 0 auto; /* Prevents the cards from shrinking and allows them to maintain their width */
+max-width: 250px; /* Set a maximum width for the cards */
+text-align: center;
+background-color: #f8f9fa;
+border-radius: 10px;
+padding: 10px;
+margin-bottom: 15px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-details a, .product-card-similar a {
+text-decoration: none;
+margin-top: 10px;
+color:black
+}
+
+.he3 a, .product-card-similar a{
+font-weight:450;
+text-decoration: none;
+color: black;
+}
+
+.product-details a:hover, .he3 a:hover, .product-card-similar a:hover{
+color: grey;
+}
+
+
+
+   

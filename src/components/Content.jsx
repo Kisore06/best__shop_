@@ -4,10 +4,10 @@ const Content = () => {
   return (
     <div>
     <p 
-    style={{ paddingBottom: '580px'
+    style={{ paddingBottom: '120px'
      }}  >
     </p>
-    <p>BestShop</p> 
+    <p style={{textAlign:'center' }} >BestShop</p> 
     </div>
   )
 }

@@ -5,6 +5,9 @@ import './ProductList.css';
 import IconButton from '@mui/material/IconButton';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { Box, Select, MenuItem } from '@mui/material';
+import { Link } from 'react-router-dom';
+
+
 
 const ProductList = () => {
  const {subCategory } = useParams();
@@ -50,7 +53,7 @@ const ProductList = () => {
 
  return (
   <div style={{ paddingTop: '80px' }}>
-  <div>
+  <div className="categories-container">
   <h2>Products in {subCategory}</h2>
   <Box>
       <IconButton onClick={() => setShowFilters(!showFilters)}>
@@ -91,15 +94,13 @@ const ProductList = () => {
       <div className="product-cards">
       {products.filter(product => (selectedGender === 'all' || product.genderName === selectedGender) && (selectedBrand === 'all' || product.brandName === selectedBrand)).map((product) => (
           <div key={product.product_id} className="product-card">
-          <img src={product.image} alt={product.productName} className="product-image" />
+          <Link to={`/product/${product.product_id}`}>
+          <img src={`http://localhost:3001/${product.image1}`} alt={product.productName} className="product-image" />
           <div className="product-details">
             <h3 className="he3">{product.productName}</h3>
-            <p>{product.description}</p>
-            <p>Category: {product.categoryName}</p>
-            <p>Sub Category: {product.subCategoryName}</p>
-            <p>Gender: {product.genderName}</p>
-            <p>Brand: {product.brandName}</p>
+            <p>MRP: {product.price}</p>
           </div>
+          </Link>
         </div>
       ))}
     </div>

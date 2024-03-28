@@ -5,6 +5,9 @@
 //import ProductList from './components/TopDeals/ProductList';
 //import products from './components/TopDeals/Products';
 //import Categories from './components/Categories/Categories';
+// import ProductForm from "./components/Shoes/ProductForm";
+//import Brands from './components/Brands/Brands';
+
 import { Route, Routes, useLocation } from "react-router-dom";
 import ShoeCategories from './components/Shoes/ShoeCategories';
 import HomePage from './components/HomePage/HomePage';
@@ -23,7 +26,6 @@ import ShopLocations from "./components/Shop/Branch/ShopLocations";
 import BagCategories from "./components/Bags/BagCategories";
 import GiftCategories from "./components/Gifts/GiftCategories";
 import ClothCategories from "./components/Clothes/ClothCategories";
-import ProductForm from "./components/Shoes/ProductForm";
 import AddCategory from "./components/Add/AddCategory";
 import AddGender from "./components/Add/AddGender";
 import AddSubcategory from "./components/Add/AddSubcategory";
@@ -39,7 +41,7 @@ import ProductTable from "./components/Tables/Products";
 import CategoryTable from "./components/Tables/Categories";
 import Gender from "./components/Tables/Gender";
 import Brands from "./components/Tables/Brands";
-//import Brands from './components/Brands/Brands';
+import ProductDetails from "./components/Shoes/ProductDetails";
 
 
 function App() {
@@ -53,6 +55,7 @@ function App() {
     <div className="App">
     <Header/>
     <Routes>
+      <Route path="/" element={<HomePage />} />
       <Route path="/home" element={<HomePage />} />
       <Route path="/shoes" element={<ShoeCategories/>} />
       <Route path="/watches" element={<WatchCategories/>} />
@@ -67,7 +70,7 @@ function App() {
       <Route path="/babyproducts" element={<BabyProdCat/>} />
       <Route path="/trophy" element={<Trophy/>} />
       <Route path="/shop-locations" element={<ShopLocations/>} />
-      <Route path="/shoes/men" element={<ProductForm/>} />
+      {/* <Route path="/shoes/men" element={<ProductForm/>} /> */}
       
       <Route path="/add-category" element={<AddCategory/>} />
       <Route path="/add-gender" element={<AddGender/>} />
@@ -88,7 +91,9 @@ function App() {
       <Route path="/sports/:subCategory" element={<ProductList />} />
       <Route path="/watches/:subCategory" element={<ProductList />} />
 
-      <Route path="/:brandName" element={<BrandProducts />} />
+      <Route path="/product/:id" element={<ProductDetails/>} />
+
+      <Route path="/brands/:brandName" element={<BrandProducts />} />
 
       <Route path="/table-details" element={<TableDetails />} />
       <Route path="/table-details-products" element={<ProductTable />} />
@@ -96,6 +101,8 @@ function App() {
       <Route path="/table-details-gender" element={<Gender />} />
       <Route path="/table-details-subCategories" element={<SubCategories />} />
       <Route path="/table-details-brands" element={<Brands />} />
+
+      <Route path="*" element={<div style={{ paddingTop: '80px' }}>Enter valid url!</div>} />
 
       </Routes>
       <Content/>

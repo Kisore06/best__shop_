@@ -1,26 +1,3 @@
-/* table {
-    width: 100%;
-    border-collapse: collapse;
-   }
-   
-   th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-   }
-   
-   tr:nth-child(even) {
-    background-color: #f2f2f2;
-   }
-   
-   th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #4CAF50;
-    color: white;
-   } */
-/* SubCategoryProducts.css */
-
 .product-cards {
     display: flex;
     flex-wrap: wrap;
@@ -31,24 +8,36 @@
    .product-card {
     background-color: #f8f9fa;
     border-radius: 10px;
-    padding: 20px;
-    width: 300px;
+    padding: 10px;
+    width: 250px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
    }
    
    .product-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 190px;
+    width: 250px;
+    object-fit:contain;
     border-radius: 10px;
    }
    
-   .product-details {
+   .product-details a, .product-card a {
+    text-decoration: none;
     margin-top: 10px;
+    color:black
+   }
+   .he3{
+    margin-top: -10px;
    }
 
-   .he3{
+   .he3 a, .product-card a{
     font-weight:450;
+    text-decoration: none;
+    color: black;
+    margin-top: 0px;
+   }
+
+   .product-details a:hover, .he3 a:hover, .product-card a:hover{
+    color: grey;
    }
 
    
