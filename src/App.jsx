@@ -44,6 +44,7 @@ import Gender from "./components/Tables/Gender";
 import Brands from "./components/Tables/Brands";
 import ProductDetails from "./components/Shoes/ProductDetails";
 import OfferProducts from "./components/Tables/OfferProduct";
+import OfferProductDetails from "./components/TopDeals/OfferProductDetails";
 //import Brands from './components/Brands/Brands';
 
 
@@ -96,6 +97,7 @@ function App() {
       <Route path="/watches/:subCategory" element={<ProductList />} />
 
       <Route path="/product/:id" element={<ProductDetails/>} />
+      <Route path="/offerproducts/:ofp_id" element={<OfferProductDetails/>} />
 
       <Route path="/brands/:brandName" element={<BrandProducts />} />
 

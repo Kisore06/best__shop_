@@ -397,24 +397,7 @@ db.query(query, params, (err, results) => {
 });
 });
 
-
-
-app.post('/product', (req, res) => {
-    const { productName, description, categoryName, subCategoryName, genderName, brandName } = req.body;
-
-    const query = 'INSERT INTO product (productName, description, categoryName, subCategoryName, genderName, brandName) VALUES (?, ?, ?, ?, ?, ?)';
-
-    db.query(query, [productName, description, categoryName, subCategoryName, genderName, brandName], (err, result) => {
-        if (err) {
-            console.error(err);
-            res.status(500).send({ error: 'An error occurred while inserting the product.' });
-        } else {
-            res.send(result);
-        }
-    });
-});
-
-// Route for uploading images
+// Route for uploading images product
 app.post('/upload', upload, (req, res) => {
 console.log(req.body);
 console.log(req.files);
@@ -457,8 +440,7 @@ try {
 
 
 
-//get product with images
-
+//get product with images product
 app.get('/upload', (req, res) => {
     console.log('Fetching product details...');
     const query = `SELECT * FROM product `;
@@ -503,24 +485,125 @@ db.query(query, [product_id], (err, result) => {
 });
 });
 
+// get offer products
+app.get('/offerproducts', (req, res) => {
+    console.log('Fetching offer products...');
+    const query = 'SELECT * FROM offerproducts';
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error('Error fetching offer products:', err);
+            res.status(500).send('Error fetching offer products');
+        } else {
+            console.log('Offer products fetched successfully');
+            res.send(results);
+        }
+    });
+});
 
-// app.get('/products', (req, res) => {
-//     const query = 'SELECT * FROM products';
-//     db.query(query, (err, results) => {
-//        if (err) throw err;
-//        res.send(results);
-//     });
-//    });
+app.get('/offerproducts/:ofp_id', (req, res) => {
+    const { ofp_id } = req.params;
+    
+    const query = 'SELECT * FROM offerproducts WHERE ofp_id = ?';
+    const params = [ofp_id]; 
+    
+    db.query(query, params, (err, results) => {
+        if (err) {
+            console.error('Error fetching product:', err);
+            res.status(500).send('Error fetching product');
+        } else {
+            console.log('Product fetched successfully');
+            console.log(results);
+            res.send(results[0]);
+        }
+    });
+    });
 
-// app.post('/products', (req, res) => {
-//     const { name, price, category, subCategory, brand } = req.body;
-//     const query = 'INSERT INTO products (name, price, category, subCategory, brand) VALUES (?, ?, ?, ?, ?)';
-//     db.query(query, [name, price, category, subCategory, brand], (err, result) => {
-//        if (err) throw err;
-//        res.send(result);
-//     });
-//    });
-   
+// Route for uploading images offer product
+app.post('/uploadofp', upload, (req, res) => {
+    console.log(req.body);
+    console.log(req.files);
+    try {
+        // Extract image paths
+        const imagePaths = {
+            image1: req.files.image1 ? req.files.image1[0].path : null,
+            image2: req.files.image2 ? req.files.image2[0].path : null,
+            image3: req.files.image3 ? req.files.image3[0].path : null,
+            image4: req.files.image4 ? req.files.image4[0].path : null,
+        };
+    
+        const product_name = req.body.product_name;
+        const product_price = req.body.product_price;
+        const offer = req.body.offer;
+        const description = req.body.description;
+        const brand_name = req.body.brand_name;
+        const category = req.body.category;
+        const sub_category = req.body.sub_category;
+        const gender = req.body.gender;
+    
+        const query = `
+            INSERT INTO offerproducts (product_name, product_price, offer, description, brand_name, category, sub_category, gender, image1, image2, image3, image4)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        `;
+        const values = [product_name, product_price, offer, description, brand_name, category, sub_category, gender, imagePaths.image1, imagePaths.image2, imagePaths.image3, imagePaths.image4];
+    
+        db.query(query, values, (err, result) => {
+            if (err) {
+                console.error('Error uploading product:', err);
+                res.status(500).send({ message: 'Error uploading offer product', error: err.message });
+            } else {
+                res.status(200).send({ message: 'Offer Product uploaded successfully', imagePaths });
+            }
+        });
+    } catch (error) {
+        console.error('Error uploading offer product:', error);
+        res.status(500).send({ message: 'Error uploading offer product', error: error.message });
+    }
+    });   
+    
+//get product with images offer poroduct
+app.get('/uploadofp', (req, res) => {
+    console.log('Fetching product details...');
+    const query = `SELECT * FROM offerproducts `;
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error('Error fetching offer product details:', err);
+            res.status(500).send('Error fetching offer product details');
+        } else {
+            console.log('Offer Product details fetched successfully');
+            res.send(results);
+        }
+    });
+});
+
+// Edit offer product
+app.put('/offerproducts/:ofp_id', (req, res) => {
+    const { ofp_id } = req.params;
+    const { product_name, product_price, offer, description, brand_name, category, sub_category, gender } = req.body;
+    const query = 'UPDATE offerproducts SET product_name = ?, product_price = ?, offer = ?, description = ?, brand_name = ?, category = ?, sub_category = ?, gender = ? WHERE ofp_id = ?';
+    db.query(query, [product_name, product_price, offer, description, brand_name, category, sub_category, gender, ofp_id], (err, result) => {
+        if (err) {
+            console.error('Error updating offer product:', err);
+            res.status(500).send('Error updating offer product');
+        } else {
+            res.send(result);
+        }
+    });
+    });
+           
+// Delete offer product
+app.delete('/offerproducts/:ofp_id', (req, res) => {
+const {ofp_id } = req.params;
+const query = 'DELETE FROM offerproducts WHERE ofp_id = ?';
+db.query(query, [ofp_id], (err, result) => {
+    if (err) {
+        console.error('Error deleting offer products:', err);
+        res.status(500).send('Error deleting offer products');
+    } else {
+        res.send(result);
+    }
+});
+});
+
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
