@@ -1,15 +1,16 @@
-// const mysql = require('mysql2');
+// config/database.js
+const mysql = require('mysql');
 
-// const db = mysql.createConnection({
-//  host: '127.0.0.1',
-//  user: 'naveen',
-//  password: 'naveen',
-//  database: 'best_shop'
-// });
+const db = mysql.createConnection({
+ host: 'localhost',
+ user: 'root',
+ password: '',
+ database: 'best_shop'
+});
 
-// db.connect(err => {
-//  if (err) throw err;
-//  console.log('Connected to the database.');
-// });
+db.connect((err) => {
+ if (err) throw err;
+ console.log('Connected to MySQL');
+});
 
-// module.exports = db;
+module.exports = db;

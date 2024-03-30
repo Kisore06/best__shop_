@@ -4,6 +4,7 @@ import Categories from './Categories';
 import Gender from './Gender';
 import SubCategories from './SubCategoriesTable';
 import Brands from './Brands';
+import OfferProduct from './OfferProduct';
 
 const TableDetails = () => {
   return (
@@ -13,6 +14,7 @@ const TableDetails = () => {
         <SubCategories/>
         <Brands/>
         <Products/>
+        <OfferProduct />
         
     </div>
   )

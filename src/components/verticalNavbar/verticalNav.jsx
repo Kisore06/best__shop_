@@ -9,6 +9,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import HomeIcon from '@mui/icons-material/Home';
+import LocationIcon from '@mui/icons-material/LocationOn'; // Import LocationIcon
 import CategoryIcon from '@mui/icons-material/Category';
 import AddIcon from '@mui/icons-material/Add'; 
 import { Link } from 'react-router-dom';
@@ -148,6 +149,12 @@ const VerticalNav = () => {
               </ListItemButton>
             </List>
           </Collapse>
+          <ListItemButton component={Link} to="/shop-locations" onClick={handleDrawerClose}>
+            <ListItemIcon >
+            <LocationIcon />
+            </ListItemIcon>
+              <ListItemText primary="Showroom" />
+          </ListItemButton>
           <ListItemButton onClick={toggleAdd}>
             <ListItemIcon>
               <AddIcon />
@@ -172,6 +179,9 @@ const VerticalNav = () => {
               <ListItemButton component={Link} to="/add-product" onClick={handleDrawerClose} sx={{ pl: 4 }}>
                 <ListItemText primary="Add Products" />
               </ListItemButton>
+              <ListItemButton component={Link} to="/offer-products" onClick={handleDrawerClose} sx={{ pl: 4 }}>
+ <ListItemText primary="Add Offer Product" />
+</ListItemButton>
             </List>
           </Collapse>
           <ListItemButton onClick={toggleTable}>
@@ -198,6 +208,9 @@ const VerticalNav = () => {
               <ListItemButton component={Link} to="/table-details-products" onClick={handleDrawerClose} sx={{ pl: 4 }}>
                 <ListItemText primary="Products" />
               </ListItemButton>
+              <ListItemButton component={Link} to="/table-details-offer-products" onClick={handleDrawerClose} sx={{ pl: 4 }}>
+ <ListItemText primary="Offer Products" />
+</ListItemButton>
               <ListItemButton component={Link} to="/table-details" onClick={handleDrawerClose} sx={{ pl: 4 }}>
                 <ListItemText primary="All Tables" />
               </ListItemButton>

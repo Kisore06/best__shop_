@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+const BACKEND_URL = 'http://localhost:3001';
+
 const AddSubcategoryForm = () => {
  const [subcategory, setSubcategory] = useState({
     name: '',
@@ -16,7 +18,7 @@ const AddSubcategoryForm = () => {
 
  const fetchCategories = async () => {
     try {
-      const response = await fetch('http://localhost:3001/categories');
+      const response = await fetch(`${BACKEND_URL}/categories`);
       const data = await response.json();
       setCategories(data);
     } catch (error) {
@@ -26,7 +28,7 @@ const AddSubcategoryForm = () => {
 
  const fetchGenders = async () => {
     try {
-      const response = await fetch('http://localhost:3001/genders');
+      const response = await fetch(`${BACKEND_URL}/genders`);
       const data = await response.json();
       setGenders(data);
     } catch (error) {
@@ -41,7 +43,7 @@ const AddSubcategoryForm = () => {
  const handleSubmit = async (e) => {
     e.preventDefault();
     
-    const response = await fetch('http://localhost:3001/subcategories', {
+    const response = await fetch(`${BACKEND_URL}/subcategories`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -62,7 +64,7 @@ const AddSubcategoryForm = () => {
  };
 
  return (
-  <div style={{ paddingTop: '80px', maxWidth: '500px', margin: '0 auto' }}>
+ <div style={{ paddingTop: '80px', maxWidth: '500px', margin: '0 auto' }}>
     <div style={{ textAlign: 'center' }}>
       <h2>Add Sub Categories</h2>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px', border: '1px solid #ccc', padding: '20px', borderRadius: '5px' }}>
@@ -87,7 +89,7 @@ const AddSubcategoryForm = () => {
               <option value="">Select a category</option>
               {categories.map((category) => (
                 <option key={category.id} value={category.id}>
-                  {category.category}
+                 {category.category}
                 </option>
               ))}
           </select>

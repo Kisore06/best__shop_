@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-import { FaRegUserCircle } from "react-icons/fa";
+import { FaRegUserCircle, FaSearch } from "react-icons/fa";
 import VerticalNav from '../../components/verticalNavbar/verticalNav.jsx';
 import logo from '../../Assets/best_logo.png';
 import Swal from 'sweetalert2';
@@ -68,20 +68,44 @@ const Header = () => {
               <a href="#All-categories">Categories</a>
               <div className="mega-menu">
                 <ul>
-                 <ul><li>Mobiles</li>
-                    <li>Clothes</li>
-                    <li>Gifts</li>
-                    <li>Shoes</li></ul>
+                 <li><a href="/shoes">Footwear</a></li>
+                 <li><a href="/watches">Watches</a></li>
+                 <li><a href="/mobiles">Mobiles</a></li>
+                 <li><a href="/bags">Bags & Luggage</a></li>
+                 <li><a href="/sports">Sports Goods</a></li>
+                 <li><a href="/babyproducts">Baby World</a></li>
+                 <li><a href="/toys">Toys</a></li>
                 </ul>
               </div>
             </li>
-            <li><a href="Brands">Brands</a></li>
-            <li><a href="showroom">Showroom</a></li>
-            <li><a href="About">About</a></li>
+            <li>
+              <a href="#Brands">Brands</a>
+              <div className="mega-menu">
+                <ul>
+                 <li><a href="/fsports">Fsports</a></li>
+                 <li><a href="/sparx">Sparx</a></li>
+                 <li><a href="/woodland">Woodland</a></li>
+                 <li><a href="/titan">Titan</a></li>
+                 <li><a href="/fastrack">Fastrack</a></li>
+                 <li><a href="/americantourister">American Tourister</a></li>
+                 <li><a href="/skybags">Sky Bags</a></li>
+                 <li><a href="/yonex">Yonex</a></li>
+                 <li><a href="/nivia">Nivia</a></li>
+                 <li><a href="/lining">Lining</a></li>
+                 <li><a href="/applebaby">Apple Baby</a></li>
+                 <li><a href="/himalaya">Himalaya</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="/shop-locations">Showroom</a></li>
+            <li><a href="#About">About</a></li>
           </ul>
         </nav>
         <div className="user-actions">
-          <input className='search-box' type='text' placeholder='Search' />
+          <div className="search-container">
+            <input className='search-box' type='text' placeholder='Search' />
+            <FaSearch className="search-icon" />
+          </div>
           <a className='profile-icon' href="#userLogin" onClick={showLoginModal}><FaRegUserCircle /></a>
         </div>
       </div>

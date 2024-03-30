@@ -6,6 +6,8 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import UpdateIcon from '@mui/icons-material/Update';
 
+// const BACKEND_URL = 'http://localhost:3001';
+
 const Gender = () => {
  const [genders, setGenders] = useState([]);
  const [editingGender, setEditingGender] = useState(null);

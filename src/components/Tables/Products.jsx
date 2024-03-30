@@ -6,6 +6,8 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import UpdateIcon from '@mui/icons-material/Update';
 
+const BACKEND_URL = 'http://localhost:3001';
+
 const ProductTable = () => {
  const [products, setProducts] = useState([]);
  const [editingProduct, setEditingProduct] = useState(null);
@@ -15,7 +17,7 @@ const ProductTable = () => {
  useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/product');
+        const response = await axios.get(`${BACKEND_URL}/product`);
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching products:', error);

@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import './Products.css';
-import { IconButton } from '@mui/material';
+import { IconButton, TextField } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import UpdateIcon from '@mui/icons-material/Update';
 
+
+const BACKEND_URL = 'http://localhost:3001';
 
 const CategoryTable = () => {
  const [categories, setCategories] = useState([]);
@@ -15,7 +17,7 @@ const CategoryTable = () => {
  useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/categories');
+        const response = await axios.get(`${BACKEND_URL}/categories`);
         setCategories(response.data);
       } catch (error) {
         console.error('Error fetching categories:', error);

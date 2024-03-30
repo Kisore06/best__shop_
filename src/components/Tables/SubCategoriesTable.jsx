@@ -6,6 +6,8 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import UpdateIcon from '@mui/icons-material/Update';
 
+const BACKEND_URL = 'http://localhost:3001';
+
 const SubCategories = () => {
  const [subCategories, setSubCategories] = useState([]);
  const [editingSubCategory, setEditingSubCategory] = useState(null);
@@ -14,7 +16,7 @@ const SubCategories = () => {
  useEffect(() => {
     const fetchSubCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/subcategories');
+        const response = await axios.get(`${BACKEND_URL}/subcategories`);
         setSubCategories(response.data);
       } catch (error) {
         console.error('Error fetching subcategories:', error);

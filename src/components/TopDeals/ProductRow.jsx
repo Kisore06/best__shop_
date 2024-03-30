@@ -2,16 +2,20 @@ import React from 'react';
 import "./TopDeals.css"
 
 const ProductRow = ({ product }) => {
-  return (
+ // Assuming BACKEND_URL is the base URL of your backend
+ const BACKEND_URL = 'http://localhost:3001'; // Adjust this to match your backend's URL
+
+ // Construct the full URL for the image
+ const imageUrl = product.product_image.startsWith('http') ? product.product_image : `${BACKEND_URL}/${product.product_image}`;
+
+ return (
     <div className="product-row">
-      <div className="product-info">
-        <img src={product.image} alt={product.name} className="product-imagen" />
-        <h3 className="product-name">{product.name}</h3>
-        <p className="product-description">{product.description}</p>
-        <p className="product-price">{product.price}</p>
-      </div>
+      <img src={imageUrl} alt={product.product_name} className="product-imageTD" />
+      <h3 className="product-name">{product.product_name}</h3>
+      <p className="product-description">Price: {product.product_price}</p>
+      <p className="product-description">Offer: {product.offer_percent}%</p>
     </div>
-  );
+ );
 }
 
 export default ProductRow;

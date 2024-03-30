@@ -32,6 +32,7 @@ import AddSubcategory from "./components/Add/AddSubcategory";
 import AddBrand from "./components/Add/AddBrand";
 import AddProduct from "./components/Add/AddProduct";
 import ProductList from "./components/Shoes/ProductList";
+import AddOfferProduct from "./components/Add/AddOfferproduct";
 import './app.css'
 import BrandProducts from "./components/Brands/BrandProducts";
 import { useEffect } from "react";
@@ -42,6 +43,8 @@ import CategoryTable from "./components/Tables/Categories";
 import Gender from "./components/Tables/Gender";
 import Brands from "./components/Tables/Brands";
 import ProductDetails from "./components/Shoes/ProductDetails";
+import OfferProducts from "./components/Tables/OfferProduct";
+//import Brands from './components/Brands/Brands';
 
 
 function App() {
@@ -77,6 +80,7 @@ function App() {
       <Route path="/add-subcategory" element={<AddSubcategory/>} />
       <Route path="/add-brand" element={<AddBrand/>} />
       <Route path="/add-product" element={<AddProduct/>} />
+      <Route path="/offer-products" element={<AddOfferProduct/>} />
 
       <Route path="/shoes/:subCategory" element={<ProductList />} />
       <Route path="/cosmetics/:subCategory" element={<ProductList />} />
@@ -101,6 +105,9 @@ function App() {
       <Route path="/table-details-gender" element={<Gender />} />
       <Route path="/table-details-subCategories" element={<SubCategories />} />
       <Route path="/table-details-brands" element={<Brands />} />
+      <Route path="/table-details-offer-products" element={<OfferProducts />} />
+
+      
 
       <Route path="*" element={<div style={{ paddingTop: '80px' }}>Enter valid url!</div>} />
 
