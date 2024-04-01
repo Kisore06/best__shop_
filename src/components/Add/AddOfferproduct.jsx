@@ -73,7 +73,7 @@ const AddOfferProduct = () => {
             required
           />
           <input
-            type="number"
+            type="text"
             value={productPrice}
             onChange={(e) => setProductPrice(e.target.value)}
             placeholder="Product Price"
@@ -81,7 +81,7 @@ const AddOfferProduct = () => {
             required
           />
           <input
-            type="number"
+            type="text"
             value={offerPercentage}
             onChange={(e) => setOfferPercentage(e.target.value)}
             placeholder="Offer Percentage"
