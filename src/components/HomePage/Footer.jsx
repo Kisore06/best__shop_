@@ -1,19 +1,22 @@
 import React from "react";
-import { FaFacebook, FaTwitter, FaInstagram, FaWhatsapp, FaTelegram } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram, FaWhatsapp, FaTelegram }
+from "react-icons/fa";
 import "./Footer.css";
 
 const sections = [
   {
     title: "Categories",
-    items: ["Clothes", "Watches", "Cosmetics", "Shoes", "Bags","Trophy"],
+    items: ["Footwears", "Watches", "Mobiles", "Bags &Luggage","Sports Goods", "Baby World", "Toys","Gifts"],
   },
-  {
-    title: "Categories",
-    items: ["Gifts", "Sports", "Toys", "Mobiles","Baby Products","General Goods"],
-  },
+  // {
+  //   title: "Categories",
+  //   items: [],
+  // },
+
+
   {
     title: "Contact Us",
-    items: ["(607) 936-8058", "example@gmail.com","Head Office MT Road Near Taluka Office, Sathyamangalam"],
+    items: ["(607) 936-8058", "example@gmail.com","Head Office MT RoadNear Taluka Office, Sathyamangalam"],
   },
   {
     title: "Legal",
@@ -22,8 +25,8 @@ const sections = [
 ];
 
 const items = [
-  { name: "Facebook", icon: FaFacebook, link: "https://www.facebook.com/BESTSHOP786/" },
-  { name: "Instagram", icon: FaInstagram, link: "https://www.instagram.com/bestshop_sathy/" },
+  { name: "Facebook", icon: FaFacebook, link:"https://www.facebook.com/BESTSHOP786/" },
+  { name: "Instagram", icon: FaInstagram, link:"https://www.instagram.com/bestshop_sathy/" },
   { name: "Twitter", icon: FaTwitter, link: "https://twitter.com/" },
   { name: "Twitch", icon: FaWhatsapp, link: "https://www.whatsapp.com" },
   { name: "Github", icon: FaTelegram, link: "https://telegram.com/" },
@@ -47,14 +50,24 @@ const Footer = () => {
         <div className="footer-subscribe">
           <p className="footer-subscribe-title">Let's Stay Connected</p>
           <p className="footer-subscribe-text">
-            Get updates on latest Discounts, Offers and New Arrivals sent to your inbox weekly.
+            Get updates on latest Discounts, Offers and New Arrivals
+sent to your inbox weekly.
           </p>
           <form className="footer-subscribe-form">
-            <input
-              className="footer-subscribe-input"
-              type="email"
-              placeholder="Enter email.."
-            />
+          <input
+            className="footer-subscribe-input"
+            type="text"
+            placeholder="Name"
+          />
+          <input
+            className="footer-subscribe-input"
+            type="tel"
+            placeholder="Phone Number"
+          />
+          <textarea
+            className="footer-subscribe-input"
+            placeholder="Address"
+          ></textarea>
             <button className="footer-subscribe-button">Subscribe</button>
           </form>
         </div>
@@ -64,7 +77,7 @@ const Footer = () => {
           {items.map((x, index) => {
             const Icon = x.icon;
             return (
-              <a key={index} href={x.link} target="_blank" rel="noopener noreferrer" className="footer-icon">
+              <a key={index} href={x.link} target="_blank"rel="noopener noreferrer" className="footer-icon">
                 <Icon />
               </a>
             );

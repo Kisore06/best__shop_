@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import './Products.css';
-import { IconButton, TextField } from '@mui/material';
+import { IconButton} from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
-import UpdateIcon from '@mui/icons-material/Update';
 import DeleteIcon from '@mui/icons-material/Delete';
+import UpdateIcon from '@mui/icons-material/Update';
+
 
 const BACKEND_URL = 'http://localhost:3001';
 
 const CategoryTable = () => {
  const [categories, setCategories] = useState([]);
  const [editingCategory, setEditingCategory] = useState(null);
- const [editingName, setEditingName] = useState('');
+ const productListRef = useRef(null);
 
  useEffect(() => {
     const fetchCategories = async () => {
@@ -26,32 +27,58 @@ const CategoryTable = () => {
     fetchCategories();
  }, []);
 
- const handleEdit = (category) => {
-   setEditingCategory(category);
-   setEditingName(category.category);
+ const handleEditClick = (category) => {
+    setEditingCategory(category);
  };
 
- const handleUpdate = async () => {
-  try {
-    await axios.put(`${BACKEND_URL}/categories/${editingCategory.id}`, { category: editingName });
-    const updatedCategories = categories.map(cat => cat.id === editingCategory.id ? { ...cat, category: editingName } : cat);
-    setCategories(updatedCategories);
-    setEditingCategory(null);
-    setEditingName('');
-  } catch (error) {
-    console.error('Error updating category:', error);
+ const handleUpdateClick = async (category) => {
+    try {
+       await axios.put(`http://localhost:3001/categories/${category.id}`, { category: editingCategory.category });
+       const response = await axios.get('http://localhost:3001/categories');
+       setCategories(response.data);
+       setEditingCategory(null);
+    } catch (error) {
+       console.error('Error updating category:', error);
+    }
+   };
+   
+
+ const handleDeleteClick = async (category) => {
+    try {
+      await axios.delete(`http://localhost:3001/categories/${category.id}`);
+      setCategories(categories.filter(cat => cat.id !== category.id));
+    } catch (error) {
+      console.error('Error deleting category:', error);
+    }
+ };
+
+ const handleCategoryNameChange = (event, category) => {
+    setEditingCategory({ ...category, category: event.target.value });
+ };
+
+ const scrollLeft = () => {
+  if (productListRef.current) {
+    productListRef.current.scrollBy({
+      left: -250, // Adjust as needed
+      behavior: 'smooth'
+    });
   }
 };
 
-
- const handleCancel = () => {
-   setEditingCategory(null);
-   setEditingName('');
- };
+const scrollRight = () => {
+  if (productListRef.current) {
+    productListRef.current.scrollBy({
+      left: 250, // Adjust as needed
+      behavior: 'smooth'
+    });
+  }
+};
 
  return (
     <div style={{ paddingTop: '80px' }}>
       <h2 className="product-table-title">Category List</h2>
+      <div className="scrollable-container">
+      <button className="scroll-button left" onClick={scrollLeft}>&lt;</button>
       <table className="product-table">
         <thead>
           <tr>
@@ -66,31 +93,35 @@ const CategoryTable = () => {
               <td>{category.id}</td>
               <td>
                 {editingCategory && editingCategory.id === category.id ? (
-                 <TextField value={editingName} onChange={e => setEditingName(e.target.value)} />
+                 <input
+                    type="text"
+                    value={editingCategory.category}
+                    onChange={(event) => handleCategoryNameChange(event, category)}
+                 />
                 ) : (
                  category.category
                 )}
               </td>
               <td>
                 {editingCategory && editingCategory.id === category.id ? (
-                 <>
-                    <IconButton aria-label="update" onClick={handleUpdate}>
-                      <UpdateIcon />
-                    </IconButton>
-                    <IconButton aria-label="cancel" onClick={handleCancel}>
-                      <DeleteIcon /> {/* Using DeleteIcon as a placeholder for cancel */}
-                    </IconButton>
-                 </>
+                 <IconButton aria-label="update" onClick={() => handleUpdateClick(category)}>
+                    <UpdateIcon />
+                 </IconButton>
                 ) : (
-                 <IconButton aria-label="edit" onClick={() => handleEdit(category)}>
+                 <IconButton aria-label="edit" onClick={() => handleEditClick(category)}>
                     <EditIcon />
                  </IconButton>
                 )}
+                <IconButton aria-label="delete" onClick={() => handleDeleteClick(category)}>
+                    <DeleteIcon />
+                </IconButton>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+      <button className="scroll-button right" onClick={scrollRight}>&gt;</button>
+      </div>
     </div>
  );
 };

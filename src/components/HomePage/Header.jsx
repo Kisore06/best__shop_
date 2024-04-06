@@ -5,6 +5,7 @@ import VerticalNav from '../../components/verticalNavbar/verticalNav.jsx';
 import logo from '../../Assets/best_logo.png';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Header = () => {
  const navigate = useNavigate();
@@ -13,28 +14,43 @@ const Header = () => {
     Swal.fire({
       title: 'Login',
       html: `
-        <form id="loginForm">
-          <label>Username:</label>
-          <input id="username" type="text" />
-          <label>Password:</label>
-          <input id="password" type="password" />
-          <button type="submit">Submit</button>
-        </form>
+        <input id="swal-input1" class="swal2-input" placeholder="Username" required>
+        <input id="swal-input2" class="swal2-input" placeholder="Password" type="password" required>
       `,
-      showCloseButton: true,
-      showCancelButton: false,
-      showConfirmButton: false,
       focusConfirm: false,
-      customClass: {
-        container: 'custom-modal-container',
-        title: 'custom-modal-title',
-      },
       preConfirm: () => {
-        Swal.close();
-        navigate('/home');
-        return false;
+        const username = document.getElementById('swal-input1').value;
+        const password = document.getElementById('swal-input2').value;
+        if (!username || !password) {
+          Swal.showValidationMessage('Please fill in all fields');
+        } else {
+          handleLogin(username, password);
+        }
       }
     });
+ };
+
+ const handleLogin = async (username, password) => {
+    try {
+      const response = await axios.post('http://localhost:3001/users', { username, password });
+      const { role } = response.data;
+      // Assuming the backend sends the role directly in the response
+      // You can now use this role to determine if the user is an admin
+      if (role === 'admin') {
+        // Show an alert if the user is an admin
+        Swal.fire({
+          icon: 'info',
+          title: 'Welcome, Admin!',
+          text: 'You have successfully logged in as an admin.',
+        });
+      }
+      // Navigate to the home page after successful login
+      navigate('/home');
+    } catch (error) {
+      Swal.showValidationMessage(
+        `Request failed: ${error}`
+      );
+    }
  };
 
  return (

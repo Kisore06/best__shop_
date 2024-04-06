@@ -19,7 +19,8 @@ const ShopLocations = () => {
             <div key={index} className="location-card">
               <h3>{location.name}</h3>
               <p>{location.address}</p>
-              <a href={location.url} target="_blank" rel="noopener noreferrer">Visit Location</a>
+              <a href={location.url} target="_blank" rel="noopener noreferrer">
+               <span className="location-icon">📍</span> View Location              </a>
             </div>
           ))}
         </div>

@@ -1,48 +1,50 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import adidas from '../../Assets/Brands/adidas.jpg';
-import americanTourister from '../../Assets/Brands/americanTourister.jpeg';
-import buccabucci from '../../Assets/Brands/buccabucci.jpg';
-import fastrack from '../../Assets/Brands/fastrack.jpg';
-import lakme from '../../Assets/Brands/lakme.jpg';
-import levis from '../../Assets/Brands/levis.jpg';
-import mamaEarth from '../../Assets/Brands/mamaEarth.jpg';
-import netplay from '../../Assets/Brands/netplay.png';
-import nike from '../../Assets/Brands/nike.jpg';
-import roadster from '../../Assets/Brands/roadster.jpg';
-import skybags from '../../Assets/Brands/skybags.jpg';
-import sonata from '../../Assets/Brands/sonata.jpg';
-
+import americantourister from '../../Assets/Brands/americantourister.png';
+import applebaby from '../../Assets/Brands/applebaby.jpg';
+import fastrack from '../../Assets/Brands/fastrack.webp';
+import fsports from '../../Assets/Brands/fsports.jpg';
+import himalaya from '../../Assets/Brands/himalaya.png';
+import Lining from '../../Assets/Brands/Lining.jpg';
+import nivia from '../../Assets/Brands/nivia.png';
+import skybags from '../../Assets/Brands/skybags.png';
+import sparx from '../../Assets/Brands/sparx.svg';
+import titan from '../../Assets/Brands/titan.jpg';
+import woodland from '../../Assets/Brands/woodland.png';
+import yonex from '../../Assets/Brands/yonex.png';
 import "./Brand.css";
 
 const brands = [
- { name: 'Adidas', image: adidas },
- { name: 'Nike', image: nike },
+ { name: 'F Sports', image: fsports },
+ { name: 'Sparx', image: sparx },
+ { name: 'Woodland', image: woodland },
+ { name: 'Titan', image: titan },
+ { name: 'Fastrack', image: fastrack },
+ { name: 'American Tourister', image: americantourister },
  { name: 'Skybags', image: skybags },
- { name: 'American Tourister', image: americanTourister },
- { name: 'Fastrack', image:fastrack },
- { name: 'Sonata', image:sonata},
- { name: 'MamaEarth', image:mamaEarth },
- { name: 'Lakme', image:lakme},
- { name: 'levis', image:levis },
- { name: 'Bucca Bucci', image:buccabucci},
- { name: 'Netplay', image:netplay },
- { name: 'Roadster', image:roadster}
+ { name: 'Yonex', image: yonex },
+ { name: 'Nivia', image: nivia },
+ { name: 'Lining', image: Lining },
+ { name: 'Apple Baby', image: applebaby },
+ { name: 'Himalaya', image: himalaya }
 ];
 
 const Brands = () => {
  return (
-    <div>
-     <h1 className="he1">Trending Brand Partners</h1>
-     <br></br>
+    <div className="categories-container">
+    <br></br>
+     <h1 className="he1" style={{marginBottom:'0px'}}>Trending Brand Partners</h1>
         <div className="brands">
         {brands.map((brand, index) => (
-            <Link key={index} to={`/${brand.name.toLowerCase()}`}>
-            <img src={brand.image} alt={brand.name} />
-            <span>{brand.name}</span>
-            </Link>
+            <div key={index} className="brand-logo">
+              <Link to={`/brands/${brand.name.toLowerCase()}`}>
+                <img src={brand.image} alt={brand.name} />
+              </Link>
+            </div>
         ))}
         </div>
+        <br></br>
+        <br></br>
     </div>
  );
 };

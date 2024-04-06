@@ -12,7 +12,6 @@ const AddSubcategoryForm = () => {
  const [genders, setGenders] = useState([]); 
 
  useEffect(() => {
-    // Fetch categories and genders from your backend API
     fetchCategories();
     fetchGenders(); 
  }, []);
@@ -105,8 +104,8 @@ const AddSubcategoryForm = () => {
             required>
               <option value="">Select a gender</option>
               {genders.map((gender) => (
-                <option key={gender.id} value={gender.g_id}>
-                 {gender.gender}
+                <option key={gender.g_id} value={gender.g_id}>
+                  {gender.gender}
                 </option>
               ))}
           </select>

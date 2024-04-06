@@ -1,27 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import './Products.css'; // Ensure you have a CSS file for styling
+import './Products.css';
 import { IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import UpdateIcon from '@mui/icons-material/Update';
+
 
 const BACKEND_URL = 'http://localhost:3001';
 
 const OfferProducts = () => {
  const [offerProducts, setOfferProducts] = useState([]);
  const [editingProduct, setEditingProduct] = useState(null);
- const [editingDetails, setEditingDetails] = useState({
-    product_name: '',
-    product_image: '',
-    product_price: '',
-    offer_percent: ''
- });
+ const productListRef = useRef(null);
+
 
  useEffect(() => {
   const fetchOfferProducts = async () => {
      try {
-       const response = await axios.get(`${BACKEND_URL}/offer-products`);
-       console.log(response.data); // Log the fetched data to check the structure
+       const response = await axios.get(`${BACKEND_URL}/offerproducts`);
        setOfferProducts(response.data);
      } catch (error) {
        console.error('Error fetching offer products:', error);
@@ -32,129 +29,160 @@ const OfferProducts = () => {
  }, []);
  
 
- const handleEdit = (product) => {
-    setEditingProduct(product);
-    setEditingDetails({
-      product_name: product.product_name,
-      product_image: product.product_image,
-      product_price: product.product_price,
-      offer_percent: product.offer_percent
-    });
- };
+ const handleEditClick = (product) => {
+  setEditingProduct(product);
+};
 
- const handleUpdate = async () => {
-  if (window.confirm('Are you sure you want to update this product?')) {
-      try {
-          await axios.put(`${BACKEND_URL}/offer-products/${editingProduct.product_id}`, editingDetails);
-          const updatedProducts = offerProducts.map(p => p.product_id === editingProduct.product_id ? { ...p, ...editingDetails } : p);
-          setOfferProducts(updatedProducts);
-          setEditingProduct(null);
-          setEditingDetails({
-              product_name: '',
-              product_image: '',
-              product_price: '',
-              offer_percent: ''
-          });
-      } catch (error) {
-          console.error('Error updating product:', error);
-      }
+const handleUpdateClick = async (offerproducts) => {
+  try {
+    await axios.put(`http://localhost:3001/offerproducts/${offerproducts.ofp_id}`, {
+      product_name: editingProduct.product_name,
+      product_price: editingProduct.product_price,
+      offer: editingProduct.offer,
+      description: editingProduct.description,
+      brand_name: editingProduct.brand_name,
+      category: editingProduct.category,
+      sub_category: editingProduct.sub_category,
+      gender: editingProduct.gender,
+    });
+    const response = await axios.get('http://localhost:3001/offerproducts');
+    setOfferProducts(response.data);
+    setEditingProduct(null);
+  } catch (error) {
+    console.error('Error updating offer product:', error);
   }
 };
 
 
- const handleDelete = async (productId) => {
-    try {
-      if (window.confirm('Are you sure you want to delete this product?')) {
-        await axios.delete(`${BACKEND_URL}/offer-products/${productId}`);
-        const updatedProducts = offerProducts.filter(p => p.product_id !== productId);
-        setOfferProducts(updatedProducts);
-      }
-    } catch (error) {
-      console.error('Error deleting product:', error);
-    }
- };
+const handleDeleteClick = async (offerproducts) => {
+  try {
+    await axios.delete(`http://localhost:3001/offerproducts/${offerproducts.ofp_id}`);
+    setOfferProducts(offerProducts.filter(p => p.ofp_id !== offerproducts.ofp_id));
+  } catch (error) {
+    console.error('Error deleting offer product:', error);
+  }
+};
 
- const handleCancel = () => {
-    setEditingProduct(null);
-    setEditingDetails({
-      product_name: '',
-      product_image: '',
-      product_price: '',
-      offer_percent: ''
+const handleProductChange = (event, offerproducts) => {
+  setEditingProduct({ ...offerproducts, [event.target.name]: event.target.value });
+};
+
+const scrollLeft = () => {
+  if (productListRef.current) {
+    productListRef.current.scrollBy({
+      left: -250, // Adjust as needed
+      behavior: 'smooth'
     });
- };
+  }
+};
+
+const scrollRight = () => {
+  if (productListRef.current) {
+    productListRef.current.scrollBy({
+      left: 250, // Adjust as needed
+      behavior: 'smooth'
+    });
+  }
+};
 
  return (
     <div style={{ paddingTop: '80px' }}>
       <h2 className="product-table-title">Offer Products List</h2>
+      <div className="scrollable-container">
+      <button className="scroll-button left" onClick={scrollLeft}>&lt;</button>
       <table className="product-table">
         <thead>
           <tr>
             <th>Product ID</th>
             <th>Product Name</th>
-            <th>Product Image</th>
-            <th>Product Price</th>
-            <th>Offer Percent</th>
+            <th>Price</th>
+            <th>Offer</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Subcategory</th>
+            <th>Gender</th>
+            <th>Brand</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          {offerProducts.map((product) => (
-            <tr key={product.product_id}>
-              <td>{product.product_id}</td>
+          {offerProducts.map((offerproducts) => (
+            <tr key={offerproducts.ofp_id}>
+              <td>{offerproducts.ofp_id}</td>
               <td>
-                {editingProduct && editingProduct.product_id === product.product_id ? (
-                 <input type="text" value={editingDetails.product_name} onChange={e => setEditingDetails({ ...editingDetails, product_name: e.target.value })} />
+                {editingProduct && editingProduct.ofp_id === offerproducts.ofp_id ? (
+                 <input 
+                    type="text" 
+                    name="product_name"
+                    value={editingProduct.product_name} 
+                    onChange={(event) => handleProductChange(event, offerproducts)}
+                 />
                 ) : (
-                 product.product_name
+                 offerproducts.product_name
                 )}
               </td>
               <td>
-                {editingProduct && editingProduct.product_id === product.product_id ? (
-                 <input type="text" value={editingDetails.product_image} onChange={e => setEditingDetails({ ...editingDetails, product_image: e.target.value })} />
+                {editingProduct && editingProduct.ofp_id === offerproducts.ofp_id ? (
+                  <input 
+                    type="text" 
+                    name="product_price"
+                    value={editingProduct.product_price} 
+                    onChange={(event) => handleProductChange(event, offerproducts)}
+                 />
                 ) : (
-                 <img src={product.product_image} alt={product.product_name} style={{ width: '50px', height: '50px' }} />
+                  offerproducts.product_price
                 )}
               </td>
               <td>
-                {editingProduct && editingProduct.product_id === product.product_id ? (
-                 <input type="text" value={editingDetails.product_price} onChange={e => setEditingDetails({ ...editingDetails, product_price: e.target.value })} />
+                {editingProduct && editingProduct.ofp_id === offerproducts.ofp_id ? (
+                  <input 
+                    type="text" 
+                    name="offer"
+                    value={editingProduct.offer} 
+                    onChange={(event) => handleProductChange(event, offerproducts)}
+                 />
                 ) : (
-                 product.product_price
+                  offerproducts.offer
                 )}
               </td>
               <td>
-                {editingProduct && editingProduct.product_id === product.product_id ? (
-                 <input type="text" value={editingDetails.offer_percent} onChange={e => setEditingDetails({ ...editingDetails, offer_percent: e.target.value })} />
+                {editingProduct && editingProduct.ofp_id === offerproducts.ofp_id ? (
+                  <input 
+                    type="text" 
+                    name="description"
+                    value={editingProduct.description} 
+                    onChange={(event) => handleProductChange(event, offerproducts)}
+                 />
                 ) : (
-                 product.offer_percent + '%'
+                  offerproducts.description
                 )}
               </td>
+              <td>{offerproducts.category}</td>
+              <td>{offerproducts.sub_category}</td>
+              <td>{offerproducts.gender}</td>
+              <td>{offerproducts.brand_name}</td>
               <td>
-                {editingProduct && editingProduct.product_id === product.product_id ? (
-                 <>
-                    <IconButton aria-label="update" onClick={handleUpdate}>
-                      <EditIcon />
-                    </IconButton>
-                    <IconButton aria-label="cancel" onClick={handleCancel}>
-                      <DeleteIcon /> {/* Using DeleteIcon as a placeholder for cancel */}
-                    </IconButton>
-                 </>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                {editingProduct && editingProduct.ofp_id === offerproducts.ofp_id ? (
+                 <IconButton aria-label="update" onClick={() => handleUpdateClick(offerproducts)} title="Update">
+                    <UpdateIcon />
+                 </IconButton>
                 ) : (
-                 <>
-                    <IconButton aria-label="edit" onClick={() => handleEdit(product)}>
-                      <EditIcon />
-                    </IconButton>
-                    <IconButton aria-label="delete" onClick={() => handleDelete(product.product_id)}>
-                      <DeleteIcon />
-                    </IconButton>
-                 </>
+                 <IconButton aria-label="edit" onClick={() => handleEditClick(offerproducts)} title="Edit">
+                    <EditIcon />
+                 </IconButton>
                 )}
+                <IconButton aria-label="delete" onClick={() => handleDeleteClick(offerproducts)} title="Delete">
+                 <DeleteIcon />
+                </IconButton>
+                </div>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+      <button className="scroll-button right" onClick={scrollRight}>&gt;</button>
+      </div>
     </div>
  );
 };

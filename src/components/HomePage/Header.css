@@ -9,7 +9,6 @@
   right: 0; /* Ensure it spans the full width of the viewport */
   z-index: 1000;
   height: 50px; /* Ensure it stays on top of other content */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
  }
  
  .custom-modal-container {
