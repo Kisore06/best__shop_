@@ -10,13 +10,13 @@ import Gifts from '../../Assets/Categories/gift1.webp';
 import "./Categories.css";
 
 const categories = [
- { name: 'Shoes', image: shoes },
+ { name: 'Footwear', image: shoes },
  { name: 'Watches', image: watches },
- { name: 'Bags', image: bags },
- { name: 'Sports', image: sports },
+ { name: 'Bags & Luggages', image: bags },
+ { name: 'Sports Goods', image: sports },
  { name: 'Toys', image: Toys },
  { name: 'Mobiles', image: Mobiles },
- { name: 'Baby Products', image: BabyProducts },
+ { name: 'Baby World', image: BabyProducts },
  { name: 'Gifts', image: Gifts },
 ];
 

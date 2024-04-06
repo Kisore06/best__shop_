@@ -52,7 +52,10 @@ const ProductDetails = () => {
 };
 
  return (
-  <div>
+  <div style={{ paddingTop: '80px' }}>
+  <div className="topnav">
+    <a href='/home'>&lt; Home </a>
+  </div>
     <div className="product-details-container">
       <div className="description-images">
         {images.map((image, index) => (

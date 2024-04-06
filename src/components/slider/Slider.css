@@ -1,70 +1,100 @@
+.react-slideshow-container .default-nav {
+    background: none; /* Ensure no background */
+    border: none; /* Ensure no border */
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000; /* Set the color of the arrow */
+    transition: transform 0.3s ease;
+    cursor: pointer; /* Ensure the cursor changes to a pointer on hover */
+}
 
-/* Style for the previous arrow */
-.nav-button-prev {
+.react-slideshow-container .default-nav:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover for a subtle effect */
+}
+
+/* Style the SVG to ensure it fills the button */
+.react-slideshow-container .default-nav svg {
+    fill: currentColor; /* Use the current text color for the arrow */
+    width: 100%; /* Ensure SVG fills the button */
+    height: 600px; /* Ensure SVG fills the button */
+}
+
+/* Styles for previous arrow */
+.react-slideshow-container .default-nav[data-type="prev"] {
     position: absolute;
-    top: 50%;
     left: 10px;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(0, 0, 0);
-    font-size: 24px;
-    cursor: pointer;
-    /* Hide the default SVG icon */
-    background-image: none;
-}
-
-.nav-button-prev::before {
-    content: '';
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 10px solid white;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* Style for the next arrow */
-.nav-button-next {
-    position: absolute;
     top: 50%;
-    right: 10px;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(0, 0, 0);
-    font-size: 24px;
-    cursor: pointer;
-    /* Hide the default SVG icon */
-    background-image: none;
 }
 
-.nav-button-next::before {
-    content: '';
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 10px solid white;
+/* Styles for next arrow */
+.react-slideshow-container .default-nav[data-type="next"] {
     position: absolute;
-    right: 50%;
-    transform: translateX(50%);
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-/* Optional: Add hover effects for the arrows */
-.nav-button-prev:hover::before,
-.nav-button-next:hover::before {
-    border-color: #007bff; /* Change arrow color on hover */
+/* Hover effects */
+.react-slideshow-container .default-nav:hover {
+    color: #007bff; /* Change arrow color on hover */
+}
+.overlay-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.slide-content {
+    width: 100%; /* Set a fixed width */
+    height: 600px; /* Set a fixed height */
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    overflow: hidden; /* Ensure the image is not cut off */
+    position: relative; /* Needed for absolute positioning of pseudo-element */
+    padding-top: 10px; /* Adjust this value to increase the top height */
 }
 
+/* Pseudo-element for the top part of the slide */
+.slide-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 600px; /* Adjust this value to control the top height */
+    background-image: inherit; /* Inherit the background image from
+the slide content */
+    background-position: center top; /* Position the background image
+at the top */
+    z-index: -1; /* Ensure the pseudo-element is behind the slide content */
+}
 
+/* Slideshow container */
+.slideshow-container {
+    padding-top: 50px;
+    max-width: 100%;
+    margin: 0 auto;
+}
 
-   
+/* Adjustments for mobile view */
+@media only screen and (max-width: 480px) {
+    .slide-content {
+        width: 100%;
+        height: 300px; /* Adjusted height for smaller screens */
+        background-size: contain; /* Ensure the entire image is visible */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat;
+        overflow: hidden;
+        position: relative;
+        padding-top: 0; /* Remove top padding for smaller screens */
+    }
+}

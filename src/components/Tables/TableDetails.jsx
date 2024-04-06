@@ -5,6 +5,7 @@ import Gender from './Gender';
 import SubCategories from './SubCategoriesTable';
 import Brands from './Brands';
 import OfferProduct from './OfferProduct';
+import UserInfo from './UserInfo';
 
 const TableDetails = () => {
   return (
@@ -15,6 +16,7 @@ const TableDetails = () => {
         <Brands/>
         <Products/>
         <OfferProduct />
+        <UserInfo />
         
     </div>
   )

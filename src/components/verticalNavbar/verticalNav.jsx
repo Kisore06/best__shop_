@@ -111,29 +111,20 @@ const VerticalNav = () => {
           </ListItemButton>
           <Collapse in={categoriesOpen} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              <ListItemButton component={Link} to="/Shoes" onClick={handleDrawerClose} sx={{ pl: 4 }}>
-                <ListItemText primary="Shoes" />
+              <ListItemButton component={Link} to="/Footwear" onClick={handleDrawerClose} sx={{ pl: 4 }}>
+                <ListItemText primary="Footwear" />
               </ListItemButton>
               <ListItemButton component={Link} to="/Watches" onClick={handleDrawerClose} sx={{ pl: 4 }}>
                 <ListItemText primary="Watches" />
               </ListItemButton>
-              <ListItemButton component={Link} to="/Cosmetics" onClick={handleDrawerClose} sx={{ pl: 4 }}>
-                <ListItemText primary="Cosmetics" />
-              </ListItemButton>
-              <ListItemButton component={Link} to="/Bags" onClick={handleDrawerClose} sx={{ pl: 4 }}>
-                <ListItemText primary="Bags" />
+              <ListItemButton component={Link} to="/Bags & Luggages" onClick={handleDrawerClose} sx={{ pl: 4 }}>
+                <ListItemText primary="Bags & Luggages" />
               </ListItemButton>
               <ListItemButton component={Link} to="/Gifts" onClick={handleDrawerClose} sx={{ pl: 4 }}>
                 <ListItemText primary="Gifts" />
               </ListItemButton>
-              <ListItemButton component={Link} to="/Clothes" onClick={handleDrawerClose} sx={{ pl: 4 }}>
-                <ListItemText primary="Clothes" />
-              </ListItemButton>
-              <ListItemButton component={Link} to="/Sports" onClick={handleDrawerClose} sx={{ pl: 4 }}>
-                <ListItemText primary="Sports" />
-              </ListItemButton>
-              <ListItemButton component={Link} to="/generalgoods" onClick={handleDrawerClose} sx={{ pl: 4 }}>
-                <ListItemText primary="General Goods" />
+              <ListItemButton component={Link} to="/Sports Goods" onClick={handleDrawerClose} sx={{ pl: 4 }}>
+                <ListItemText primary="Sports Goods" />
               </ListItemButton>
               <ListItemButton component={Link} to="/Toys" onClick={handleDrawerClose} sx={{ pl: 4 }}>
                 <ListItemText primary="Toys" />
@@ -141,11 +132,8 @@ const VerticalNav = () => {
               <ListItemButton component={Link} to="/Mobiles" onClick={handleDrawerClose} sx={{ pl: 4 }}>
                 <ListItemText primary="Mobiles" />
               </ListItemButton>
-              <ListItemButton component={Link} to="/babyproducts" onClick={handleDrawerClose} sx={{ pl: 4 }}>
-                <ListItemText primary="Baby Products" />
-              </ListItemButton>
-              <ListItemButton component={Link} to="/trophy" onClick={handleDrawerClose} sx={{ pl: 4 }}>
-                <ListItemText primary="Trophies" />
+              <ListItemButton component={Link} to="/Baby World" onClick={handleDrawerClose} sx={{ pl: 4 }}>
+                <ListItemText primary="Baby World" />
               </ListItemButton>
             </List>
           </Collapse>
@@ -209,8 +197,11 @@ const VerticalNav = () => {
                 <ListItemText primary="Products" />
               </ListItemButton>
               <ListItemButton component={Link} to="/table-details-offer-products" onClick={handleDrawerClose} sx={{ pl: 4 }}>
- <ListItemText primary="Offer Products" />
-</ListItemButton>
+                <ListItemText primary="Offer Products" />
+              </ListItemButton>
+              <ListItemButton component={Link} to="/user-info" onClick={handleDrawerClose} sx={{ pl: 4 }}>
+                <ListItemText primary="User Information" />
+              </ListItemButton>
               <ListItemButton component={Link} to="/table-details" onClick={handleDrawerClose} sx={{ pl: 4 }}>
                 <ListItemText primary="All Tables" />
               </ListItemButton>

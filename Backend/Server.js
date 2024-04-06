@@ -11,6 +11,7 @@ app.use(bodyParser.json());
 app.use('/uploads/images', express.static('uploads/images'));
 
 
+
 // MySQL connection
 const db = mysql.createConnection({
  host: 'localhost',
@@ -604,6 +605,34 @@ db.query(query, [ofp_id], (err, result) => {
 });
 });
 
+//get user-info
+app.get('/userinfo', (req, res) => {
+    console.log('Fetching user information...');
+    const query = `SELECT * FROM userinfo `;
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error('Error fetching user-info', err);
+            res.status(500).send('Error fetching user-info');
+        } else {
+            console.log('user-info fetched successfully');
+            res.send(results);
+        }
+    });
+});
+
+app.post('/userinfo', (req, res) => {
+    const { name, phone_number, address } = req.body;
+    const query = 'INSERT INTO userinfo (name, phone_number, address) VALUES (?, ?, ?)';
+    db.query(query, [name, phone_number, address], (err, result) => {
+        if (err) {
+            console.error('Error adding user-info:', err);
+            res.status(500).send('Error adding user-info');
+        } else {
+            console.log('User-info added successfully');
+            res.send(result);
+        }
+    });
+});
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

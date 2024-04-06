@@ -68,13 +68,13 @@ const Header = () => {
               <a href="#All-categories">Categories</a>
               <div className="mega-menu">
                 <ul>
-                 <li><a href="/shoes">Footwear</a></li>
+                 <li><a href="/Footwear">Footwear</a></li>
                  <li><a href="/watches">Watches</a></li>
                  <li><a href="/mobiles">Mobiles</a></li>
-                 <li><a href="/bags">Bags & Luggage</a></li>
-                 <li><a href="/sports">Sports Goods</a></li>
-                 <li><a href="/babyproducts">Baby World</a></li>
-                 <li><a href="/toys">Toys</a></li>
+                 <li><a href="/Bags & Luggage">Bags & Luggage</a></li>
+                 <li><a href="/Sports Goods">Sports Goods</a></li>
+                 <li><a href="/Baby World">Baby World</a></li>
+                 <li><a href="/Toys">Toys</a></li>
                 </ul>
               </div>
             </li>

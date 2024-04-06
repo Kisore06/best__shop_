@@ -53,6 +53,9 @@ const ProductList = () => {
 
  return (
   <div style={{ paddingTop: '80px' }}>
+  <div className="topnav">
+    <a href='/home'>&lt; Home </a>
+  </div>
   <div className="categories-container">
   <h2>Products in {subCategory}</h2>
   <Box>
