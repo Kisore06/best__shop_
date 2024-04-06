@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Products.css';
 import { IconButton } from '@mui/material';
@@ -11,7 +11,6 @@ import UpdateIcon from '@mui/icons-material/Update';
 const Gender = () => {
  const [genders, setGenders] = useState([]);
  const [editingGender, setEditingGender] = useState(null);
- const productListRef = useRef(null);
 
 
  useEffect(() => {
@@ -55,29 +54,11 @@ const Gender = () => {
     setEditingGender({ ...gender, gender: event.target.value });
  };
 
- const scrollLeft = () => {
-  if (productListRef.current) {
-    productListRef.current.scrollBy({
-      left: -250, // Adjust as needed
-      behavior: 'smooth'
-    });
-  }
-};
-
-const scrollRight = () => {
-  if (productListRef.current) {
-    productListRef.current.scrollBy({
-      left: 250, // Adjust as needed
-      behavior: 'smooth'
-    });
-  }
-};
-
+ 
  return (
-    <div style={{ paddingTop: '80px' }}>
-      <h2 className="product-table-title">Genders</h2>
+  <div style={{ paddingTop: '80px', marginLeft:'50px', marginRight:'50px'}}>
+  <h2 className="product-table-title">Genders</h2>
       <div className="scrollable-container">
-      <button className="scroll-button left" onClick={scrollLeft}>&lt;</button>
       <table className="product-table">
         <thead>
           <tr>
@@ -119,7 +100,6 @@ const scrollRight = () => {
           ))}
         </tbody>
       </table>
-      <button className="scroll-button right" onClick={scrollRight}>&gt;</button>
       </div>
     </div>
  );

@@ -1,10 +1,9 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./TopDeals.css";
 import { Link } from 'react-router-dom';
 
 const ProductList = ({ products }) => {
- const productListRef = useRef(null);
  const [product, setProduct] = useState(null);
 
  useEffect(() => {
@@ -20,30 +19,13 @@ const ProductList = ({ products }) => {
     fetchProduct();
  }, []);
 
- const scrollLeft = () => {
-    if (productListRef.current) {
-      productListRef.current.scrollBy({
-        left: -250, // Adjust as needed
-        behavior: 'smooth'
-      });
-    }
- };
-
- const scrollRight = () => {
-    if (productListRef.current) {
-      productListRef.current.scrollBy({
-        left: 250, // Adjust as needed
-        behavior: 'smooth'
-      });
-    }
- };
+ 
 
  return (
     <div className="categories-container" >
       <h1 className="he1">Season Sales</h1>
       <div className="scrollable-container">
-        <button className="scroll-button left" onClick={scrollLeft}>&lt;</button>
-        <div>
+        <div style={{ marginLeft:'50px', marginRight:'50px'}}>
           {product && product.map((product) => (
             <div key={product.ofp_id} className="product-card-similar">
             <Link to={`/offerproducts/${product.ofp_id}`}>
@@ -57,7 +39,6 @@ const ProductList = ({ products }) => {
             </div>
           ))}
         </div>
-        <button className="scroll-button right" onClick={scrollRight}>&gt;</button>
       </div>
     </div>
  );

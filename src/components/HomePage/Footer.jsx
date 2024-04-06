@@ -1,19 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import { FaFacebook, FaTwitter, FaInstagram, FaWhatsapp, FaTelegram }
 from "react-icons/fa";
 import "./Footer.css";
+import axios from 'axios';
 
 const sections = [
   {
     title: "Categories",
     items: ["Footwears", "Watches", "Mobiles", "Bags &Luggage","Sports Goods", "Baby World", "Toys","Gifts"],
   },
-  // {
-  //   title: "Categories",
-  //   items: [],
-  // },
-
-
   {
     title: "Contact Us",
     items: ["(607) 936-8058", "example@gmail.com","Head Office MT RoadNear Taluka Office, Sathyamangalam"],
@@ -32,6 +27,38 @@ const items = [
   { name: "Github", icon: FaTelegram, link: "https://telegram.com/" },
 ];
 const Footer = () => {
+  const[userInfo,setUserInfo] = useState({
+    name:'',
+    phone_number:'',
+    address:'',
+  })
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data={
+      name:userInfo.name,
+      phone_number:userInfo.phone_number,
+      address:userInfo.address
+    };
+
+    try{
+      const response = await axios.post('http://localhost:3001/userinfo', data, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+      console.log(response.data);
+      setUserInfo({
+        name:'',
+        phone_number:'',
+        address:'',
+      })
+      window.alert('Details Submitted successfully!')
+    } catch (error) {
+      console.log(error);
+      window.alert('An error occured while submitting!!')
+    }
+  }
   return (
     <div className="footer-container">
       <div className="footer-main">
@@ -50,25 +77,33 @@ const Footer = () => {
         <div className="footer-subscribe">
           <p className="footer-subscribe-title">Let's Stay Connected</p>
           <p className="footer-subscribe-text">
-            Get updates on latest Discounts, Offers and New Arrivals
-sent to your inbox weekly.
+            Get updates on latest Discounts, Offers and New Arrivals sent to your inbox.
           </p>
-          <form className="footer-subscribe-form">
+          <form onSubmit={handleSubmit} className="footer-subscribe-form">
           <input
             className="footer-subscribe-input"
             type="text"
             placeholder="Name"
+            value={userInfo.name}
+            onChange={(e) => setUserInfo({ ...userInfo, name:e.target.value})}
+            required
           />
           <input
             className="footer-subscribe-input"
             type="tel"
             placeholder="Phone Number"
+            value={userInfo.phone_number}
+            onChange={(e) => setUserInfo({ ...userInfo, phone_number:e.target.value})}
+            required
           />
           <textarea
             className="footer-subscribe-input"
             placeholder="Address"
+            value={userInfo.address}
+            onChange={(e) => setUserInfo({ ...userInfo, address:e.target.value})}
+            required
           ></textarea>
-            <button className="footer-subscribe-button">Subscribe</button>
+            <button type="submit" className="footer-subscribe-button">Subscribe</button>
           </form>
         </div>
       </div>

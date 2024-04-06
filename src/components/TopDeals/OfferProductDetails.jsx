@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { IconButton } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -10,6 +10,9 @@ const ProductDetails = () => {
  const [product, setProduct] = useState(null);
  const [currentImageIndex, setCurrentImageIndex] = useState(0);
  const [images, setImages] = useState([]);
+ const [similarProducts, setSimilarProducts] = useState([]);
+ const [similarProductsBySubcategory, setSimilarProductsBySubcategory] = useState([]);
+ const [similarProductsByBrand, setSimilarProductsByBrand] = useState([]);
 
 
  useEffect(() => {
@@ -19,6 +22,17 @@ const ProductDetails = () => {
         console.log(response.data);
         setProduct(response.data);
         setImages([response.data.image1, response.data.image2, response.data.image3, response.data.image4]);
+
+        const similarResponse = await axios.get(`http://localhost:3001/offerproducts`);
+        setSimilarProducts(similarResponse.data);
+
+        // Fetch similar products by subcategory
+        const similarBySubcategoryResponse = await axios.get(`http://localhost:3001/product?subCategoryName=${response.data.sub_category}`);
+        setSimilarProductsBySubcategory(similarBySubcategoryResponse.data);
+
+        // Fetch similar products by brand
+        const similarByBrandResponse = await axios.get(`http://localhost:3001/product?brandName=${response.data.brandName}`);
+        setSimilarProductsByBrand(similarByBrandResponse.data);
 
       } catch (error) {
         console.error('Error fetching product details:', error);
@@ -43,7 +57,10 @@ const ProductDetails = () => {
 };
 
  return (
-  <div>
+  <div style={{ paddingTop: '80px' }}>
+  <div className="topnav">
+    <a href='/home'>&lt; Back to Home </a>
+  </div>
     <div className="product-details-container">
       <div className="description-images">
         {images.map((image, index) => (
@@ -74,12 +91,12 @@ const ProductDetails = () => {
       >
           <ArrowForwardIosIcon />
       </IconButton>
-      </div>
+      </div> 
 
       <div className="product-info">
         <h2 className="he2">{product.product_name}</h2>
         <h4>MRP: {product.product_price}</h4>
-        <h4>MRP: {product.offer}</h4>
+        <h4>{product.offer}</h4>
         <p>{product.description}</p>
         <p>Brand: {product.brand_name}</p>
         <p>Category: {product.category}</p>
@@ -87,6 +104,61 @@ const ProductDetails = () => {
         <p>Gender: {product.gender}</p>
         <button style={{marginLeft:'0'}}onClick={connectWhatsApp}>Connect on WhatsApp</button>
       </div>
+    </div>
+    <br></br><br></br>
+    {/* similar ofp*/}
+    <div>
+    <h2>Similar Offer Products</h2>
+    <br></br>
+    <div className="product-cards-similar">
+        {similarProducts.map((product) => (
+          <div key={product.ofp_id} className="product-card-similar">
+          <Link to={`/offerproducts/${product.ofp_id}`}>
+          <img src={`http://localhost:3001/${product.image1}`} alt={product.productName} className="product-image" />
+          <div className="product-details">
+            <h3 className="he3">{product.product_name}</h3>
+            <p>{product.product_price}</p>
+            <p>{product.offer}</p>
+          </div>
+          </Link>
+        </div>
+        ))}
+    </div>
+    <br></br><br></br>
+    {/* similar subcat */}
+    <h2>Similar Products by Subcategory</h2>
+    <br></br>
+    <div className="product-cards-similar">
+        {similarProductsBySubcategory.map((product) => (
+          <div key={product.product_id} className="product-card-similar">
+          <Link to={`/product/${product.product_id}`}>
+          <img src={`http://localhost:3001/${product.image1}`} alt={product.productName} className="product-image" />
+          <div className="product-details">
+            <h3 className="he3">{product.productName}</h3>
+            <p>MRP: {product.price}</p>
+          </div>
+          </Link>
+        </div>
+        ))}
+    </div>
+    <br></br><br></br>
+    {/*Similar brand*/}
+    <h2>Similar Products by Brand</h2>
+    <br></br>
+    <div className="product-cards-similar">
+        {similarProductsByBrand.map((product) => (
+          <div key={product.product_id} className="product-card-similar">
+          <Link to={`/product/${product.product_id}`}>
+          <img src={`http://localhost:3001/${product.image1}`} alt={product.productName} className="product-image" />
+          <div className="product-details">
+            <h3 className="he3">{product.productName}</h3>
+            <p>MRP: {product.price}</p>
+          </div>
+          </Link>
+        </div>
+        ))}
+    </div>
+    <br></br><br></br>
     </div>
     
     

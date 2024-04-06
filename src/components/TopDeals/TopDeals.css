@@ -63,3 +63,13 @@
   text-align: center;
   margin-bottom: 20px;
 }
+.topnav{
+  margin-left:20px
+}
+.topnav a{
+  text-decoration: none;
+  color: black;
+}
+.topnav a:hover{
+  color: blue;
+}
