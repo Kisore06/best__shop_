@@ -1,14 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.css';
-import { FaRegUserCircle, FaSearch } from "react-icons/fa";
+import { FaRegUserCircle } from "react-icons/fa";
 import VerticalNav from '../../components/verticalNavbar/verticalNav.jsx';
 import logo from '../../Assets/best_logo.png';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import SearchBar from './SearchBar';
 
 const Header = () => {
  const navigate = useNavigate();
+ const [searchResults, setSearchResults] = useState([]);
+ const categories = [
+    { name: 'Footwear', path: '/Footwear' },
+    { name: 'Watches', path: '/watches' },
+    { name: 'Mobiles', path: '/mobiles' },
+    { name: 'Bags & Luggage', path: '/Bags & Luggage' },
+    { name: 'Sports Goods', path: '/Sports Goods' },
+    { name: 'Baby World', path: '/Baby World' },
+    { name: 'Toys', path: '/Toys' },
+ ];
+
+ const handleSearch = (e) => {
+  const searchTerm = e.target.value.toLowerCase();
+  const filteredCategories = categories.filter(category =>
+    category.name.toLowerCase().includes(searchTerm)
+  );
+  setSearchResults(filteredCategories);
+};
+
+const handleSearchResultClick = (path) => {
+  navigate(path);
+};
 
  const showLoginModal = () => {
     Swal.fire({
@@ -102,10 +125,11 @@ const Header = () => {
           </ul>
         </nav>
         <div className="user-actions">
-          <div className="search-container">
-            <input className='search-box' type='text' placeholder='Search' />
-            <FaSearch className="search-icon" />
-          </div>
+        <SearchBar
+            searchResults={searchResults}
+            handleSearch={handleSearch}
+            handleSearchResultClick={handleSearchResultClick}
+          />
           <a className='profile-icon' href="#userLogin" onClick={showLoginModal}><FaRegUserCircle /></a>
         </div>
       </div>

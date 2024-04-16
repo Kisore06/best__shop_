@@ -3,3 +3,43 @@ body {
     font-family: 'Jost', sans-serif;
    }
    
+/* ScrollToTop.css */
+.scroll-to-top {
+    background-color: rgb(241, 0, 0);
+    right: 40px;
+    bottom: 40px;
+    position: fixed;
+    z-index: 2;
+    cursor: pointer;
+    border-radius: 100px;
+    width: 70px;
+    height: 70px;
+    padding: unset;
+    /* box-shadow: 0 9px 25px 0 rgba(132, 128, 177, 0.28); */
+    /* border: none; */
+   }
+   
+   .scroll-to-top:hover {
+    transform: scale(1.1);
+   }
+   
+   .scroll-to-top-icon {
+    width: 70px;
+    height: 50px;
+    border: 2px solid #6f00ff;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   
+   .scroll-to-top-icon::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #6f00ff;
+    transform: rotate(135deg);
+   }
+   

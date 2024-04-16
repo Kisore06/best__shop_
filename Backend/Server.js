@@ -17,7 +17,7 @@ const db = mysql.createConnection({
  host: 'localhost',
  user: 'root',
  password: '',
- database: 'best_shop_'
+ database: 'best_shop'
 });
 
 db.connect((err) => {
@@ -604,6 +604,33 @@ db.query(query, [ofp_id], (err, result) => {
     }
 });
 });
+
+//search product
+app.get('/search', (req, res) => {
+    const { query } = req.query;
+    if (!query) {
+        return res.status(400).send('No search query provided');
+    }
+
+    const searchQuery = `%${query}%`; // Use % for partial matches
+    const sqlQuery = `
+        SELECT * FROM product
+        WHERE LOWER(productName) LIKE LOWER(?)
+        OR LOWER(categoryName) LIKE LOWER(?)
+        OR LOWER(subCategoryName) LIKE LOWER(?)
+        OR LOWER(brandName) LIKE LOWER(?)
+    `;
+
+    db.query(sqlQuery, [searchQuery, searchQuery, searchQuery, searchQuery], (err, results) => {
+        if (err) {
+            console.error('Error searching products:', err);
+            return res.status(500).send('Error searching products');
+        }
+        res.send(results);
+    });
+});
+
+   
 
 //get user-info
 app.get('/userinfo', (req, res) => {
