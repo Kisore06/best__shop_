@@ -1,6 +1,6 @@
 import React from 'react';
 import "./TopDeals.css";
-import '../../utils/api'
+import api from '../../utils/api'
 
 const ProductRow = ({ product }) => {
  // Assuming BACKEND_URL is the base URL of your backend

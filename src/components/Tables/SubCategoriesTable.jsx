@@ -5,8 +5,9 @@ import { IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import UpdateIcon from '@mui/icons-material/Update';
+import api from '../../utils/api';
 
-const BACKEND_URL = 'http://localhost:3001';
+// const BACKEND_URL = 'http://localhost:3001';
 
 const SubCategories = () => {
  const [subCategories, setSubCategories] = useState([]);
@@ -15,7 +16,7 @@ const SubCategories = () => {
  useEffect(() => {
     const fetchSubCategories = async () => {
       try {
-        const response = await axios.get(`${BACKEND_URL}/subcategories`);
+        const response = await axios.get(`${api}/subcategories`);
         setSubCategories(response.data);
       } catch (error) {
         console.error('Error fetching subcategories:', error);
@@ -31,11 +32,11 @@ const SubCategories = () => {
 
  const handleUpdateClick = async (subCategory) => {
     try {
-      await axios.put(`http://localhost:3001/subcategories/${subCategory.id}`, {
+      await axios.put(`${api}/subcategories/${subCategory.id}`, {
         name: editingSubCategory.name,
         category: editingSubCategory.category,
       });
-      const response = await axios.get('http://localhost:3001/subcategories');
+      const response = await axios.get(`${api}/subcategories`);
       setSubCategories(response.data);
       setEditingSubCategory(null);
     } catch (error) {
@@ -45,7 +46,7 @@ const SubCategories = () => {
 
  const handleDeleteClick = async (subCategory) => {
     try {
-      await axios.delete(`http://localhost:3001/subcategories/${subCategory.id}`);
+      await axios.delete(`${api}/subcategories/${subCategory.id}`);
       setSubCategories(subCategories.filter(sc => sc.id !== subCategory.id));
     } catch (error) {
       console.error('Error deleting subcategory:', error);

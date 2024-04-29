@@ -5,9 +5,10 @@ import { IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import UpdateIcon from '@mui/icons-material/Update';
+import api from '../../utils/api'
 
 
-const BACKEND_URL = 'http://localhost:3001';
+// const BACKEND_URL = 'http://localhost:3001';
 
 const OfferProducts = () => {
  const [offerProducts, setOfferProducts] = useState([]);
@@ -16,7 +17,7 @@ const OfferProducts = () => {
  useEffect(() => {
   const fetchOfferProducts = async () => {
      try {
-       const response = await axios.get(`${BACKEND_URL}/offerproducts`);
+       const response = await axios.get(`${api}/offerproducts`);
        setOfferProducts(response.data);
      } catch (error) {
        console.error('Error fetching offer products:', error);
@@ -33,7 +34,7 @@ const OfferProducts = () => {
 
 const handleUpdateClick = async (offerproducts) => {
   try {
-    await axios.put(`http://localhost:3001/offerproducts/${offerproducts.ofp_id}`, {
+    await axios.put(`${api}/offerproducts/${offerproducts.ofp_id}`, {
       product_name: editingProduct.product_name,
       product_price: editingProduct.product_price,
       offer: editingProduct.offer,
@@ -43,7 +44,7 @@ const handleUpdateClick = async (offerproducts) => {
       sub_category: editingProduct.sub_category,
       gender: editingProduct.gender,
     });
-    const response = await axios.get('http://localhost:3001/offerproducts');
+    const response = await axios.get(`${api}/offerproducts`);
     setOfferProducts(response.data);
     setEditingProduct(null);
   } catch (error) {
@@ -54,7 +55,7 @@ const handleUpdateClick = async (offerproducts) => {
 
 const handleDeleteClick = async (offerproducts) => {
   try {
-    await axios.delete(`http://localhost:3001/offerproducts/${offerproducts.ofp_id}`);
+    await axios.delete(`${api}/offerproducts/${offerproducts.ofp_id}`);
     setOfferProducts(offerProducts.filter(p => p.ofp_id !== offerproducts.ofp_id));
   } catch (error) {
     console.error('Error deleting offer product:', error);

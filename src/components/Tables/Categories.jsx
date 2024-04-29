@@ -5,9 +5,10 @@ import { IconButton} from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import UpdateIcon from '@mui/icons-material/Update';
+import api from '../../utils/api'
 
 
-const BACKEND_URL = 'http://localhost:3001';
+// const BACKEND_URL = 'http://localhost:3001';
 
 const CategoryTable = () => {
  const [categories, setCategories] = useState([]);
@@ -16,7 +17,7 @@ const CategoryTable = () => {
  useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get(`${BACKEND_URL}/categories`);
+        const response = await axios.get(`${api}/categories`);
         setCategories(response.data);
       } catch (error) {
         console.error('Error fetching categories:', error);
@@ -32,8 +33,8 @@ const CategoryTable = () => {
 
  const handleUpdateClick = async (category) => {
     try {
-       await axios.put(`http://localhost:3001/categories/${category.id}`, { category: editingCategory.category });
-       const response = await axios.get('http://localhost:3001/categories');
+       await axios.put(`${api}/categories/${category.id}`, { category: editingCategory.category });
+       const response = await axios.get(`${api}/categories`);
        setCategories(response.data);
        setEditingCategory(null);
     } catch (error) {
@@ -44,7 +45,7 @@ const CategoryTable = () => {
 
  const handleDeleteClick = async (category) => {
     try {
-      await axios.delete(`http://localhost:3001/categories/${category.id}`);
+      await axios.delete(`${api}/categories/${category.id}`);
       setCategories(categories.filter(cat => cat.id !== category.id));
     } catch (error) {
       console.error('Error deleting category:', error);

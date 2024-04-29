@@ -5,8 +5,9 @@ import { IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import UpdateIcon from '@mui/icons-material/Update';
+import api from '../../utils/api'
 
-const BACKEND_URL = 'http://localhost:3001';
+// const BACKEND_URL = 'http://localhost:3001';
 
 const ProductTable = () => {
  const [products, setProducts] = useState([]);
@@ -16,7 +17,7 @@ const ProductTable = () => {
  useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`${BACKEND_URL}/product`);
+        const response = await axios.get(`${api}/product`);
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -32,7 +33,7 @@ const ProductTable = () => {
 
  const handleUpdateClick = async (product) => {
     try {
-      await axios.put(`http://localhost:3001/product/${product.product_id}`, {
+      await axios.put(`${api}/product/${product.product_id}`, {
         productName: editingProduct.productName,
         price: editingProduct.price,
         description: editingProduct.description,
@@ -41,7 +42,7 @@ const ProductTable = () => {
         genderName: editingProduct.genderName,
         brandName: editingProduct.brandName,
       });
-      const response = await axios.get('http://localhost:3001/product');
+      const response = await axios.get(`${api}/product`);
       setProducts(response.data);
       setEditingProduct(null);
     } catch (error) {
@@ -51,7 +52,7 @@ const ProductTable = () => {
 
  const handleDeleteClick = async (product) => {
     try {
-      await axios.delete(`http://localhost:3001/product/${product.product_id}`);
+      await axios.delete(`${api}/product/${product.product_id}`);
       setProducts(products.filter(p => p.product_id !== product.product_id));
     } catch (error) {
       console.error('Error deleting product:', error);

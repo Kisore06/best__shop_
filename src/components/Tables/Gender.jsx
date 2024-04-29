@@ -5,6 +5,7 @@ import { IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import UpdateIcon from '@mui/icons-material/Update';
+import api from '../../utils/api'
 
 // const BACKEND_URL = 'http://localhost:3001';
 
@@ -16,7 +17,7 @@ const Gender = () => {
  useEffect(() => {
     const fetchGenders = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/genders');
+        const response = await axios.get(`${api}/genders`);
         setGenders(response.data);
       } catch (error) {
         console.error('Error fetching genders:', error);
@@ -32,8 +33,8 @@ const Gender = () => {
 
  const handleUpdateClick = async (gender) => {
     try {
-      await axios.put(`http://localhost:3001/genders/${gender.g_id}`, { gender: editingGender.gender });
-      const response = await axios.get('http://localhost:3001/genders');
+      await axios.put(`${api}/genders/${gender.g_id}`, { gender: editingGender.gender });
+      const response = await axios.get(`${api}/genders`);
       setGenders(response.data);
       setEditingGender(null);
     } catch (error) {
@@ -43,7 +44,7 @@ const Gender = () => {
 
  const handleDeleteClick = async (gender) => {
     try {
-      await axios.delete(`http://localhost:3001/genders/${gender.g_id}`);
+      await axios.delete(`${api}/genders/${gender.g_id}`);
       setGenders(genders.filter(g => g.g_id !== gender.g_id));
     } catch (error) {
       console.error('Error deleting gender:', error);

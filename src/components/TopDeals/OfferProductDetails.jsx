@@ -4,7 +4,7 @@ import axios from 'axios';
 import { IconButton } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import '../../utils/api'
+import api from '../../utils/api'
 
 const ProductDetails = () => {
  const { ofp_id } = useParams();
@@ -32,7 +32,7 @@ const ProductDetails = () => {
         setSimilarProductsBySubcategory(similarBySubcategoryResponse.data);
 
         // Fetch similar products by brand
-        const similarByBrandResponse = await axios.get(`${api}//product?brandName=${response.data.brandName}`);
+        const similarByBrandResponse = await axios.get(`${api}/product?brandName=${response.data.brandName}`);
         setSimilarProductsByBrand(similarByBrandResponse.data);
 
       } catch (error) {

@@ -5,6 +5,7 @@ import { IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import UpdateIcon from '@mui/icons-material/Update';
+import api from '../../utils/api'
 
 // const BACKEND_URL = 'http://localhost:3001';
 
@@ -15,7 +16,7 @@ const Brands = () => {
  useEffect(() => {
     const fetchBrands = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/brands');
+        const response = await axios.get(`${api}/brands`);
         setBrands(response.data);
       } catch (error) {
         console.error('Error fetching brands:', error);
@@ -31,8 +32,8 @@ const Brands = () => {
 
  const handleUpdateClick = async (brand) => {
     try {
-      await axios.put(`http://localhost:3001/brands/${brand.brand_id}`, { brand_name: editingBrand.brand_name });
-      const response = await axios.get('http://localhost:3001/brands');
+      await axios.put(`${api}/brands/${brand.brand_id}`, { brand_name: editingBrand.brand_name });
+      const response = await axios.get(`${api}/brands`);
       setBrands(response.data);
       setEditingBrand(null);
     } catch (error) {
@@ -42,7 +43,7 @@ const Brands = () => {
 
  const handleDeleteClick = async (brand) => {
     try {
-      await axios.delete(`http://localhost:3001/brands/${brand.brand_id}`);
+      await axios.delete(`${api}/brands/${brand.brand_id}`);
       setBrands(brands.filter(b => b.brand_id !== brand.brand_id));
     } catch (error) {
       console.error('Error deleting brand:', error);

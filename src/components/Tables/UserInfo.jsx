@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Products.css';
+import api from '../../utils/api'
 
 const UserInfo = () => {
  const [userInfo, setUserInfo] = useState([]);
@@ -8,7 +9,7 @@ const UserInfo = () => {
  useEffect(() => {
     const fetchUserInfo = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/userinfo');
+        const response = await axios.get(`${api}/userinfo`);
         setUserInfo(response.data);
       } catch (error) {
         console.error('Error fetching genders:', error);
