@@ -58,9 +58,6 @@ const ProductDetails = () => {
 
  return (
   <div style={{ paddingTop: '80px' }}>
-  <div className="topnav">
-    <a href='/home'>&lt; Back to Home </a>
-  </div>
     <div className="product-details-container">
       <div className="description-images">
         {images.map((image, index) => (
@@ -97,7 +94,8 @@ const ProductDetails = () => {
         <h2 className="he2">{product.product_name}</h2>
         <h4>MRP: {product.product_price}</h4>
         <h4>{product.offer}</h4>
-        <p>{product.description}</p>
+        <b>Product Details :</b>
+        <p className="description-wrap">{product.description}</p>
         <p>Brand: {product.brand_name}</p>
         <p>Category: {product.category}</p>
         <p>Sub Category: {product.sub_category}</p>

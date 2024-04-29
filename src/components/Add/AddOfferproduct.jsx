@@ -128,9 +128,11 @@ const AddProduct = () => {
             image1: null,
             image2: null,
             image3: null,
-            image4: null,
+            image4: null
           });
           window.alert('Offer Product added successfully!');
+          window.location.reload();
+
       } catch (error) {
           console.error(error);
           window.alert('An error occurred while adding the Offer Product.');

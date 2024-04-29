@@ -127,7 +127,10 @@ const AddProduct = () => {
               image3: null,
               image4: null,
           });
+
           window.alert('Product added successfully!');
+          window.location.reload();
+
       } catch (error) {
           console.error(error);
           window.alert('An error occurred while adding the Product.');
@@ -252,6 +255,7 @@ const AddProduct = () => {
                         accept="image/*"
                         onChange={handleImageChange1}
                         style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+                        required 
                     />
                 </label>
                 {/* Image 2 */}

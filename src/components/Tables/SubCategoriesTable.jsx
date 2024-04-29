@@ -33,8 +33,7 @@ const SubCategories = () => {
     try {
       await axios.put(`http://localhost:3001/subcategories/${subCategory.id}`, {
         name: editingSubCategory.name,
-        categoryId: editingSubCategory.categoryId,
-        genderId: editingSubCategory.genderId,
+        category: editingSubCategory.category,
       });
       const response = await axios.get('http://localhost:3001/subcategories');
       setSubCategories(response.data);
@@ -68,8 +67,7 @@ const SubCategories = () => {
           <tr>
             <th>Sub Category ID</th>
             <th>Sub Category Name</th>
-            <th>Category ID</th>
-            <th>Gender ID</th>
+            <th>Category Name</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -89,8 +87,7 @@ const SubCategories = () => {
                  subCategory.name
                 )}
               </td>
-              <td>{subCategory.categoryId}</td>
-              <td>{subCategory.genderId}</td>
+              <td>{subCategory.category}</td>
               <td>
                 {editingSubCategory && editingSubCategory.id === subCategory.id ? (
                  <IconButton aria-label="update" onClick={() => handleUpdateClick(subCategory)}>

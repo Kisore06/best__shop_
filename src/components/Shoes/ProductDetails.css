@@ -105,6 +105,10 @@ color: black;
 .product-details a:hover, .he3 a:hover, .product-card-similar a:hover{
 color: grey;
 }
+.description-wrap{
+    white-space: pre-wrap;
+    line-height: 1.9;
+}
 
 
 

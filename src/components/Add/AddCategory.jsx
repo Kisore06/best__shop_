@@ -1,4 +1,3 @@
-// src/components/AddCategory.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -10,7 +9,7 @@ const AddCategory = () => {
  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${BACKEND_URL}/category`, { name: categoryName });
+      const response = await axios.post(`${BACKEND_URL}/categories`, { name: categoryName });
       console.log(response.data);
       setCategoryName('');
       window.alert('Category added successfully!');  
