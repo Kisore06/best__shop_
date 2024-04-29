@@ -1,27 +1,30 @@
-/* Header.css */
-
 .header {
   background-color: rgb(255, 255, 255);
   padding: 10px 0;
-  position: fixed; /* Make the header fixed */
-  top: 0; /* Position it at the top of the viewport */
-  left: 0; /* Position it at the left of the viewport */
-  right: 0; /* Ensure it spans the full width of the viewport */
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
   z-index: 1000;
-  height: 50px; /* Ensure it stays on top of other content */
+  height: 50px;
+  transition: top 0.3s;
+ }
+
+ .header.hidden {
+   top: -50px; /* Move header out of view when hidden */
  }
  
  .custom-modal-container {
-  background-color: #ffffff; /* Light background */
-  color: #333; /* Dark text */
-  border-radius: 10px; /* Rounded corners */
-  padding: 20px; /* Padding inside the modal */
+  background-color: #ffffff; 
+  color: #333; 
+  border-radius: 10px; 
+  padding: 20px; 
  }
  
  .custom-modal-title {
-  font-size: 24px; /* Larger title */
-  font-weight: bold; /* Bold title */
-  color: #333; /* Dark title */
+  font-size: 24px; 
+  font-weight: bold; 
+  color: #333;
  }
  
  .header-container {

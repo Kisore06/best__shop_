@@ -6,6 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { Box, Select, MenuItem } from '@mui/material';
 import { Link } from 'react-router-dom';
+import api from "../../utils/api";
 
 
 
@@ -21,7 +22,7 @@ const ProductList = () => {
  useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/product?subCategoryName=${subCategory}`);
+        const response = await axios.get(`${api}/product?subCategoryName=${subCategory}`);
         setProducts(response.data);
       } catch (error) {
         console.error(error);
@@ -30,7 +31,7 @@ const ProductList = () => {
 
     const fetchGenders = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/genders');
+        const response = await axios.get(`${api}/genders`);
         setGenders(response.data);
       } catch (error) {
         console.error('Error fetching genders:', error);
@@ -39,7 +40,7 @@ const ProductList = () => {
   
    const fetchBrands = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/brands/${subCategory}`);
+      const response = await axios.get(`${api}/brands/${subCategory}`);
       setBrands(response.data);
       } catch (error) {
           console.error('Error fetching brands by subcategory:', error);
@@ -95,7 +96,7 @@ const ProductList = () => {
       {products.filter(product => (selectedGender === 'all' || product.genderName === selectedGender) && (selectedBrand === 'all' || product.brandName === selectedBrand)).map((product) => (
           <div key={product.product_id} className="product-card">
           <Link to={`/product/${product.product_id}`}>
-          <img src={`http://localhost:3001/${product.image1}`} alt={product.productName} className="product-image" />
+          <img src={`${api}/${product.image1}`} alt={product.productName} className="product-image" />
           <div className="product-details">
             <h3 className="he3">{product.productName}</h3>
             <p>MRP: {product.price}</p>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { FaRegUserCircle, FaSearch } from "react-icons/fa";
 import VerticalNav from '../../components/verticalNavbar/verticalNav.jsx';
@@ -6,9 +6,26 @@ import logo from '../../Assets/best_logo.png';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import api from "../../utils/api";
 
 const Header = () => {
  const navigate = useNavigate();
+ const [prevScrollPos, setPrevScrollPos] = useState(0);
+ const [visible, setVisible] = useState(true);
+
+ useEffect(() => {
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, [prevScrollPos, visible]);
 
  const showLoginModal = () => {
     Swal.fire({
@@ -32,7 +49,7 @@ const Header = () => {
 
  const handleLogin = async (username, password) => {
     try {
-      const response = await axios.post('http://localhost:3001/users', { username, password });
+      const response = await axios.post(`${api}/users`, { username, password });
       const { role } = response.data;
       // Assuming the backend sends the role directly in the response
       // You can now use this role to determine if the user is an admin
