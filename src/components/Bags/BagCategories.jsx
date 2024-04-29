@@ -1,5 +1,5 @@
 import React from 'react';
-import './BagCategories.css'; // Import the CSS file
+import './BagCategories.css'; 
 import briefcases from "..//..//Assets//Bags//Briefcases.jpg";
 import diaper from "..//..//Assets//Bags//DiaperBags.jpg";
 import duffel from "..//..//Assets//Bags//DuffelBags.jpg";

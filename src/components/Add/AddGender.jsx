@@ -1,8 +1,9 @@
 // src/components/AddGender.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
+import api from "../../utils/api";
 
-const BACKEND_URL = 'http://localhost:3001';
+
 
 const AddGender = () => {
  const [genderName, setGenderName] = useState('');
@@ -10,7 +11,7 @@ const AddGender = () => {
  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${BACKEND_URL}/genders`, { name: genderName });
+      const response = await axios.post(`${api}/genders`, { name: genderName });
       console.log(response.data);
       setGenderName('');
       window.alert('Gender added successfully!');

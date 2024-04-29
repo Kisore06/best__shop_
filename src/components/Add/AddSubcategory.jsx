@@ -1,7 +1,7 @@
 import { error } from 'ajv/dist/vocabularies/applicator/dependencies';
 import React, { useState, useEffect } from 'react';
+import api from "../../utils/api";
 
-const BACKEND_URL = 'http://localhost:3001';
 
 const AddSubcategoryForm = () => {
  const [subcategory, setSubcategory] = useState({
@@ -16,7 +16,7 @@ const AddSubcategoryForm = () => {
 
  const fetchCategories = async () => {
     try {
-      const response = await fetch(`${BACKEND_URL}/categories`);
+      const response = await fetch(`${api}/categories`);
       const data = await response.json();
       setCategories(data);
     } catch (error) {
@@ -33,7 +33,7 @@ const AddSubcategoryForm = () => {
     e.preventDefault();
     
     try{
-      const response = await fetch(`${BACKEND_URL}/subcategories`, {
+      const response = await fetch(`${api}/subcategories`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

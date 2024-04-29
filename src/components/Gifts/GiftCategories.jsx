@@ -1,6 +1,5 @@
-/* GiftCategories.jsx */
 import React from 'react';
-import './GiftCategories.css'; // Ensure this CSS file is created
+import './GiftCategories.css';
 import frame from '../../Assets/Gifts/Frame.jpg';
 import Coffee from '../../Assets/Gifts/Coffee.jpg';
 import trendy from '../../Assets/Gifts/Trendy.jpg';

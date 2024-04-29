@@ -5,6 +5,7 @@ import './BrandProducts.css';
 import IconButton from '@mui/material/IconButton';
 import { Box, Select, MenuItem } from '@mui/material';
 import FilterListIcon from '@mui/icons-material/FilterList';
+import api from "../../utils/api";
 
 
 const BrandProducts = () => {
@@ -17,7 +18,7 @@ const BrandProducts = () => {
  useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/product?brandName=${brandName}`);
+        const response = await axios.get(`${api}/product?brandName=${brandName}`);
         setProducts(response.data);
       } catch (error) {
         console.error(error);
@@ -25,7 +26,7 @@ const BrandProducts = () => {
     };
     const fetchGenders = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/genders');
+        const response = await axios.get(`${api}/genders`);
         setGenders(response.data);
       } catch (error) {
         console.error('Error fetching genders:', error);
@@ -66,7 +67,7 @@ const BrandProducts = () => {
           {products.map((product) => (
             <div key={product.product_id} className="product-card">
             <Link to={`/product/${product.product_id}`}>
-           <img src={`http://localhost:3001/${product.image1}`} alt={product.productName} className="product-image" />
+           <img src={`${api}/${product.image1}`} alt={product.productName} className="product-image" />
               <div className="product-details">
                 <h3 className="he3">{product.productName}</h3>
                 <p>MRP: {product.price}</p>

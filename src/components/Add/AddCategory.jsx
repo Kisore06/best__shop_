@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import api from "../../utils/api";
 
-const BACKEND_URL = 'http://localhost:3001';
 
 const AddCategory = () => {
  const [categoryName, setCategoryName] = useState('');
@@ -9,7 +9,7 @@ const AddCategory = () => {
  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${BACKEND_URL}/categories`, { name: categoryName });
+      const response = await axios.post(`${api}/categories`, { name: categoryName });
       console.log(response.data);
       setCategoryName('');
       window.alert('Category added successfully!');  
