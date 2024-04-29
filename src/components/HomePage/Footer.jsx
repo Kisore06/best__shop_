@@ -3,6 +3,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaWhatsapp, FaTelegram }
 from "react-icons/fa";
 import "./Footer.css";
 import axios from 'axios';
+import api from "../../utils/api";
 
 const sections = [
   {
@@ -42,7 +43,7 @@ const Footer = () => {
     };
 
     try{
-      const response = await axios.post('http://localhost:3001/userinfo', data, {
+      const response = await axios.post(`${api}/userinfo`, data, {
       headers: {
         'Content-Type': 'application/json',
       },

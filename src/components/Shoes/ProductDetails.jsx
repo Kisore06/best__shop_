@@ -5,6 +5,8 @@ import { IconButton } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import './ProductDetails.css';
+import api from "../../utils/api";
+
 
 const ProductDetails = () => {
  const { id } = useParams();
@@ -17,7 +19,7 @@ const ProductDetails = () => {
  useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/product/${id}`);
+        const response = await axios.get(`${api}/product/${id}`);
         setProduct(response.data);
         setImages([
           response.data.image1,
@@ -27,11 +29,11 @@ const ProductDetails = () => {
         ].filter(image => image)); // Filter out null or undefined images
 
         // Fetch similar products by subcategory
-        const similarBySubcategoryResponse = await axios.get(`http://localhost:3001/product?subCategoryName=${response.data.subCategoryName}`);
+        const similarBySubcategoryResponse = await axios.get(`${api}/product?subCategoryName=${response.data.subCategoryName}`);
         setSimilarProductsBySubcategory(similarBySubcategoryResponse.data);
 
         // Fetch similar products by brand
-        const similarByBrandResponse = await axios.get(`http://localhost:3001/product?brandName=${response.data.brandName}`);
+        const similarByBrandResponse = await axios.get(`${api}/product?brandName=${response.data.brandName}`);
         setSimilarProductsByBrand(similarByBrandResponse.data);
       } catch (error) {
         console.error('Error fetching product details:', error);
@@ -63,7 +65,7 @@ const ProductDetails = () => {
             image && ( // Check if the image is not null or undefined before rendering
               <img
                 key={index}
-                src={`http://localhost:3001/${image}`}
+                src={`${api}/${image}`}
                 alt={product.productName}
                 onClick={() => handleImageClick(index)}
                 style={{ cursor: 'pointer', transition: 'transform 0.3s ease', marginRight: '10px' }}
@@ -81,7 +83,7 @@ const ProductDetails = () => {
           >
             <ArrowBackIosIcon />
           </IconButton>
-          <img src={`http://localhost:3001/${images[currentImageIndex]}`} alt={product.productName} />
+          <img src={`${api}/${images[currentImageIndex]}`} alt={product.productName} />
           <IconButton
             className="arrow-button right"
             onClick={() => setCurrentImageIndex((currentImageIndex + 1) % images.length)}
@@ -112,7 +114,7 @@ const ProductDetails = () => {
           {similarProductsBySubcategory.map((product) => (
             <div key={product.product_id} className="product-card-similar">
               <Link to={`/product/${product.product_id}`}>
-                <img src={`http://localhost:3001/${product.image1}`} alt={product.productName} className="product-image" />
+                <img src={`${api}/${product.image1}`} alt={product.productName} className="product-image" />
                 <div className="product-details">
                  <h3 className="he3">{product.productName}</h3>
                  <p>MRP: {product.price}</p>
@@ -129,7 +131,7 @@ const ProductDetails = () => {
           {similarProductsByBrand.map((product) => (
             <div key={product.product_id} className="product-card-similar">
               <Link to={`/product/${product.product_id}`}>
-                <img src={`http://localhost:3001/${product.image1}`} alt={product.productName} className="product-image" />
+                <img src={`${api}/${product.image1}`} alt={product.productName} className="product-image" />
                 <div className="product-details">
                  <h3 className="he3">{product.productName}</h3>
                  <p>MRP: {product.price}</p>

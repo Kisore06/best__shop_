@@ -1,73 +1,75 @@
-/* Header.css */
-
 .header {
-   background-color: rgb(255, 255, 255);
-   padding: 10px 0;
-   position: fixed;
-   top: 0;
-   left: 0;
-   right: 0;
-   z-index: 1000;
-   height: 50px;
-  }
-  
-  .custom-modal-container {
-   background-color: #ffffff;
-   color: #333;
-   border-radius: 10px;
-   padding: 20px;
-  }
-  
-  .custom-modal-title {
-   font-size: 24px;
-   font-weight: bold;
-   color: #333;
-  }
-  
-  .header-container {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   margin: 0 auto;
-   padding: 0 20px;
-  }
-  
-  .logo {
-   height: 50px;
-   margin-right: 10px;
-   padding-left: 50px;
-  }
-  
-  .nav-links {
-   justify-items: center;
-   align-items: center;
-  }
-  
-  .nav-links ul {
-   list-style: none;
-   padding: 0;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding-right: 0%;
-  }
-  
-  .nav-links li {
-   margin: 0 10px;
-   position: relative;
-  }
-  
-  .nav-links a {
-   text-decoration: none;
-   color: #333;
-   transition: color 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-   color: #007bff;
-  }
-  
-  .nav-links li:hover .mega-menu {
+  background-color: rgb(255, 255, 255);
+  padding: 10px 0;
+  position: fixed; /* Make the header fixed */
+  top: 0; /* Position it at the top of the viewport */
+  left: 0; /* Position it at the left of the viewport */
+  right: 0; /* Ensure it spans the full width of the viewport */
+  z-index: 1000;
+  height: 50px; /* Ensure it stays on top of other content */
+ }
+ 
+ .custom-modal-container {
+  background-color: #ffffff; /* Light background */
+  color: #333; /* Dark text */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding inside the modal */
+ }
+ 
+ .custom-modal-title {
+  font-size: 24px; /* Larger title */
+  font-weight: bold; /* Bold title */
+  color: #333; /* Dark title */
+ }
+ 
+ .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 20px;
+ }
+ 
+ .logo {
+  height: 50px;
+ }
+ 
+ .logo {
+  margin-right: 10px;
+  padding-left: 50px;
+ }
+ 
+ /* Navigation Links */
+ .nav-links {
+  justify-items: center;
+  align-items: center;
+ }
+ 
+ .nav-links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 0%;
+ }
+ 
+ .nav-links li {
+  margin: 0 10px;
+  position: relative; /* Added for dropdown */
+ }
+ 
+ .nav-links a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease; /* Smooth color transition */
+ }
+ 
+ .nav-links a:hover {
+  color: #007bff; /* Change link color on hover */
+ }
+
+ .nav-links li:hover .mega-menu {
    display: block;
   }
   
