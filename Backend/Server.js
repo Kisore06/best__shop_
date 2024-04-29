@@ -283,9 +283,9 @@ app.get('/subcategories', (req, res) => {
 
 
 app.post('/subcategories', (req, res) => {
-    const { name, categoryId, genderId } = req.body;
-    const query = 'INSERT INTO subcategories (name, categoryId, genderId) VALUES (?, ?, ?)';
-    db.query(query, [name, categoryId, genderId], (err, result) => {
+    const { name, category } = req.body;
+    const query = 'INSERT INTO subcategories (name, category) VALUES (?, ?)';
+    db.query(query, [name, category], (err, result) => {
         if (err) {
             console.error('Error adding subcategory:', err);
             res.status(500).send('Error adding subcategory');
@@ -299,9 +299,9 @@ app.post('/subcategories', (req, res) => {
 // Edit subCategory
 app.put('/subcategories/:id', (req, res) => {
 const { id } = req.params;
-const { name, categoryId, genderId } = req.body;
-const query = 'UPDATE subcategories SET name = ?, categoryId = ?, genderId = ? WHERE id = ?';
-db.query(query, [name, categoryId, genderId, id], (err, result) => {
+const { name, category } = req.body;
+const query = 'UPDATE subcategories SET name = ?, category = ?  WHERE id = ?';
+db.query(query, [name, category, id], (err, result) => {
     if (err) {
         console.error('Error updating SubCategory:', err);
         res.status(500).send('Error updating SubCategory');

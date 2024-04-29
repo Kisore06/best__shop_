@@ -25,14 +25,14 @@ const ProductList = ({ products }) => {
  return (
     <div className="categories-container" >
       <h1 className="he1">Season Sales</h1>
-      <div className="scrollable-container">
+      <div className="ofp-container">
         <div style={{ marginLeft:'50px', marginRight:'50px'}}>
           {product && product.map((product) => (
-            <div key={product.ofp_id} className="product-card-similar">
+            <div key={product.ofp_id} className="ofp-product-card">
             <Link to={`/offerproducts/${product.ofp_id}`}>
               <img src={`${api}/${product.image1}`} alt={product.product_name} className="product-image" />
               <div className="product-details">
-                <h3 className="he3">{product.product_name}</h3>
+                <h3 className="head3">{product.product_name}</h3>
                 <p>{product.product_price}</p>
                 <p>{product.offer}</p>
               </div>

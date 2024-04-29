@@ -1,8 +1,7 @@
 // src/components/AddBrand.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
-
-const BACKEND_URL = 'http://localhost:3001';
+import api from "../../utils/api";
 
 const AddBrand = () => {
  const [brandName, setBrandName] = useState('');
@@ -10,7 +9,7 @@ const AddBrand = () => {
  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${BACKEND_URL}/brands`, { name: brandName });
+      const response = await axios.post(`${api}/brands`, { name: brandName });
       console.log(response.data);
       setBrandName('');
       window.alert('Brand added successfully!');  

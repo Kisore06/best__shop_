@@ -1,4 +1,3 @@
-// BabyProdCat.js
 import React from 'react';
 import './BabyProdCat.css';
 import diapering from '../../Assets/baby/diaper.jpeg';

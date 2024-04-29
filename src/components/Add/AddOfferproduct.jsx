@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import api from "../../utils/api";
+
 
 const AddProduct = () => {
   const [product, setProduct] = useState({
@@ -33,7 +35,7 @@ const AddProduct = () => {
   useEffect(() => {
       const fetchCategories = async () => {
           try {
-              const response = await axios.get('http://localhost:3001/categories');
+              const response = await axios.get(`${api}/categories`);
               setCategories(response.data);
           } catch (error) {
               console.error('Error fetching categories:', error);
@@ -42,7 +44,7 @@ const AddProduct = () => {
 
       const fetchSubcategories = async () => {
           try {
-              const response = await axios.get('http://localhost:3001/subcategories');
+              const response = await axios.get(`${api}/subcategories`);
               setSubcategories(response.data);
           } catch (error) {
               console.error('Error fetching subCategories:', error);
@@ -51,7 +53,7 @@ const AddProduct = () => {
 
       const fetchGenders = async () => {
           try {
-              const response = await axios.get('http://localhost:3001/genders');
+              const response = await axios.get(`${api}/genders`);
               setGenders(response.data);
           } catch (error) {
               console.error('Error fetching genders:',error);
@@ -60,7 +62,7 @@ const AddProduct = () => {
 
       const fetchBrands = async () => {
           try {
-              const response = await axios.get('http://localhost:3001/brands');
+              const response = await axios.get(`${api}/brands`);
               setBrands(response.data);
           } catch (error) {
               console.error('Error fetching brands:',error);
@@ -110,7 +112,7 @@ const AddProduct = () => {
       if (product.image4) formData.append('image4', product.image4);
 
       try {
-          const response = await axios.post('http://localhost:3001/uploadofp', formData, {
+          const response = await axios.post(`${api}/uploadofp`, formData, {
               headers: {
                   'Content-Type': 'multipart/form-data',
               },
@@ -128,9 +130,11 @@ const AddProduct = () => {
             image1: null,
             image2: null,
             image3: null,
-            image4: null,
+            image4: null
           });
           window.alert('Offer Product added successfully!');
+          window.location.reload();
+
       } catch (error) {
           console.error(error);
           window.alert('An error occurred while adding the Offer Product.');
