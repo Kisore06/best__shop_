@@ -1,12 +1,13 @@
 import React from 'react';
-import "./TopDeals.css"
+import "./TopDeals.css";
+import '../../utils/api'
 
 const ProductRow = ({ product }) => {
  // Assuming BACKEND_URL is the base URL of your backend
- const BACKEND_URL = 'http://localhost:3001'; // Adjust this to match your backend's URL
+//  const BACKEND_URL = 'http://localhost:3001'; // Adjust this to match your backend's URL
 
  // Construct the full URL for the image
- const imageUrl = product.product_image.startsWith('http') ? product.product_image : `${BACKEND_URL}/${product.product_image}`;
+ const imageUrl = product.product_image.startsWith('http') ? product.product_image : `${api}/${product.product_image}`;
 
  return (
     <div className="product-row">

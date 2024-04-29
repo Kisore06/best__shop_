@@ -1,4 +1,4 @@
-const apiHost = "http://localhost:3001" 
+const api = "http://localhost:3001" 
 
 
-export default apiHost;
+export default api;
