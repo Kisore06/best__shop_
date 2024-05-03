@@ -7,8 +7,8 @@
  }
 
  .ofp-container {
-  overflow-x: auto;
   white-space: nowrap;
+  overflow-x: auto;
  }
  
  .ofp-product-card {
@@ -45,8 +45,30 @@
  }
  
  .ofp-product-image {
-  height: 250px;
-  width: 250px;
+  height: 220px;
+  width: 220px;
   object-fit:contain;
   border-radius: 10px;
  }
+
+ /* .nav-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 10px;
+ }
+ 
+ .nav-button:hover {
+  background-color: #0056b3;
+ }
+ 
+ .prev-button {
+  float: left;
+ }
+ 
+ .next-button {
+  float: right;
+ } */
+ 

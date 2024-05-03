@@ -64,7 +64,7 @@ const ProductDetails = () => {
         {images.map((image, index) => (
           <img
             key={index}
-            src={`${api}/image}`}
+            src={`${api}/${image}`}
             alt={product.product_name}
             onClick={() => handleImageClick(index)}
             style={{ cursor: 'pointer', transition: 'transform 0.3s ease', marginRight: '10px' }}

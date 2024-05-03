@@ -29,7 +29,7 @@ const ProductList = ({ products }) => {
         <div style={{ marginLeft:'50px', marginRight:'50px'}}>
           {product && product.map((product) => (
             <div key={product.ofp_id} className="ofp-product-card">
-            <Link to={`${api}/offerproducts/${product.ofp_id}`}>
+            <Link to={`/offerproducts/${product.ofp_id}`}>
               <img src={`${api}/${product.image1}`} alt={product.product_name} className="product-image" />
               <div className="product-details">
                 <h3 className="head3">{product.product_name}</h3>
