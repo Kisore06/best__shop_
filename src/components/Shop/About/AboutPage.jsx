@@ -3,7 +3,7 @@ import './AboutPage.css'; // Import your CSS file
 
 const AboutPage = () => {
   return (
-    <div className="main-content">
+    <div id="About" className="main-content">
       <div className="content-section">
         <h2>Welcome to Best Shop</h2>
         <p>

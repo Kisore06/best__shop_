@@ -32,7 +32,7 @@ import ProductDetails from "./components/Shoes/ProductDetails";
 import OfferProducts from "./components/Tables/OfferProduct";
 import OfferProductDetails from "./components/TopDeals/OfferProductDetails";
 import UserInfo from "./components/Tables/UserInfo";
-import ScrollToTop from "react-scroll-to-top";
+// import ScrollToTop from "react-scroll-to-top";
 import SearchResultsPage from './components/HomePage/SearchResult';
 
 function App() {
@@ -45,9 +45,9 @@ function App() {
  return (
     <div className="App">
       <Header/>
-      <ScrollToTop className="scroll-to-top" smooth={true} style={{ backgroundColor: '#33ff33' }}>
+      {/* <ScrollToTop className="scroll-to-top" smooth={true} style={{ backgroundColor: '#33ff33' }}>
         <div className="scroll-to-top-icon"></div>
-      </ScrollToTop>
+      </ScrollToTop> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/home" element={<HomePage />} />
@@ -58,7 +58,8 @@ function App() {
         <Route path="/gifts" element={<GiftCategories/>}/>
         <Route path="/mobiles" element={<MobileCategories/>} />
         <Route path="/toys" element={<ToyCategories/>} />
-        <Route path="/baby world" element={<BabyProdCat/>} />
+        <Route path="/baby products" element={<BabyProdCat/>} />
+        <Route path="/general goods" element={<BabyProdCat/>} />
         <Route path="/shop-locations" element={<ShopLocations/>} />
         
         <Route path="/add-category" element={<AddCategory/>} />

@@ -25,6 +25,23 @@ const VerticalNav = () => {
  const [tableOpen, setTableOpen] = useState(false);
  const drawerRef = useRef(null);
 
+ const [prevScrollPos, setPrevScrollPos] = useState(0);
+ const [visible, setVisible] = useState(true);
+
+ useEffect(() => {
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, [prevScrollPos, visible]);
+
  useEffect(() => {
     const handleClickOutside = (event) => {
       if (drawerRef.current && !drawerRef.current.contains(event.target)) {
@@ -57,7 +74,7 @@ const VerticalNav = () => {
 
  return (
     <>
-      <nav className="vertical-nav">
+      <nav className="vertical-nav" style={{ top: visible ? '0' : '-90px' }}>
         <IconButton
           color="inherit"
           aria-label="open drawer"

@@ -6,7 +6,7 @@ import sports from '../../Assets/Categories/sports1.avif';
 import BabyProducts from '../../Assets/Categories/BabyProducts.jpg';
 import Mobiles from '../../Assets/Categories/Mobiles.jpeg';
 import Toys from '../../Assets/Categories/Toys1.jpg';
-import Gifts from '../../Assets/Categories/gift1.webp';
+import general from '../../Assets/Categories/general.jpg';
 import "./Categories.css";
 
 const categories = [
@@ -16,8 +16,8 @@ const categories = [
  { name: 'Sports Goods', image: sports },
  { name: 'Toys', image: Toys },
  { name: 'Mobiles', image: Mobiles },
- { name: 'Baby World', image: BabyProducts },
- { name: 'Gifts', image: Gifts },
+ { name: 'Baby Products', image: BabyProducts },
+ { name: 'General Goods', image: general },
 ];
 
 const Categories = () => {

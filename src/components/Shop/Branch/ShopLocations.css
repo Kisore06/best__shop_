@@ -9,18 +9,16 @@
    gap: 20px;
  }
  
- /* Location card styles */
  .location-card {
    background-color: #f8f9fa;
    padding: 20px;
    border-radius: 5px;
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
- }
- 
- /* Location card headings */
- .location-card h3 {
-   margin-bottom: 10px;
-   font-size: 18px;
+  }
+  
+  .location-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
  }
  
  /* Location card text */

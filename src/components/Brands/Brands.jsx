@@ -12,21 +12,41 @@ import sparx from '../../Assets/Brands/sparx.svg';
 import titan from '../../Assets/Brands/titan.jpg';
 import woodland from '../../Assets/Brands/woodland.png';
 import yonex from '../../Assets/Brands/yonex.png';
+import leecooper from '../../Assets/Brands/Lee-Cooper-logo.jpg';
+import crocs from '../../Assets/Brands/crocs.jpg';
+import casio from '../../Assets/Brands/Casio-logo.jpg';
+import samsung from '../../Assets/Brands/samsung.png';
+import apple from '../../Assets/Brands/apple.webp';
+import oppo from '../../Assets/Brands/Oppo-Logo.png';
+import vivo from '../../Assets/Brands/Vivo-Logo.png';
+import wildcraft from '../../Assets/Brands/wildcraft.svg';
+import genie from '../../Assets/Brands/genie.jpg';
+import sebamed from '../../Assets/Brands/sebamed.jpg';
 import "./Brand.css";
 
 const brands = [
- { name: 'F Sports', image: fsports },
  { name: 'Sparx', image: sparx },
+ { name: 'F Sports', image: fsports },
  { name: 'Woodland', image: woodland },
+ { name: 'Lee Cooper', image: leecooper },
+ { name: 'Crocs', image: crocs },
  { name: 'Titan', image: titan },
  { name: 'Fastrack', image: fastrack },
+ { name: 'Casio', image: casio },
+ { name: 'Samsung', image: samsung },
+ { name: 'Apple', image: apple },
+ { name: 'Vivo', image: vivo },
+ { name: 'Oppo', image: oppo },
  { name: 'American Tourister', image: americantourister },
  { name: 'Skybags', image: skybags },
+ { name: 'Wildcraft', image: wildcraft },
+ { name: 'Genie', image: genie },
  { name: 'Yonex', image: yonex },
  { name: 'Nivia', image: nivia },
  { name: 'Lining', image: Lining },
  { name: 'Apple Baby', image: applebaby },
- { name: 'Himalaya', image: himalaya }
+ { name: 'Himalaya', image: himalaya },
+ { name: 'Seba Med', image: sebamed }
 ];
 
 const Brands = () => {

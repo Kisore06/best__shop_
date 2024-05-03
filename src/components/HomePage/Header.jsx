@@ -77,8 +77,6 @@ const handleSearchResultClick = (path) => {
     try {
       const response = await axios.post(`${api}/users`, { username, password });
       const { role } = response.data;
-      // Assuming the backend sends the role directly in the response
-      // You can now use this role to determine if the user is an admin
       if (role === 'admin') {
         // Show an alert if the user is an admin
         Swal.fire({
@@ -97,7 +95,7 @@ const handleSearchResultClick = (path) => {
  };
 
  return (
-    <header className="header">
+    <header className="header" style={{ top: visible ? '0' : '-90px' }}>
       <VerticalNav />
       <div className="header-container">
         <div className="logo-container">
