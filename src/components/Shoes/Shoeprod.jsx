@@ -135,11 +135,11 @@ const handleSubCategoryChange = (e) => {
 
   return (
     <div style={{ paddingTop: '80px'}}>
-    <div className="title-align">
+    <div style={{backgroundColor:'#5D7261'}} className="title-align">
       <h1 className="he1" style={{marginBottom:'35px'}}>Products in {category}</h1>
     </div>
     <div style={{ display: 'flex' }}>
-    <div className="filter-column">
+    <div style={{backgroundColor:'#f4f1ea'}} className="filter-column">
     {/* subcategory filter */}
     <div className="filter-section">
   <h3 className="filter-title">
@@ -270,7 +270,7 @@ const handleSubCategoryChange = (e) => {
 
       </div>
 
-        <div className="categories-container">
+        <div style={{paddingLeft:'20px',paddingTop:'20px'}} className="categories-container">
           <div className="product-cards">
           {products.filter(product => 
               (selectedGender.includes('all') || selectedGender.includes(product.genderName)) && 

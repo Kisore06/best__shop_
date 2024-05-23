@@ -1,6 +1,7 @@
 import React from 'react';
 import './AboutPage.css'; 
 import { useNavigate } from "react-router-dom";
+import best from "../../../Assets/best main 3.jpg"
 
 const AboutPage = () => {
   const navigate = useNavigate();
@@ -10,15 +11,19 @@ const AboutPage = () => {
   };
 
   return (
-    <div style={{   backgroundColor: '#f4f1ea ' }}>
+    <div style={{   backgroundColor: '#f4f1ea ', paddingTop:'50px', paddingBottom:'50px' }}>
     <div id="About" className="main-content">
+    <div className="image-and-content-container">
+    <img src={best} alt="Best shop Main branch" className="about-page-image" />
+    <div className="flex-content-container">
       <div className="content-section">
-        <h2>"Welcome to Best Shop, Your Trusted Destination for Quality and Variety!"</h2>
+        <h2 style={{textAlign:'center'}}>"Welcome to Best Shop, Your Trusted Destination for </h2>
+        <h2 style={{textAlign:'center'}}>Quality and Variety!"</h2>
         <p>
         At Best Shop, we believe in the power of exceptional products to enhance everyday life. Founded in 1993, We set out with a simple mission : to provide a curated selection of high-quality goods across multiple categories, all in one convenient location.        </p>
       </div>
-      <div className="content-section">
-      <h1>"Explore, Discover, and Experience"</h1>
+      <div className="content-section sec-button">
+      <h1 style={{marginBottom:'30px'}}>"Explore, Discover, and Experience"</h1>
       <button onClick={goToShopLocations} className="shop-button">STOP ON BY</button>
       </div>
       <div className="content-section">
@@ -26,6 +31,8 @@ const AboutPage = () => {
         <p>
         Established over three decades ago, Best shop has been proudly serving the communities of Sathyamangalam and Gobi with a commitment to excellence and a passion for providing an unparalleled shopping experience. With a legacy spanning over 30 years, we have become synonymous with quality, reliability, and customer satisfaction.we have solidified our presence in the industry through four meticulously organized retail stores and a thriving institutional business, powered by a dedicated team of 40 skilled members.        
         </p>
+      </div>
+      </div>
       </div>
       <div className="content-section">
         <h2>A Commitment to Quality</h2>
