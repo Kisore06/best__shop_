@@ -54,13 +54,14 @@
 }
 .slide-content {
     width: 100%; /* Set a fixed width */
-    height: 600px; /* Set a fixed height */
+    height: 400px; /* Set a fixed height */
     background-size: cover; /* Ensure the image covers the entire area */
     background-position: center center; /* Center the image */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     overflow: hidden; /* Ensure the image is not cut off */
     position: relative; /* Needed for absolute positioning of pseudo-element */
-    padding-top: 10px; /* Adjust this value to increase the top height */
+    padding-top: 10px;
+    /* border-radius: 14px; */
 }
 
 /* Pseudo-element for the top part of the slide */
@@ -70,22 +71,19 @@
     top: 0;
     left: 0;
     width: 100px;
-    height: 600px; /* Adjust this value to control the top height */
-    background-image: inherit; /* Inherit the background image from
-the slide content */
-    background-position: center top; /* Position the background image
-at the top */
-    z-index: -1; /* Ensure the pseudo-element is behind the slide content */
+    height: 400px;
+    background-image: inherit;
+    background-position: center top; 
+    z-index: -1; 
 }
 
 /* Slideshow container */
 .slideshow-container {
     padding-top: 50px;
     max-width: 100%;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 
-/* Adjustments for mobile view */
 @media only screen and (max-width: 480px) {
     .slide-content {
         width: 100%;

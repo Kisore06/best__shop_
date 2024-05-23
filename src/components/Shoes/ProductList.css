@@ -6,7 +6,7 @@
    }
    
    .product-card {
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     border-radius: 10px;
     padding: 10px;
     width: 250px;
@@ -14,10 +14,15 @@
    }
    
    .product-image {
-    height: 190px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     object-fit:contain;
     border-radius: 10px;
+    transition: transform 0.3s ease;
+   }
+
+   .product-image:hover{
+    transform: scale(1.05);
    }
    
    .product-details a, .product-card a {

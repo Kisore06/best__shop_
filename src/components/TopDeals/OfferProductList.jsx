@@ -1,46 +1,102 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./TopDeals.css";
+import nextIcon from '../../Assets/next.png'; // Assign the imported image to a variable
+import prevIcon from '../../Assets/back.png';// Assign the imported image to a variable
 import { Link } from 'react-router-dom';
 import api from '../../utils/api';
+import Slider from "react-slick"; // Import Slider from react-slick
+import "slick-carousel/slick/slick.css"; // Import slick css
+import "slick-carousel/slick/slick-theme.css"; // Import slick theme css
 
-const ProductList = ({ products }) => {
- const [product, setProduct] = useState(null);
+
+
+
+// Custom Next Arrow Component
+const NextArrow = ({ onClick }) => {
+ return (
+     <div className="next-arrow" onClick={onClick}>
+       <img src={nextIcon} alt="Next" /> {/* Use the variable as the image source */}
+     </div>
+ );
+};
+
+// Custom Previous Arrow Component
+const PrevArrow = ({ onClick }) => {
+ return (
+     <div className="prev-arrow" onClick={onClick}>
+       <img src={prevIcon} alt="Previous" /> {/* Use the variable as the image source */}
+     </div>
+ );
+};
+
+const ProductList = () => {
+  const [noOfSlides, setNoOfSlides] = useState(window.innerWidth / 300);
+
+  useEffect(() => {
+    const handleResize = () => {
+       setNoOfSlides(window.innerWidth / 300);
+    };
+   
+    window.addEventListener('resize', handleResize);
+   
+    // Cleanup function to remove the event listener
+    return () => window.removeEventListener('resize', handleResize);
+   }, []);
+   
+ const [products, setProducts] = useState([]);
 
  useEffect(() => {
-    const fetchProduct = async () => {
+    const fetchProducts = async () => {
       try {
         const response = await axios.get(`${api}/offerproducts`);
-        setProduct(response.data);
+        setProducts(response.data);
       } catch (error) {
         console.error('Error fetching product details:', error);
       }
     };
 
-    fetchProduct();
+    fetchProducts();
  }, []);
 
- 
+ // Slick settings
+ const settings = {
+    slidesToShow: noOfSlides,
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 2000,
+    nextArrow: <NextArrow />, // Pass custom Next Arrow component
+    prevArrow: <PrevArrow />, 
+    mobileFirst:true
+  // Pass custom Previous Arrow component
+ };
 
  return (
-    <div className="categories-container" >
+    <div className="categories-container">
       <h1 className="he1">Season Sales</h1>
-      <div className="ofp-container">
-        <div style={{ marginLeft:'50px', marginRight:'50px'}}>
-          {product && product.map((product) => (
-            <div key={product.ofp_id} className="ofp-product-card">
+      <Slider {...settings}> {/* Use Slider component here */}
+        {products.map((product, index) => (
+          <div key={product.ofp_id} className="ofp-product-card" >
             <Link to={`/offerproducts/${product.ofp_id}`}>
-              <img src={`${api}/${product.image1}`} alt={product.product_name} className="product-image" />
-              <div className="product-details">
-                <h3 className="head3">{product.product_name}</h3>
+              <div style={{height:"20vh",width:"100%"}}>
+              <img 
+                src={`${api}/${product.image1}`} 
+                alt={product.product_name} 
+                className="ofp-product-image" 
+                onMouseEnter={(e) => e.currentTarget.src = `${api}/${product.image2}`} 
+                onMouseLeave={(e) => e.currentTarget.src = `${api}/${product.image1}`} 
+              /> 
+              </div>
+                         
+              <div>
+              <h4 className="product-name">{product.product_name}</h4>
                 <p>{product.product_price}</p>
                 <p>{product.offer}</p>
               </div>
-              </Link>
-            </div>
-          ))}
-        </div>
-      </div>
+            </Link>
+          </div>
+        ))}
+      </Slider>
     </div>
  );
 }

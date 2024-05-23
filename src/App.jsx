@@ -58,7 +58,8 @@ function App() {
         <Route path="/gifts" element={<GiftCategories/>}/>
         <Route path="/mobiles" element={<MobileCategories/>} />
         <Route path="/toys" element={<ToyCategories/>} />
-        <Route path="/baby world" element={<BabyProdCat/>} />
+        <Route path="/baby products" element={<BabyProdCat/>} />
+        <Route path="/general goods" element={<BabyProdCat/>} />
         <Route path="/shop-locations" element={<ShopLocations/>} />
         
         <Route path="/add-category" element={<AddCategory/>} />

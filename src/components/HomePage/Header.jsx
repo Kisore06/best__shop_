@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { FaRegUserCircle } from "react-icons/fa";
 import VerticalNav from '../../components/verticalNavbar/verticalNav.jsx';
-import logo from '../../Assets/best_logo.png';
+// import logo from '../../Assets/best_logo.png';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -14,7 +14,7 @@ const Header = () => {
  const navigate = useNavigate();
  const [searchResults, setSearchResults] = useState([]);
  const categories = [
-    { name: 'Footwear', path: '/Footwear' },
+    { name: 'Footwear', path: '/footwear' },
     { name: 'Watches', path: '/watches' },
     { name: 'Mobiles', path: '/mobiles' },
     { name: 'Bags & Luggage', path: '/Bags & Luggage' },
@@ -77,8 +77,6 @@ const handleSearchResultClick = (path) => {
     try {
       const response = await axios.post(`${api}/users`, { username, password });
       const { role } = response.data;
-      // Assuming the backend sends the role directly in the response
-      // You can now use this role to determine if the user is an admin
       if (role === 'admin') {
         // Show an alert if the user is an admin
         Swal.fire({
@@ -97,53 +95,360 @@ const handleSearchResultClick = (path) => {
  };
 
  return (
-    <header className="header">
+  <nav class="navbar">
+
+    {/* <header className="header" style={{ top: visible ? '0' : '-90px' }}> */}
       <VerticalNav />
       <div className="header-container">
         <div className="logo-container">
-          <img src={logo} alt="Store Logo" className="logo" />
+          <h2><b>BEST SHOP</b></h2>
+        </div>
+  {/* <nav class="navbar"> */}
+  <div className="menu-container">
+    <ul className="mega-menu">
+      <li className="dropdown">
+        <div>
+          <span><a href="/home">Home</a></span>
+          <span className="material-symbols-outlined">
+          chevron_right
+          </span>
+        </div>
+      </li>
+      <li className="dropdown">
+        <div>
+          <span>Categories</span>
+          <span className="material-symbols-outlined">
+          chevron_right
+          </span>
+        </div>
+        <ul className="menu">
+          <li>
+            <a href="#">Categories</a>
+          </li>
+          <li className="sub-dropdown">
+            <div>
+              <span>Featured</span>
+              <span className="material-symbols-outlined">
+              chevron_right
+              </span>
+            </div>
+            <ul className="sub-menu">
+              <li>
+                <a href="#">Featured</a>
+              </li>
+              <li>
+                <a href="#">New Releases</a>
+              </li>
+              <li>
+                <a href="# ">SKNRS Launch Calendar</a>
+              </li>
+              <li>
+                <a href="#">Bestsellers</a>
+              </li>
+            </ul>
+          </li>
+          <li className="sub-dropdown">
+            <div>
+              <span>Shoes</span>
+              <span className="material-symbols-outlined">
+              chevron_right
+              </span>
+            </div>
+            <ul className="sub-menu">
+              <li>
+                <a href="#">All Shoes</a>
+              </li>
+              <li>
+                <a href="#">Lifestyle</a>
+              </li>
+              <li>
+                <a href="#">Jordan</a>
+              </li>
+              <li>
+                <a href="#">Running</a>
+              </li>
+              <li>
+                <a href="#">Football</a>
+              </li>
+              <li>
+                <a href="#">Basketball</a>
+              </li>
+              <li>
+                <a href="#">Training and Gym</a>
+              </li>
+              <li>
+                <a href="#">Skateboarding</a>
+              </li>
+            </ul>
+          </li>
+          <li className="sub-dropdown">
+            <div>
+              <span>Clothing</span>
+              <span className="material-symbols-outlined">
+              chevron_right
+              </span>
+            </div>
+            <ul class="sub-menu">
+              <li>
+                <a href="#">All Clothing</a>
+              </li>
+              <li>
+                <a href="#">Lyfestyle</a>
+              </li>
+              <li>
+                <a href="#">Tops and T-Shirts</a>
+              </li>
+              <li>
+                <a href="#">Hoodies and Sweatshirts</a>
+              </li>
+              <li>
+                <a href="#">Shorts</a>
+              </li>
+              <li>
+                <a href="#">Tracksuits</a>
+              </li>
+              <li>
+                <a href="#">Trousers and Tights</a>
+              </li>
+              <li>
+                <a href="#">Jackets</a>
+              </li>
+              <li>
+                <a href="#">Kits and Jerseys</a>
+              </li>
+            </ul>
+          </li>
+          <li className="sub-dropdown">
+            <div>
+              <span>Shop By Sport</span>
+              <span className="material-symbols-outlined">
+              chevron_right
+              </span>
+            </div>
+            <ul className="sub-menu">
+              <li>
+                <a href="#">All Sports</a>
+              </li>
+              <li>
+                <a href="#">Running</a>
+              </li>
+              <li>
+                <a href="#">Football</a>
+              </li>
+              <li>
+                <a href="#">Basketball</a>
+              </li>
+              <li>
+                <a href="#">Training and Gym</a>
+              </li>
+              <li>
+                <a href="#">Tennis</a>
+              </li>
+              <li>
+                <a href="#">Golf</a>
+              </li>
+            </ul>
+          </li>
+          <li className="sub-dropdown">
+            <div>
+              <span>Accessories</span>
+              <span className="material-symbols-outlined">
+              chevron_right
+              </span>
+            </div>
+            <ul className="sub-menu">
+              <li>
+                <a href="#">All Accessories</a>
+              </li>
+              <li>
+                <a href="#">Bags and Backpacks</a>
+              </li>
+              <li>
+                <a href="#">Socks</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      {/* <!-- Women section --> */}
+      <li className="dropdown">
+        <div>
+          <span>Brands</span>
+          <span className="material-symbols-outlined">
+          chevron_right
+          </span>
+        </div>
+        <ul className="menu">
+          <li>
+            <a href="#">Women</a>
+          </li>
+          <li className="sub-dropdown">
+            <div>
+              <span>Featured</span>
+              <span className="material-symbols-outlined">
+              chevron_right
+              </span>
+            </div>
+            <ul className="sub-menu">
+              <li>
+                <a href="#">Featured</a>
+              </li>
+              <li>
+                <a href="#">New Releases</a>
+              </li>
+              <li>
+                <a href="# ">SKNRS Launch Calendar</a>
+              </li>
+              <li>
+                <a href="#">Bestsellers</a>
+              </li>
+            </ul>
+          </li>
+          <li className="sub-dropdown">
+            <div>
+              <span>Shoes</span>
+              <span className="material-symbols-outlined">
+              chevron_right
+              </span>
+            </div>
+            <ul className="sub-menu">
+              <li>
+                <a href="#">All Shoes</a>
+              </li>
+              <li>
+                <a href="#">Lifestyle</a>
+              </li>
+              <li>
+                <a href="#">Jordan</a>
+              </li>
+              <li>
+                <a href="#">Running</a>
+              </li>
+              <li>
+                <a href="#">Training and Gym</a>
+              </li>
+            </ul>
+          </li>
+          <li className="sub-dropdown">
+            <div>
+              <span>Clothing</span>
+              <span className="material-symbols-outlined">
+              chevron_right
+              </span>
+            </div>
+            <ul className="sub-menu">
+              <li>
+                <a href="#">All Clothing</a>
+              </li>
+              <li>
+                <a href="#">Lyfestyle</a>
+              </li>
+              <li>
+                <a href="#">Tops and T-Shirts</a>
+              </li>
+              <li>
+                <a href="#">Hoodies and Sweatshirts</a>
+              </li>
+              <li>
+                <a href="#">Leggings</a>
+              </li>
+              <li>
+                <a href="#">Trousers</a>
+              </li>
+              <li>
+                <a href="#">Shorts</a>
+              </li>
+              <li>
+                <a href="#">Tracksuits</a>
+              </li>
+              <li>
+                <a href="#">Sports Bra</a>
+              </li>
+              <li>
+                <a href="#">Matching Sets</a>
+              </li>
+              <li>
+                <a href="#">Jackets</a>
+              </li>
+              <li>
+                <a href="#">Skirts and Dresses</a>
+              </li>
+            </ul>
+          </li>
+          <li className="sub-dropdown">
+            <div>
+              <span>Shop By Sport</span>
+              <span className="material-symbols-outlined">
+              chevron_right
+              </span>
+            </div>
+            <ul className="sub-menu">
+              <li>
+                <a href="#">All Sports</a>
+              </li>
+              <li>
+                <a href="#">Running</a>
+              </li>
+              <li>
+                <a href="#">Yoga</a>
+              </li>
+              <li>
+                <a href="#">HandBall</a>
+              </li>
+              <li>
+                <a href="#">Training and Gym</a>
+              </li>
+              <li>
+                <a href="#">Tennis</a>
+              </li>
+              <li>
+                <a href="#">Golf</a>
+              </li>
+            </ul>
+          </li>
+          <li className="sub-dropdown">
+            <div>
+              <span>Accessories</span>
+              <span className="material-symbols-outlined">
+              chevron_right
+              </span>
+            </div>
+            <ul className="sub-menu">
+              <li>
+                <a href="#">All Accessories</a>
+              </li>
+              <li>
+                <a href="#">Bags and Backpacks</a>
+              </li>
+              <li>
+                <a href="#">Socks</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      {/* <!-- Kids section --> */}
+      <li className="dropdown">
+        <div>
+          <span><a href="/shop-locations">Showroom</a></span>
+          <span className="material-symbols-outlined">
+          chevron_right
+          </span>
+        </div>
+      </li>
+
+      {/* <!-- Collections section --> */}
+      <li className="dropdown">
+        <div>
+          <span><a href="#About">About</a></span>
+          <span className="material-symbols-outlined">
+          chevron_right
+          </span>
         </div>
 
-        <nav className="nav-links">
-          <ul>
-            <li><a href="/home">Home</a></li>
-            <li>
-              <a href="#All-categories">Categories</a>
-              <div className="mega-menu">
-                <ul>
-                 <li><a href="/Footwear">Footwear</a></li>
-                 <li><a href="/watches">Watches</a></li>
-                 <li><a href="/mobiles">Mobiles</a></li>
-                 <li><a href="/Bags & Luggage">Bags & Luggage</a></li>
-                 <li><a href="/Sports Goods">Sports Goods</a></li>
-                 <li><a href="/Baby World">Baby World</a></li>
-                 <li><a href="/Toys">Toys</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <a href="#Brands">Brands</a>
-              <div className="mega-menu">
-                <ul>
-                 <li><a href="/fsports">Fsports</a></li>
-                 <li><a href="/sparx">Sparx</a></li>
-                 <li><a href="/woodland">Woodland</a></li>
-                 <li><a href="/titan">Titan</a></li>
-                 <li><a href="/fastrack">Fastrack</a></li>
-                 <li><a href="/americantourister">American Tourister</a></li>
-                 <li><a href="/skybags">Sky Bags</a></li>
-                 <li><a href="/yonex">Yonex</a></li>
-                 <li><a href="/nivia">Nivia</a></li>
-                 <li><a href="/lining">Lining</a></li>
-                 <li><a href="/applebaby">Apple Baby</a></li>
-                 <li><a href="/himalaya">Himalaya</a></li>
-                </ul>
-              </div>
-            </li>
-            <li><a href="/shop-locations">Showroom</a></li>
-            <li><a href="#About">About</a></li>
-          </ul>
-        </nav>
+      </li>
+    </ul>
+  </div>
         <div className="user-actions">
         <SearchBar
             searchResults={searchResults}
@@ -153,7 +458,9 @@ const handleSearchResultClick = (path) => {
           <a className='profile-icon' href="#userLogin" onClick={showLoginModal}><FaRegUserCircle /></a>
         </div>
       </div>
-    </header>
+    {/* </header> */}
+    </nav>
+
  );
 };
 

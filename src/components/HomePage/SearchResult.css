@@ -18,13 +18,6 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
    }
    
-   .product-image {
-    height: 190px;
-    width: 250px;
-    object-fit: contain;
-    border-radius: 10px;
-   }
-   
    .product-details a, .product-card a {
     text-decoration: none;
     margin-top: 10px;

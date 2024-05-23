@@ -96,7 +96,14 @@ const ProductList = () => {
       {products.filter(product => (selectedGender === 'all' || product.genderName === selectedGender) && (selectedBrand === 'all' || product.brandName === selectedBrand)).map((product) => (
           <div key={product.product_id} className="product-card">
           <Link to={`/product/${product.product_id}`}>
+          <div style={
+            {display:"flex",
+              justifyContent:"center",
+              width:"100%"
+            }
+          }>
           <img src={`${api}/${product.image1}`} alt={product.productName} className="product-image" />
+          </div>
           <div className="product-details">
             <h3 className="he3">{product.productName}</h3>
             <p>MRP: {product.price}</p>

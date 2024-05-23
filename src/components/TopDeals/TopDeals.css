@@ -7,19 +7,18 @@
  }
 
  .ofp-container {
-  white-space: nowrap;
   overflow-x: auto;
- }
- 
- .ofp-product-card {
-  display: inline-block;
-  margin: 10px;
-  background-color: #f8f9fa;
-  border-radius: 10px;
-  padding: 10px;
-  width: 250px;
+  white-space: nowrap;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+ }
+
+ /* .product-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: wrap;
+  /* max-width: 100%; Ensure the container has a defined width */
+  */
 
 .head3{
   white-space: normal; 
@@ -35,6 +34,7 @@
   margin-top: 0px;
  }
 
+
  .product-details a:hover, .head3 a:hover, .ofp-product-card a:hover{
   color: grey;
  }
@@ -43,32 +43,99 @@
   margin-top: 10px;
   color:black
  }
+/* Adjust the gap between cards within a slide */
+.ofp-product-card {
+  display: inline-block;
+  gap: 10PX;
+  margin-right: 10px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 10px;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  -webkit-box-pack: center;
+    /* -ms-flex-pack: center; */
+    display: -webkit-box;
+    /* display: -ms-flexbox; */
+    display: flex;
+    /* height: 200px; */
+    justify-content: center;
+    position: relative;
+}
+
+/* Adjust the gap between individual slides */
+/* .slick-slide {
+  margin-left: 10px; /* Adjust the margin as needed */
+/* */
+
+
  
  .ofp-product-image {
-  height: 220px;
-  width: 220px;
+  height:100%;
+  width: 100%;
   object-fit:contain;
   border-radius: 10px;
  }
 
- /* .nav-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
+ .categories-container {
+  position: relative;
+ }
+ 
+ .next-arrow, .prev-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* background: rgba(255, 255, 255, 0.5); Adjust background for overlay effect */
+  color: rgb(255, 255, 255); /* Adjust text color */
+  padding: 10px;
   cursor: pointer;
-  margin: 10px;
+  z-index: 10;
+  height: 40px;
+  width: 40px;
+  border-radius: 80px;
  }
  
- .nav-button:hover {
-  background-color: #0056b3;
+ .next-arrow {
+  right: 0;
+  height: 40px;
+  width: 40px;
  }
  
- .prev-button {
-  float: left;
+ .prev-arrow {
+  left: 0;
+  height: 40px;
+  width: 40px;
  }
  
- .next-button {
-  float: right;
- } */
+ img{
+  height: 40px;
+  width: 40px;
+ }
+
+   /* the slides */
+   /* .slick-slide {
+    margin: 0 27px;
+} */
+
+/* the parent */
+/* .slick-list {
+    margin: 0 -27px;
+} */
  
+/* a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+} */
+
+
+@media (max-width: 600px) {
+  .slick-slide {
+     margin-right: 5px; /* Smaller gap for smaller screens */
+   }
+ }
+ 
+
+
+
+

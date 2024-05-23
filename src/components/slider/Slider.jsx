@@ -24,7 +24,7 @@ const Slideshow = () => {
 
   return (
     <div style={{ paddingTop: '70px'}} className="slideshow-container">
-      <Slide easing="ease" duration={400}>
+      <Slide easing="ease" duration={3500}>
         {slides.map((slide, index) => (
           <div key={index} className="each-slide">
             <a href={slide.link} rel="noopener noreferrer">
