@@ -51,9 +51,11 @@ const brands = [
 
 const Brands = () => {
  return (
-    <div className="categories-container">
+    <div className="brands-container" style={{marginBottom:'30px'}}>
     <br></br>
-     <h1 className="he1" style={{marginBottom:'0px'}}>Trending Brand Partners</h1>
+    <div className="title-align">
+      <h1 className="he1" style={{marginBottom:'5px'}}>Trending Brand Partners</h1>
+    </div>
         <div className="brands">
         {brands.map((brand, index) => (
             <div key={index} className="brand-logo">

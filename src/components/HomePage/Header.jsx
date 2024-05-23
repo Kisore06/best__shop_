@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { FaRegUserCircle } from "react-icons/fa";
 import VerticalNav from '../../components/verticalNavbar/verticalNav.jsx';
-import logo from '../../Assets/best_logo.png';
+// import logo from '../../Assets/best_logo.png';
+import logo from '../../Assets/best-logo-2.png';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -104,9 +105,9 @@ const handleSearchResultClick = (path) => {
 
         <nav className="nav-links">
           <ul>
-            <li><a href="/home">Home</a></li>
+            <li><a className="head" href="/home">Home</a></li>
             <li>
-              <a href="#All-categories">Categories</a>
+              <a className="head"  href="#All-categories">Categories</a>
               <div className="mega-menu">
                 <ul>
                  <li><a href="/Footwear">Footwear</a></li>
@@ -120,7 +121,7 @@ const handleSearchResultClick = (path) => {
               </div>
             </li>
             <li>
-              <a href="#Brands">Brands</a>
+              <a className="head" href="#Brands">Brands</a>
               <div className="mega-menu">
                 <ul>
                  <li><a href="/fsports">Fsports</a></li>
@@ -138,8 +139,8 @@ const handleSearchResultClick = (path) => {
                 </ul>
               </div>
             </li>
-            <li><a href="/shop-locations">Showroom</a></li>
-            <li><a href="#About">About</a></li>
+            <li><a className="head" href="/shop-locations">Showroom</a></li>
+            <li><a className="head" href="#About">About</a></li>
           </ul>
         </nav>
         <div className="user-actions">
@@ -148,7 +149,7 @@ const handleSearchResultClick = (path) => {
             handleSearch={handleSearch}
             handleSearchResultClick={handleSearchResultClick}
           />
-          <a className='profile-icon' href="#userLogin" onClick={showLoginModal}><FaRegUserCircle /></a>
+          <a className='profile-icon' style={{color:"grey"}} href="#userLogin" onClick={showLoginModal}><FaRegUserCircle /></a>
         </div>
       </div>
     </header>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import shoes from '../../Assets/Categories/shoes1.webp';
+import shoes from '../../Assets/Categories/footwear.jpg';
 import bags from '../../Assets/Categories/Bag1.webp';
 import watches from '../../Assets/Categories/watches1.jpg';
 import sports from '../../Assets/Categories/sports1.avif';
@@ -23,8 +23,10 @@ const categories = [
 const Categories = () => {
 
 return (
-    <div className="categories-container">
-        <h1 className="he1">Explore By Categories</h1>
+    <div id="All-categories" className="categories-container">
+        <div className="title-align">
+            <h1 className="he1" style={{marginBottom:'35px'}}>Explore By Categories</h1>
+        </div>
         <div className="categories">
             {categories.map((category, index) => (
                 <Link key={index} to={`/${category.name.toLowerCase()}`} className="category-link">

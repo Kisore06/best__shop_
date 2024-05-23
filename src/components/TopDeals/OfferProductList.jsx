@@ -23,8 +23,10 @@ const ProductList = ({ products }) => {
  
 
  return (
-    <div className="categories-container" >
+    <div className="ofp-all-container" >
+    <div className="title-align">
       <h1 className="he1">Season Sales</h1>
+    </div>
       <div className="ofp-container">
         <div style={{ marginLeft:'50px', marginRight:'50px'}}>
           {product && product.map((product) => (
@@ -33,7 +35,7 @@ const ProductList = ({ products }) => {
               <img 
                   src={`${api}/${product.image1}`} 
                   alt={product.product_name} 
-                  className="product-image" 
+                  className="ofp-product-image" 
                   onMouseEnter={(e) => e.currentTarget.src = `${api}/${product.image2}`} 
                   onMouseLeave={(e) => e.currentTarget.src = `${api}/${product.image1}`} 
                 />             

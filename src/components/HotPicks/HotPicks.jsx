@@ -14,6 +14,11 @@ import lego from "../../Assets/HotPicks/lego.jpg"
 import mobileAcc from "../../Assets/HotPicks/mobile-acc.jpg"
 import feeding from "../../Assets/HotPicks/feeding.jpg"
 import diapers from "../../Assets/HotPicks/diapers.jpg"
+import experience from "../../Assets/HotPicks/experience33.png"
+import loyal from "../../Assets/HotPicks/customers.png"
+import one from "../../Assets/HotPicks/onestop.png"
+import assure from "../../Assets/HotPicks/assure.png"
+// import coupon from "../../Assets/HotPicks/coupon.jpg"
 // import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 // import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 // import { IconButton } from '@mui/material';
@@ -37,8 +42,62 @@ const hotPicks = [
 const HotPicks = () => {
   
   return (
-    <div>
-    <div className="special-deals-container">
+    <div style={{backgroundColor:'#f4f1ea'}}>
+    {/* <div className="special-deals-container">
+    <h1 className="continuous-text">
+      <span className="first-text">Mother's Day Deals</span>
+      <span className="second-text"> Starting from 20%OFF</span>
+      <span className="first-text">Mother's Day Deals</span>
+      <span className="second-text"> Starting from 20%OFF</span>
+      <span className="first-text">Mother's Day Deals</span>
+      <span className="second-text"> Starting from 20%OFF</span>
+      <span className="first-text">Mother's Day Deals</span>
+      <span className="second-text"> Starting from 20%OFF</span>
+      <span className="first-text">Mother's Day Deals</span>
+      <span className="second-text"> Starting from 20%OFF</span>
+      <span className="first-text">Mother's Day Deals</span>
+      <span className="second-text"> Starting from 20%OFF</span>
+      <span className="first-text">Mother's Day Deals</span>
+      <span className="second-text"> Starting from 20%OFF</span>
+      <span className="first-text">Mother's Day Deals</span>
+      <span className="second-text"> Starting from 20%OFF</span>
+      <span className="first-text">Mother's Day Deals</span>
+      <span className="second-text"> Starting from 20%OFF</span>
+    </h1>
+  </div> */}
+ 
+    <div className="flex-container">
+    {/* <IconButton className="arrow-left" onClick={prevItem}><KeyboardArrowLeftIcon/></IconButton>
+    <IconButton className="arrow-right" onClick={nextItem}><KeyboardArrowRightIcon/></IconButton> */}
+            {hotPicks.map((hotpick, index) => (
+                <Link key={index} to={hotpick.url} style={{textDecoration:'none', color:'black'}}>
+                    <div className="flex-item">
+                        <img src={hotpick.image} alt={hotpick.name} />
+                        <span>{hotpick.name}</span>
+                    </div>
+                </Link>
+            ))}
+    </div>
+    <div className='img-flex'>
+    <div className='img-item'>
+      <img src={experience} alt={'experience'}></img>
+    </div>
+    <div  className='img-item'>
+      <img src={loyal} alt={'loyal'}></img>
+    </div>
+    <div style={{paddingTop:"2px"}} className='img-item'>
+      <img src={one} alt={'one stop'}></img>
+    </div>
+    <div style={{paddingTop:"2px"}} className='img-item'>
+      <img src={assure} alt={'assured products'}></img>
+    </div>
+      
+    </div>
+    {/* <div >
+    <img className='coupon' src={coupon} alt="season_sale"/>
+  </div> */}
+
+  <div className="special-deals-container">
     <h1 className="continuous-text">
       <span className="first-text">Mother's Day Deals</span>
       <span className="second-text"> Starting from 20%OFF</span>
@@ -60,18 +119,6 @@ const HotPicks = () => {
       <span className="second-text"> Starting from 20%OFF</span>
     </h1>
   </div>
-    <div className="flex-container">
-    {/* <IconButton className="arrow-left" onClick={prevItem}><KeyboardArrowLeftIcon/></IconButton>
-    <IconButton className="arrow-right" onClick={nextItem}><KeyboardArrowRightIcon/></IconButton> */}
-            {hotPicks.map((hotpick, index) => (
-                <Link key={index} to={hotpick.url} style={{textDecoration:'none', color:'black'}}>
-                    <div className="flex-item">
-                        <img src={hotpick.image} alt={hotpick.name} />
-                        <span>{hotpick.name}</span>
-                    </div>
-                </Link>
-            ))}
-    </div>
     </div>
   );
 };

@@ -326,19 +326,67 @@ db.query(query, [id], (err, result) => {
 });
 });
 
-// Fetch brands by subcategory (used in filter)
-app.get('/brands/:subCategoryName', (req, res) => {
-    const { subCategoryName } = req.params;
+//subcategory details for filter
+app.get('/subcategories/filter/:categoryName', (req, res) => {
+    const { categoryName } = req.params;
+    const query = `
+    SELECT DISTINCT subcategories.name
+    FROM subcategories
+    JOIN product ON subcategories.name = product.subCategoryName
+    WHERE product.categoryName = ?
+    `;
+    const params = [categoryName];
+  
+    db.query(query, params, (err, results) => {
+      if (err) {
+        console.error('Error fetching subCategoryName:', err);
+        res.status(500).send('Error fetching subCategoryName');
+      } else {
+        console.log('subCategoryName fetched successfully');
+        if (results.length > 0) {
+          res.send(results);
+        } else {
+          res.status(404).send('No subCategoryName found in the specified category');
+        }
+      }
+    });
+  });
+
+// // Fetch brands by subcategory (used in filter)
+// app.get('/brands/:subCategoryName', (req, res) => {
+//     const { subCategoryName } = req.params;
+//     const query = `
+//         SELECT DISTINCT brands.brand_name
+//         FROM brands
+//         JOIN product ON brands.brand_name = product.brandName
+//         WHERE product.subCategoryName = ?
+//     `;
+//     db.query(query, [subCategoryName], (err, results) => {
+//         if (err) {
+//             console.error('Error fetching brands by subcategory:', err);
+//             res.status(500).send('Error fetching brands by subcategory');
+//         } else {
+//             res.send(results);
+//         }
+//     });
+// });
+
+// Fetch brands by Category (used in filter)
+app.get('/brands/:categoryName', (req, res) => {
+    const { categoryName } = req.params;
     const query = `
         SELECT DISTINCT brands.brand_name
         FROM brands
         JOIN product ON brands.brand_name = product.brandName
-        WHERE product.subCategoryName = ?
+        WHERE product.categoryName = ?
     `;
-    db.query(query, [subCategoryName], (err, results) => {
+
+    const params = [categoryName];
+
+    db.query(query, params, (err, results) => {
         if (err) {
-            console.error('Error fetching brands by subcategory:', err);
-            res.status(500).send('Error fetching brands by subcategory');
+            console.error('Error fetching brands by category:', err);
+            res.status(500).send('Error fetching brands by category');
         } else {
             res.send(results);
         }
@@ -374,7 +422,6 @@ db.query(query, params, (err, results) => {
         res.status(500).send('Error fetching products');
     } else {
         console.log('Products fetched successfully');
-        console.log(results);
         res.send(results); 
     }
 });
@@ -392,11 +439,35 @@ db.query(query, params, (err, results) => {
         res.status(500).send('Error fetching product');
     } else {
         console.log('Product fetched successfully');
-        console.log(results);
         res.send(results[0]);
     }
 });
 });
+
+//product details category wise
+app.get('/products/:categoryName', (req, res) => {
+    const { categoryName } = req.params;
+    const query = `
+      SELECT * FROM product 
+      WHERE categoryName = ?;
+    `;
+    const params = [categoryName];
+  
+    db.query(query, params, (err, results) => {
+      if (err) {
+        console.error('Error fetching products:', err);
+        res.status(500).send('Error fetching products');
+      } else {
+        console.log('Products fetched successfully');
+        if (results.length > 0) {
+          res.send(results);
+        } else {
+          res.status(404).send('No products found in the specified category');
+        }
+      }
+    });
+  });
+  
 
 // Route for uploading images product
 app.post('/upload', upload, (req, res) => {
@@ -513,7 +584,6 @@ app.get('/offerproducts/:ofp_id', (req, res) => {
             res.status(500).send('Error fetching product');
         } else {
             console.log('Product fetched successfully');
-            console.log(results);
             res.send(results[0]);
         }
     });

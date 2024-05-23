@@ -23,7 +23,30 @@ const Slideshow = () => {
   }, []);
 
   return (
-    <div style={{ paddingTop: '70px'}} className="slideshow-container">
+    <div style={{ paddingTop: '70px', backgroundColor:'#f4f1ea', paddingBottom:'2px'}}>
+    {/* <div className="special-deals-container">
+    <p className="continuous-text">
+      <span className="first-text">Mother's Day Deals</span>
+      <span className="second-text"> Starting from 20%OFF</span>
+      <span className="first-text">Mother's Day Deals</span>
+      <span className="second-text"> Starting from 20%OFF</span>
+      <span className="first-text">Mother's Day Deals</span>
+      <span className="second-text"> Starting from 20%OFF</span>
+      <span className="first-text">Mother's Day Deals</span>
+      <span className="second-text"> Starting from 20%OFF</span>
+      <span className="first-text">Mother's Day Deals</span>
+      <span className="second-text"> Starting from 20%OFF</span>
+      <span className="first-text">Mother's Day Deals</span>
+      <span className="second-text"> Starting from 20%OFF</span>
+      <span className="first-text">Mother's Day Deals</span>
+      <span className="second-text"> Starting from 20%OFF</span>
+      <span className="first-text">Mother's Day Deals</span>
+      <span className="second-text"> Starting from 20%OFF</span>
+      <span className="first-text">Mother's Day Deals</span>
+      <span className="second-text"> Starting from 20%OFF</span>
+    </p>
+  </div> */}
+    <div className="slideshow-container">
       <Slide easing="ease" duration={3500}>
         {slides.map((slide, index) => (
           <div key={index} className="each-slide">
@@ -35,6 +58,7 @@ const Slideshow = () => {
           </div>
         ))}
       </Slide>
+    </div>
     </div>
   );
 };

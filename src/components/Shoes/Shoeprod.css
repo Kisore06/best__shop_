@@ -1,0 +1,40 @@
+.filter-column {
+    min-width: 200px;
+    padding-right: 20px;
+}
+  
+.filter-column select {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.filter-column {
+    width: 200px;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  
+  .filter-section {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .filter-title {
+    margin-bottom: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .filter-option {
+    margin-bottom: 5px;
+  }
+  
+  .filter-option input[type="checkbox"] {
+    margin-right: 5px;
+  }
+
+  .filter-add-minus {
+    cursor: pointer;
+  }

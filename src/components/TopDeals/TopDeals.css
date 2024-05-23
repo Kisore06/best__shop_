@@ -4,9 +4,24 @@
   color: #3498db;
   text-align: center;
   margin-bottom: 20px;
+  border-bottom: 2px solid #111111;
+  display: inline-block; 
+  width: auto;
  }
 
+ .ofp-all-container{
+   background-color: #f4f1ea;
+   padding-left:30px; 
+   padding-right:30px;
+   padding-bottom:50px;
+   padding-top:30px;
+ }
+ .title-align{
+  display: flex;
+  justify-content: center;
+ }
  .ofp-container {
+  padding-top:30px;
   overflow-x: auto;
   white-space: nowrap;
  }
@@ -17,7 +32,7 @@
   background-color: #f8f9fa;
   border-radius: 10px;
   padding: 10px;
-  width: 250px;
+  width: 200px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -26,6 +41,7 @@
   word-wrap: break-word;
   overflow-wrap: break-word; 
   max-width: 100%; 
+  margin-top: -5px;
 }
 
  .head3 a, .ofp-product-card a{
@@ -40,13 +56,13 @@
  }
  .product-details a, .ofp-product-card a {
   text-decoration: none;
-  margin-top: 10px;
+  margin-top: 0px;
   color:black
  }
  
  .ofp-product-image {
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
   object-fit:contain;
   border-radius: 10px;
  }

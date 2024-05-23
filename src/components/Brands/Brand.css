@@ -6,6 +6,12 @@ text-align: left;
 margin-bottom: 20px;
 margin-left: 10px;
 }
+.brands-container{
+    padding-left:30px; 
+    padding-right:30px;
+    padding-bottom:50px;
+    padding-top:30px;
+}
 .brands {
 display: flex;
 flex-wrap: wrap;

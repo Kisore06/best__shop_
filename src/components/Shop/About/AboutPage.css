@@ -1,10 +1,9 @@
-/* AboutPage.css */
 
 .main-content {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  font-family: 'Arial', sans-serif; /* Adjust the font family as needed */
+  font-family: 'Arial', sans-serif;
  }
  
  .content-section {
@@ -25,8 +24,22 @@
   color: #666;
   text-align: justify; /* Center the text within the paragraphs */
  }
+
+ .shop-button{
+   background-color: #5D7261;
+ }
+
+  .shop-button:hover {
+   background-color: #4b6952; 
+   transform: scale(1.05); 
+  }
+  
+
+  .shop-button:active {
+   background-color: #4b6952; 
+   transform: scale(0.95); 
+  }
  
- /* Responsive design */
  @media (max-width: 768px) {
   .content-section {
      margin-bottom: 20px;

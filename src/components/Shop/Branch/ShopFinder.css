@@ -94,10 +94,10 @@
   }
   
   /* Focus Effect */
-  button:focus {
-   outline: none; /* Removes default focus outline */
-   box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5); /* Custom focus outline */
-  }
+  /* button:focus {
+   outline: none; 
+   box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
+  } */
    
    
    .right-side {

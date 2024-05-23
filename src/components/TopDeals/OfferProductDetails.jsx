@@ -67,7 +67,7 @@ const ProductDetails = () => {
             src={`${api}/${image}`}
             alt={product.product_name}
             onClick={() => handleImageClick(index)}
-            style={{ cursor: 'pointer', transition: 'transform 0.3s ease', marginRight: '10px' }}
+            style={{ cursor: 'pointer', transition: 'transform 1.5s ease', marginRight: '10px' }}
             onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
             onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
           />
