@@ -1,8 +1,5 @@
-import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import './Testimonial.css';
+import React, { useState } from 'react';
+import './Testimonial.css'; // Ensure you have a CSS file linked here for styling
 
 const Testimonial = () => {
   const testimonials = [
@@ -10,54 +7,26 @@ const Testimonial = () => {
     { text: "I love this service!", author: "Customer 2" },
     { text: "Excellent customer support!", author: "Customer 3" },
   ];
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Slider settings
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+  const goToPreviousTestimonial = () => {
+    setCurrentIndex(prevIndex => prevIndex > 0? prevIndex - 1 : testimonials.length - 1);
   };
 
-  // Custom Next Arrow
-  function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{...style, display: "block", color: "black" }}
-        onClick={onClick}
-      />
-    );
-  }
-
-  // Custom Prev Arrow
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{...style, display: "block", color: "black" }}
-        onClick={onClick}
-      />
-    );
-  }
+  const goToNextTestimonial = () => {
+    setCurrentIndex(prevIndex => prevIndex < testimonials.length - 1? prevIndex + 1 : 0);
+  };
 
   return (
     <div className="testimonial">
       <h1>Testimonials</h1>
       <div className="testimonials-container">
-        <Slider {...settings}>
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="testimonial-card">
-              <p>{testimonial.text}</p>
-              <p>- {testimonial.author}</p>
-            </div>
-          ))}
-        </Slider>
+        <button className="test-btn" onClick={goToPreviousTestimonial}>&lt;</button>
+        <div className="testimonial-card">
+          <p>{testimonials[currentIndex].text}</p>
+          <p>- {testimonials[currentIndex].author}</p>
+        </div>
+        <button className="test-btn" onClick={goToNextTestimonial}>&gt;</button>
       </div>
     </div>
   );

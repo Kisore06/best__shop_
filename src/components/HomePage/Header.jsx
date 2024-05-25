@@ -123,7 +123,7 @@ const handleSearchResultClick = (path) => {
         </div>
         <ul className="menu">
           <li>
-            <a href="#">Categories</a>
+            <a href="/Footwear">Categories</a>
           </li>
           
           <li className="sub-dropdown">
@@ -135,7 +135,7 @@ const handleSearchResultClick = (path) => {
             </div>
             <ul className="sub-menu">
               <li>
-                <a href="#">Featured</a>
+                <a href="">Featured</a>
               </li>
               <li>
                 <a href="#">New Releases</a>
@@ -157,7 +157,7 @@ const handleSearchResultClick = (path) => {
             </div>
             <ul className="sub-menu">
               <li>
-                <a href="#">All Shoes</a>
+                <a href="/Footwear">All Shoes</a>
               </li>
               <li>
                 <a href="#">Lifestyle</a>
