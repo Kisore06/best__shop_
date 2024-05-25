@@ -1,5 +1,5 @@
 .header {
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   padding: 10px 0;
   position: fixed; /* Make the header fixed */
   top: 0; /* Position it at the top of the viewport */
@@ -44,10 +44,22 @@
   padding-left: 50px;
  }
  
- /* Navigation Links */
  .nav-links {
   justify-items: center;
   align-items: center;
+ }
+ .head:after{
+   content:"";
+   position: absolute;
+   background-color: #ffffff;
+   height:3px;
+   width:0%;
+   left:0;
+   bottom:-10px;
+   transition: 0.5s;
+ }
+ .head:hover:after{
+   width: 100%;
  }
  
  .nav-links ul {
@@ -61,17 +73,17 @@
  
  .nav-links li {
   margin: 0 10px;
-  position: relative; /* Added for dropdown */
+  position: relative; 
  }
  
  .nav-links a {
   text-decoration: none;
-  color: #333;
-  transition: color 0.3s ease; /* Smooth color transition */
+  color: rgb(45, 126, 45);
+  transition: color 0.3s ease; 
  }
  
  .nav-links a:hover {
-  color: #007bff; /* Change link color on hover */
+  color: #ffffff;
  }
 
  .nav-links li:hover .mega-menu {
@@ -90,14 +102,14 @@
   }
   
   .mega-menu {
-   /* position: absolute; */
-   /* top: 100%; */
+   /* position:absolute; */
+   top: 100%;
    left: 0;
    display: none;
    /* background-color: #fff; */
    /* z-index: 1; */
    border-radius: 5px;
-   
+   margin-top: 6px;
   }
   
   .mega-menu ul {
@@ -126,7 +138,7 @@
   
   .user-actions a {
    margin-right: 10px;
-   color: #333;
+   color: white;
    text-decoration: none;
    transition: color 0.3s ease;
   }
@@ -136,7 +148,7 @@
   }
   
   .user-actions a:hover {
-   color: #007bff;
+   color: #ffffff;
   }
   
   .fa {
@@ -154,7 +166,7 @@
   }
   
   .search-input:focus {
-   border-color: #007bff;
+   border-color: #ffffff;
   }
   
   .search-container {
@@ -166,7 +178,7 @@
    width: 100%;
    padding: 5px 30px 5px 10px;
    box-sizing: border-box;
-   border: 3px solid #000000;
+   border: 3px solid grey;
    border-radius: 20px;
    transition: width 0.5s ease-in-out;
   }
@@ -235,10 +247,109 @@
 
 /* Existing styles */
 
-/* Responsive styles */
-@media (max-width: 768px) {
+.category-expand{
+    width: 1000px;
+    position: absolute;
+    display: none;
+    height: 470px;
+    z-index: 200;
+    background: #fff;
+    top: 57px;
+    padding: 20px;
+    padding-bottom: 0;
+    /* display: flex; */
+    border-radius: 0 0 4px 4px;
+    left: 0;
+    box-shadow: 0 6px 6px 0 rgb(156 156 156 / 24%),
+    0 0 6px 0 rgb(0 0 0 / 12%);
+}
+.brands .category-expand{
+    top: 55px;
+}
+.sub-category{
+    width: 20%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.sub-category-value{
+    width: 100%;
+    height: auto;
+    line-height: 55px;
+    border-bottom: 1px solid #e4e4e4;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    color: #8d8d8d;
+    cursor: pointer;
+    padding-right: 25px;
+    position: relative;
+}
+.black{
+    color: black;
+}
+.arrow-icon{
+    background-size: auto 12px;
+    background-position:  right center;
+    width: 20px;
+    height: 20px;
+    position:absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    background: url(https://www.tatacliq.com/src/general/components/img/down-arrow-grey.7cb8fab52c44.svg) no-repeat;
+    background-size: auto 13px;
+    background-position: center;
+    transform: rotate(275deg);
+}
+.sub-category-option{
 
-  }
+    width: 80%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    padding-left: 45px;
+    overflow: hidden;
+}
+.b .sub-category-option{
+    width: 53%;
+}
+.sub-category-option-value{
+    width: 25%;
+    height: auto;
+    font-size: 14px;
+    line-height: 30px;
+    color: #8d8d8d;
+    cursor: pointer;
+}
+.sub-category-option-value:hover{
+    color: #FE1743;
+}
+.sub-category-option-header{
+    width: 25%;
+    height: auto;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 30px;
+    color: black;
+    cursor: pointer;
+}
+section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 450px;
+    transition:all 300ms ease-in-out;
+}
+section div{
+    width: 25%;
+}
+
 
   @media (max-width: 768px) {
    .mega-menu {
@@ -336,7 +447,7 @@ button{
 .menu-btn{
    margin-left: 1em;
    background: none;
-   display: inline-block;
+   /* display: inline-block; */
 }
 
 .menu-btn span{
@@ -530,3 +641,5 @@ button{
        height: 50vh;
    }
 }
+
+

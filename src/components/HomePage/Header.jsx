@@ -125,6 +125,7 @@ const handleSearchResultClick = (path) => {
           <li>
             <a href="#">Categories</a>
           </li>
+          
           <li className="sub-dropdown">
             <div>
               <span>Featured</span>
@@ -280,7 +281,7 @@ const handleSearchResultClick = (path) => {
         </div>
         <ul className="menu">
           <li>
-            <a href="#">Women</a>
+            <a href="#">Brands</a>
           </li>
           <li className="sub-dropdown">
             <div>
@@ -313,100 +314,94 @@ const handleSearchResultClick = (path) => {
             </div>
             <ul className="sub-menu">
               <li>
-                <a href="#">All Shoes</a>
+                <a href="#">Sparx</a>
               </li>
               <li>
-                <a href="#">Lifestyle</a>
+                <a href="#">Woodland</a>
               </li>
               <li>
-                <a href="#">Jordan</a>
+                <a href="#">Crocs</a>
               </li>
               <li>
-                <a href="#">Running</a>
+                <a href="#">Fsports</a>
               </li>
               <li>
-                <a href="#">Training and Gym</a>
+                <a href="#">Nike</a>
               </li>
             </ul>
           </li>
           <li className="sub-dropdown">
             <div>
-              <span>Clothing</span>
+              <span>Mobiles</span>
               <span className="material-symbols-outlined">
               chevron_right
               </span>
             </div>
             <ul className="sub-menu">
               <li>
-                <a href="#">All Clothing</a>
+                <a href="#">All Brands</a>
               </li>
               <li>
-                <a href="#">Lyfestyle</a>
+                <a href="#">Samsung</a>
               </li>
               <li>
-                <a href="#">Tops and T-Shirts</a>
+                <a href="#">Apple</a>
               </li>
               <li>
-                <a href="#">Hoodies and Sweatshirts</a>
+                <a href="#">Vivo</a>
               </li>
               <li>
-                <a href="#">Leggings</a>
+                <a href="#">Oppo</a>
               </li>
               <li>
-                <a href="#">Trousers</a>
+                <a href="#">Portronics</a>
               </li>
               <li>
-                <a href="#">Shorts</a>
+                <a href="#">Sony</a>
               </li>
               <li>
-                <a href="#">Tracksuits</a>
+                <a href="#">Realme</a>
               </li>
               <li>
-                <a href="#">Sports Bra</a>
+                <a href="#">Redmi</a>
               </li>
               <li>
-                <a href="#">Matching Sets</a>
+                <a href="#">Panasonic</a>
               </li>
               <li>
-                <a href="#">Jackets</a>
-              </li>
-              <li>
-                <a href="#">Skirts and Dresses</a>
+                <a href="#">Zebronics</a>
               </li>
             </ul>
           </li>
           <li className="sub-dropdown">
             <div>
-              <span>Shop By Sport</span>
+              <span>Watches</span>
               <span className="material-symbols-outlined">
               chevron_right
               </span>
             </div>
             <ul className="sub-menu">
               <li>
-                <a href="#">All Sports</a>
+                <a href="#">Sonata</a>
               </li>
               <li>
-                <a href="#">Running</a>
+                <a href="#">Titan</a>
               </li>
               <li>
-                <a href="#">Yoga</a>
+                <a href="#">Fastrack</a>
               </li>
               <li>
-                <a href="#">HandBall</a>
+                <a href="#">Casio</a>
               </li>
               <li>
-                <a href="#">Training and Gym</a>
+                <a href="#">Timex</a>
               </li>
               <li>
-                <a href="#">Tennis</a>
-              </li>
-              <li>
-                <a href="#">Golf</a>
+                <a href="#">Firebolt</a>
               </li>
             </ul>
           </li>
-          <li className="sub-dropdown">
+          {/* <li className="sub-dropdown">
             <div>
               <span>Accessories</span>
               <span className="material-symbols-outlined">
@@ -415,7 +410,7 @@ const handleSearchResultClick = (path) => {
             </div>
             <ul className="sub-menu">
               <li>
-                <a href="#">All Accessories</a>
+                <a href="#"></a>
               </li>
               <li>
                 <a href="#">Bags and Backpacks</a>
@@ -424,7 +419,7 @@ const handleSearchResultClick = (path) => {
                 <a href="#">Socks</a>
               </li>
             </ul>
-          </li>
+          </li> */}
         </ul>
       </li>
       {/* <!-- Kids section --> */}

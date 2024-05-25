@@ -1,12 +1,13 @@
 /* SearchResultsPage.css */
 .search-results-page {
     padding-top: 80px;
+    margin-left: 40px;
    }
    
    .product-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
     gap: 20px;
    }
    

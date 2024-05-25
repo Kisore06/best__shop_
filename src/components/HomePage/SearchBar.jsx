@@ -33,7 +33,7 @@ const SearchBar = () => {
         onChange={handleInputChange}
         onKeyDown={handleSearch}
       />
-      <FaSearch className="search-icon" />
+      <FaSearch style={{color:"grey"}} className="search-icon" />
     </div>
  );
 };

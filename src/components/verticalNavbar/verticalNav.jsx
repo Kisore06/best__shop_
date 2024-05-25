@@ -88,7 +88,7 @@ const VerticalNav = () => {
             top: 15, // Adjust the top position as needed
          }}
         >
-          <MenuIcon sx={{ fontSize: 25}} />
+          <MenuIcon sx={{ color:'grey', fontSize: 25}} />
 
         </IconButton>
       </nav>

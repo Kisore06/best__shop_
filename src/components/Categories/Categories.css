@@ -42,7 +42,7 @@
     padding: 8px; /* Increased padding */
     color: white;
     text-shadow: 0 0 10px rgb(0, 0, 0); 
-
+    font-weight: 500;
     font-size: 20px; /* Increased font size */
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;

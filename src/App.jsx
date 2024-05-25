@@ -1,17 +1,18 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import ShoeCategories from './components/Shoes/ShoeCategories';
+// import ShoeCategories from './components/Shoes/ShoeCategories';
+import Shoeprod from './components/Shoes/Shoeprod';
 import HomePage from './components/HomePage/HomePage';
 import Header from "./components/HomePage/Header";
 import Footer from "./components/HomePage/Footer";
-import WatchCategories from "./components/Watches/WatchCategories";
+// import WatchCategories from "./components/Watches/WatchCategories";
 import Content from "./components/Content";
-import SportsCategories from "./components/Sports/SportsCategories";
-import MobileCategories from "./components/Mobiles/MobileCategories";
-import ToyCategories from "./components/Toys/ToyCategories";
+// import SportsCategories from "./components/Sports/SportsCategories";
+// import MobileCategories from "./components/Mobiles/MobileCategories";
+// import ToyCategories from "./components/Toys/ToyCategories";
 import BabyProdCat from "./components/BabyProducts/BabyProdCat";
 import ShopLocations from "./components/Shop/Branch/ShopLocations";
-import BagCategories from "./components/Bags/BagCategories";
-import GiftCategories from "./components/Gifts/GiftCategories";
+// import BagCategories from "./components/Bags/BagCategories";
+// import GiftCategories from "./components/Gifts/GiftCategories";
 import AddCategory from "./components/Add/AddCategory";
 import AddGender from "./components/Add/AddGender";
 import AddSubcategory from "./components/Add/AddSubcategory";
@@ -51,15 +52,16 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/home" element={<HomePage />} />
-        <Route path="/footwear" element={<ShoeCategories/>} />
-        <Route path="/watches" element={<WatchCategories/>} />
-        <Route path="/bags & luggages" element={<BagCategories/>} />
+        {/* <Route path="/footwear" element={<ShoeCategories/>} /> */}
+        <Route path="/:category" element={<Shoeprod/>} />
+        {/* <Route path="/watches" element={<WatchCategories/>} /> */}
+        {/* <Route path="/bags & luggages" element={<BagCategories/>} />
         <Route path="/sports goods" element={<SportsCategories/>} />
         <Route path="/gifts" element={<GiftCategories/>}/>
         <Route path="/mobiles" element={<MobileCategories/>} />
         <Route path="/toys" element={<ToyCategories/>} />
+        <Route path="/general goods" element={<BabyProdCat/>} /> */}
         <Route path="/baby products" element={<BabyProdCat/>} />
-        <Route path="/general goods" element={<BabyProdCat/>} />
         <Route path="/shop-locations" element={<ShopLocations/>} />
         
         <Route path="/add-category" element={<AddCategory/>} />
